@@ -1,6 +1,6 @@
 # AI-Powered Development Protocols Framework
 
-A sophisticated, plug-and-play governance layer for AI-assisted software development. It is designed to work with any modern AI coding assistant, from IDE-integrated tools like [Cursor](https://cursor.sh/) and GitHub Copilot to conversational agents like Claude. This framework transforms AI collaborators from simple code generators into structured, context-aware engineering partners.
+A pragmatic, plug-and-play governance framework for AI-assisted software development. It is designed to work with any modern AI coding assistant, from IDE-integrated tools like [Cursor](https://cursor.sh/) and GitHub Copilot to conversational agents like Claude. This framework transforms AI collaborators from simple code generators into structured, context-aware engineering partners.
 
 It provides a set of structured Markdown protocols that guide an AI through the entire development lifecycle: from robust requirement gathering and architectural planning to controlled execution and continuous improvement.
 
