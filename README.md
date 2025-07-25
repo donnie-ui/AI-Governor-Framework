@@ -1,6 +1,6 @@
 # AI Dev Assistant Framework
 
-A pragmatic, plug-and-play governance framework for AI-assisted software development. It is designed to work with any modern AI coding assistant, from IDE-integrated tools like [Cursor](https://cursor.sh/) and GitHub Copilot to conversational agents like Claude. This framework excels in complex, multi-codebase monorepos, transforming AI collaborators from simple code generators into structured, context-aware engineering partners.
+A pragmatic, plug-and-play governance framework for AI-assisted software development. It is designed to work with any modern AI coding assistant, from IDE-integrated tools like [Cursor](https://cursor.sh/) and GitHub Copilot to conversational agents like Claude. This framework excels in complex, multi-codebase monorepos, transforming AI assistants from simple code generators into structured, context-aware engineering partners.
 
 It provides a set of structured Markdown files—protocols and rules—that guide an AI through the entire development lifecycle, from initial codebase analysis to continuous improvement.
 
