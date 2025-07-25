@@ -87,8 +87,7 @@ This framework is built around a sequential, four-protocol workflow which is sto
 
 This framework is offered freely to the community. If you find it valuable and it has helped you improve your AI-assisted development workflow, please consider showing your support. It is greatly appreciated!
 
--   **[Sponsor on GitHub](https://github.com/sponsors/YOUR_USERNAME)**
--   **[Buy Me a Coffee](https://www.buymeacoffee.com/YOUR_USERNAME)**
+-   **[Sponsor on GitHub](https://github.com/sponsors/Fr-e-d)**
 
 ## 🤝 Attribution & License
 
