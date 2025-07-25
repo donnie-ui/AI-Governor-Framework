@@ -1,8 +1,8 @@
-# AI-Powered Development Protocols Framework
+# AI Dev Assistant Framework
 
 A pragmatic, plug-and-play governance framework for AI-assisted software development. It is designed to work with any modern AI coding assistant, from IDE-integrated tools like [Cursor](https://cursor.sh/) and GitHub Copilot to conversational agents like Claude. This framework transforms AI collaborators from simple code generators into structured, context-aware engineering partners.
 
-It provides a set of structured Markdown protocols that guide an AI through the entire development lifecycle: from robust requirement gathering and architectural planning to controlled execution and continuous improvement.
+It provides a set of structured Markdown files—protocols and rules—that guide an AI through the entire development lifecycle, from initial codebase analysis to continuous improvement.
 
 ---
 
@@ -10,76 +10,33 @@ It provides a set of structured Markdown protocols that guide an AI through the 
 
 Standard AI prompting is chaotic. It lacks structure, context, and a feedback loop, often leading to inconsistent results and time-consuming rework.
 
-This framework shifts the paradigm from **prompting** to **governing**. Instead of asking an AI to "build a feature," you instruct it to follow a battle-tested **workflow**, where each step is a formal protocol. The AI's role evolves:
+This framework shifts the paradigm from **prompting** to **governing**. Instead of asking an AI to "build a feature," you instruct it to follow a battle-tested **workflow**. The AI's role evolves:
 
--   From a simple coder to a **Product Manager** who asks the right questions.
+-   From a simple coder to an **Architect** who analyzes your codebase.
 -   From a task executer to a **Tech Lead** who creates a detailed technical plan.
 -   From an uncontrolled generator to a **Paired Developer** who awaits your approval at every key step.
 -   From a one-shot tool to a **QA Lead** who helps you improve the process itself.
 
 By providing the AI with a clear "operating system," you ensure the code it produces is not only functional but also architecturally sound, consistent with your project's standards, and highly maintainable.
 
-## 🚀 Quick Start & Onboarding Guide (Plug & Play)
+## 🚀 The "Companion Expert" Workflow
 
-Integrating this framework into your project is designed to be simple.
+This framework is designed to turn your AI assistant into a **companion expert** that learns and grows with your project. The workflow is simple:
 
-### 1. **Copy the Framework**
-   - Copy the `ai-protocol-framework` folder (or just its contents) into the root of your repository. You can rename the folder to whatever you like (e.g., `.ai-protocols`, `ai_governance`).
+1.  **Bootstrap Your Project (One-Time Setup):** Run the `0-bootstrap-your-project.md` protocol. The AI will analyze your codebase and work with you to create a foundational "Context Kit" of `READMEs` and project-specific rules.
+2.  **Develop Features:** Use the main 4-step development workflow (starting with `1-create-prd.md`) to create or modify features. The AI will now be significantly more accurate because it uses the context you built together.
+3.  **Evolve the Context:** With each feature you build, the AI will get smarter. Use the `4-implementation-retrospective.md` protocol to identify gaps and continuously enrich your project's rules and documentation.
 
-### 2. **Review and Adapt the Protocols**
-   - The protocols inside `protocols/` are designed to be generic. Open each file and look for placeholders like `"[Your Frontend App]"` or `@[your-rule-name]`.
-   - **Adapt the placeholders** to match your project's specific terminology, architecture, and file paths. This is the most crucial step to contextualize the AI.
+### A Note on the First Run: The Learning Curve
 
-### 3. **(Optional but Recommended) Create Your `@rules`**
-   - This framework is most powerful when combined with a `.cursor/rules` directory containing specific rules for your codebase (e.g., coding style, API usage patterns).
-   - The protocols will instruct the AI to consult these `@rules`, giving it deep, project-specific context.
-   - To get you started, this repository includes an `ai-assistant-rules/` directory. It contains a collection of high-level, generic "master rules" that you can copy into your own `.cursor/rules/master-rules/` folder and adapt. It also includes a guide on how to write effective rules yourself.
+Your first few interactions with the AI using this framework might require more corrections and clarifications. **This is normal and by design.** You are actively *teaching* the assistant the specific nuances of your codebase.
 
-### 4. **Start the Workflow**
-   - You're ready to go! Start a new conversation with your AI assistant (e.g., Cursor) and kick off the workflow by referencing the first protocol.
+Think of it as onboarding a new junior developer. The initial investment in teaching pays off exponentially. With each iteration, the AI's context gets richer, its proposals become more accurate, and it evolves from a generic tool into a true expert companion for your project.
 
-   **Example First Prompt:**
-   ```
-   Please use the protocol defined in @ai-protocol-framework/protocols/1-create-prd.md.
+## 🗂️ Framework Structure
 
-   I want to build a new feature: [Describe your feature, its goal, and its target users].
-   ```
-
-   The AI will take over, following the protocol to guide you through the rest of the process.
-
-## 🗺️ The 4-Step Development Workflow
-
-This framework is built around a sequential, four-protocol workflow which is stored in the `dev-workflow/` directory. It is complemented by a set of foundational rules, located in the `rules/` directory, that govern the AI's behavior.
-
----
-
-### 1️⃣ **Phase 1: Product Requirement Document (PRD) Creation**
-   - **Protocol:** `1-create-prd.md`
-   - **AI Role:** Product Manager
-   - **Outcome:** A clear specification document (`.md`) that defines *what* to build and, crucially, *where* it fits within your existing architecture (e.g., Frontend, Backend Service, API Layer).
-
----
-
-### 2️⃣ **Phase 2: Technical Task Generation**
-   - **Protocol:** `2-generate-tasks.md`
-   - **AI Role:** Tech Lead
-   - **Outcome:** A detailed, step-by-step technical plan in a checklist format (`.md`) that breaks down the PRD into actionable tasks for development.
-
----
-
-### 3️⃣ **Phase 3: Task Processing (`3-process-tasks.md`)**
-
--   **Protocol:** `3-process-tasks.md`
--   **AI Role:** Paired Developer
--   **Outcome:** The feature is implemented task by task, with the AI pausing for your explicit approval at each critical checkpoint, ensuring you remain in full control.
-
----
-
-### 4️⃣ **Phase 4: Implementation Retrospective**
-
--   **Protocol:** `4-implementation-retrospective.md`
--   **AI Role:** QA & Process Improvement Lead
--   **Outcome:** A collaborative review of the development process to identify bottlenecks or ambiguities. This phase generates concrete suggestions for improving the protocols or your project's `@rules`, creating a powerful continuous improvement loop.
+-   **`/dev-workflow/`**: Contains the sequential protocols that guide the development process from idea to retrospective.
+-   **`/rules/`**: Contains a starter kit of foundational "Master Rules" that govern the AI's behavior and thinking process.
 
 ---
 

@@ -121,10 +121,11 @@ Before finalizing a new rule, use this checklist:
 
 ---
 
-### 💡 Implementation Note for Cursor Users
+### 💡 Implementation Note
 
-Remember that for these rules to be active in the [Cursor](https://cursor.sh/) editor, they must:
-1.  Be placed inside a `.cursor/rules/` directory at the root of your project.
-2.  Have the file extension `.mdc` instead of `.md`.
+Remember that for these rules to be active and automatically discovered by an AI assistant, they must be placed in a dedicated, queryable directory within your project (e.g., `.cursor/rules/`, `.ai-docs/`).
 
-For more details, refer to the [official documentation on rules](https://docs.cursor.com/context/rules). 
+*   **For tools like Cursor:** The file extension must be `.mdc` for the rule to be automatically loaded.
+*   **For other tools:** You may need to provide the content of the relevant rule files as part of your prompt.
+
+For more details on specific implementations, refer to the documentation of your chosen AI coding assistant. 
