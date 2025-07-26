@@ -18,29 +18,25 @@ You must execute these phases in order. Phase 1 informs Phase 2.
 
 *This phase is mostly silent. You are gathering facts before presenting them.*
 
-1.  **Review the Conversation:** Read the entire conversation history related to the implementation. Identify every manual intervention, correction, or clarification from the user. These are "weak signals" of an imperfect rule or process.
+1.  **`[MUST]` Invoke Context Discovery:** Before auditing, you **MUST** apply the `4-master-rule-context-discovery.md` protocol. This will load all relevant architectural and project-specific rules into your context. You will use these rules as the basis for your audit.
 
-2.  **Audit the Source Code:**
+2.  **Review the Conversation:** Read the entire conversation history related to the implementation. Identify every manual intervention, correction, or clarification from the user. These are "weak signals" of an imperfect rule or process.
+
+3.  **Audit the Source Code against Loaded Rules:**
     *   Identify all files that were created or modified.
-    *   For each file, check its compliance against a codebase-specific checklist.
+    *   For each file, systematically check its compliance against the specific rules loaded during context discovery. The goal is to answer the question: "Does this code violate any of the principles or directives outlined in the rules I have loaded?"
 
-    **Example Review Checklist for a `Frontend App`:**
-    *   `[ ]` **Structure:** Does the component respect `@[your-component-structure-rule]` (all files present)?
-    *   `[ ]` **JS Code:** Is the JavaScript correctly scoped, robust (null handling, config objects), and secure (no HTML injection)? (Ref: `@[your-js-init-rule]`).
-    *   `[ ]` **CSS:** Are styles properly scoped, using theme variables, and responsive? (Ref: `@[your-styling-guide]`).
-    *   `[ ]` **API Calls:** Do API interactions follow `@[your-api-call-guide]`?
-    *   `[ ]` **README:** Is the `README.md` file complete and up-to-date? (Ref: `@[your-readme-quality-rule]`).
+    **Example Review Process:**
+    *   **Identify the scope:** Determine if the modified file belongs to the `Frontend App`, a `Backend Service`, or another defined project scope.
+    *   **Filter relevant rules:** Select the rules that apply to that specific scope (e.g., all rules with `SCOPE: My-UI-App`).
+    *   **Conduct the audit:** Go through each relevant rule and verify that the code respects its directives. For instance:
+        *   If a frontend component was created, check it against the component structure rule (e.g., `your-component-structure-rule`).
+        *   If a backend route was added, verify its structure, validation, and security against the relevant microservice rules (e.g., `your-route-handler-rule`, `your-data-validation-rule`).
+        *   Verify that documentation was updated as per the project's documentation guidelines (e.g., `master-rule-documentation-and-context-guidelines.md`).
 
-    **Example Review Checklist for a `Backend Service`:**
-    *   `[ ]` **Structure:** Does the route follow `@[your-routing-rule]` and `@[your-route-handler-rule]`?
-    *   `[ ]` **Validation & Security:** Is input validation in place (`@[your-validation-rule]`)? Is the security model correctly implemented (`@[your-auth-rule]`)?
-    *   `[ ]` **Business Logic:** Is logic correctly isolated in modules (`@[your-module-scoping-rule]`)?
-    *   `[ ]` **Communication:** Do external calls respect the established protocols (`@[your-external-interaction-rule]`)?
-    *   `[ ]` **Tests:** Are unit and integration tests present and relevant (`@[your-testing-rule]`)?
-
-3.  **Synthesize Self-Review:**
+4.  **Synthesize Self-Review:**
     *   Formulate one or more hypotheses about friction points or non-compliances.
-    *   *Example Hypothesis: "The initial omission of the `README.md` file suggests its mandatory nature is not emphasized enough in the component structure rule."*
+    *   *Example Hypothesis: "The initial omission of the `README.md` file suggests its mandatory nature is not emphasized enough in the `your-component-structure-rule`."*
     *   (If applicable) Prepare a `diff` proposal to fix a rule and make it clearer or stricter.
 
 ### PHASE 2: Collaborative Retrospective with the User
