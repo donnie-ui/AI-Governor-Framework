@@ -6,18 +6,23 @@ It provides a set of structured Markdown files—protocols and rules—that guid
 
 ---
 
-## 🌟 The Philosophy: From Prompting to Governing
+## 🌟 The Philosophy: Context is King
 
-Standard AI prompting is chaotic. It lacks structure, context, and a feedback loop, often leading to inconsistent results and time-consuming rework.
+Working with AI assistants reveals one core truth: **Context is King.** 👑
 
-This framework shifts the paradigm from **prompting** to **governing**. Instead of asking an AI to "build a feature," you instruct it to follow a battle-tested **workflow**. The AI's role evolves:
+However, "context" isn't just about dumping more data into the prompt. In complex codebases, that approach is inefficient and prohibitively expensive. 💸
 
--   From a simple coder to an **Architect** who analyzes your codebase.
--   From a task executer to a **Tech Lead** who creates a detailed technical plan.
--   From an uncontrolled generator to a **Paired Developer** who awaits your approval at every key step.
--   From a one-shot tool to a **QA Lead** who helps you improve the process itself.
+True **Context Engineering** is a strategy. It’s about giving the AI the *right* information, at the *right* time. This framework is built on four core principles to achieve that:
 
-By providing the AI with a clear "operating system," you ensure the code it produces is not only functional but also architecturally sound, consistent with your project's standards, and highly maintainable.
+1️⃣ **Decompose Complexity:** Break big features into small, focused tasks to improve AI accuracy.
+
+2️⃣ **Enable Targeted Access:** Build a knowledge base of rules & `READMEs` for precise, on-demand context.
+
+3️⃣ **Keep Humans in the Loop:** Supervise the AI like a brilliant junior developer and validate at key checkpoints.
+
+4️⃣ **Evolve Context Continuously:** Treat context as a living system that grows with your code and makes the AI smarter over time.
+
+This framework shifts the paradigm from simple **prompting** to strategic **governing**, transforming any AI assistant into a true "Companion Expert" that understands your project's unique standards.
 
 ## 🚀 The "Companion Expert" Workflow
 
