@@ -1,24 +1,9 @@
 # AI Dev Agent Framework
 
-A pragmatic, plug-and-play governance framework for AI-assisted software development. It is designed to work with any modern AI coding Agent, from IDE-integrated tools like [Cursor](https://cursor.sh/) and GitHub Copilot to conversational agents like Claude. This framework excels in complex, multi-codebase monorepos, transforming AI agents from simple code generators into structured, context-aware engineering partners.
+A pragmatic, plug-and-play governance framework for AI-assisted software development. It is designed to work with any modern AI coding Agent, from IDE-integrated tools like [Cursor](https://cursor.sh/) and GitHub Copilot to conversational agents like Claude Code. This framework excels in complex, multi-codebase monorepos, transforming AI agents from simple code generators into structured, context-aware engineering partners.
 
 It provides a set of structured Markdown files—protocols and rules—that guide an AI through the entire development lifecycle, from initial codebase analysis to continuous improvement.
 
----
-
-## 🚀 Quickstart
-
-Getting started is simple. The framework is designed to be **fully bootstrapped by an AI assistant**. Your only task is to instruct your AI to follow the first step of the development workflow.
-
-**Your instruction to the AI:**
-> "Let's get started. Please execute the protocol defined in `dev-workflow/0-bootstrap-your-project.md` to set up my project."
-
-The AI will then:
-1.  **Set up the Framework:** Automatically create the necessary rule directories and copy the starter kit.
-2.  **Analyze Your Codebase:** Intelligently scan your project to understand its technologies and conventions.
-3.  **Generate a Context Kit:** Propose and create tailored `README.md` files and `project-rules` to form a foundational knowledge base.
-
-Once this one-time setup is complete, you can follow the rest of the `dev-workflow` for your development tasks.
 
 ## 🌟 The Philosophy: Context is King
 
@@ -47,9 +32,9 @@ This framework shifts the paradigm from simple **prompting** to strategic **gove
 
 ---
 
-## Workflow at a Glance
+## 🚀 Workflow at a Glance
 
-The workflow is designed to be used in order, starting with the `0-bootstrap-your-project.md` protocol for initial setup, followed by the main 4-step development cycle for creating or modifying features.
+The AI will then guide you through the following phases. For detailed instructions on steps 0-4, please refer to the [`/dev-workflow/README.md`](dev-workflow/README.md).
 
 ---
 
@@ -91,7 +76,6 @@ The workflow is designed to be used in order, starting with the `0-bootstrap-you
 -   **Why:** To create a continuous improvement loop where each new feature makes the AI smarter and refines the framework for the future.
 -   **Goal:** To audit the implemented code against existing rules, and then to identify and propose concrete improvements to the framework's protocols and rules.
 
----
 
 ## ❤️ Support This Project
 

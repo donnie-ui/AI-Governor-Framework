@@ -11,6 +11,10 @@ The process is designed to be sequential. You should always start with Protocol 
 
 3.  **`2-generate-tasks.md`**: The AI takes the PRD and, acting as a Tech Lead, breaks it down into a detailed, actionable task list for implementation.
 
+4.  **`3-process-tasks.md`**: This is the core execution loop. The AI follows the generated task list, implementing each sub-task sequentially and waiting for your explicit approval before committing changes and moving to the next step.
+
+5.  **`4-implementation-retrospective.md`**: After implementation, this protocol guides the AI to act as a QA Lead, auditing the work, identifying areas for improvement, and updating the project's rules to enhance future performance.
+
 ### 1️⃣ Create a Product Requirement Document (PRD)
 
 Start by defining the "what" and "why" of your feature. The AI will act as a Product Manager, interviewing you to create a comprehensive specification.
