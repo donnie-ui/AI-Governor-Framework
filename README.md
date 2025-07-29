@@ -1,6 +1,6 @@
-# AI Dev Assistant Framework
+# AI Dev Agent Framework
 
-A pragmatic, plug-and-play governance framework for AI-assisted software development. It is designed to work with any modern AI coding assistant, from IDE-integrated tools like [Cursor](https://cursor.sh/) and GitHub Copilot to conversational agents like Claude. This framework excels in complex, multi-codebase monorepos, transforming AI assistants from simple code generators into structured, context-aware engineering partners.
+A pragmatic, plug-and-play governance framework for AI-assisted software development. It is designed to work with any modern AI coding Agent, from IDE-integrated tools like [Cursor](https://cursor.sh/) and GitHub Copilot to conversational agents like Claude. This framework excels in complex, multi-codebase monorepos, transforming AI agents from simple code generators into structured, context-aware engineering partners.
 
 It provides a set of structured Markdown files—protocols and rules—that guide an AI through the entire development lifecycle, from initial codebase analysis to continuous improvement.
 
@@ -8,7 +8,7 @@ It provides a set of structured Markdown files—protocols and rules—that guid
 
 ## 🌟 The Philosophy: Context is King
 
-Working with AI assistants reveals one core truth: **Context is King.** 👑
+Working with AI agents reveals one core truth: **Context is King.** 👑
 
 However, "context" isn't just about dumping more data into the prompt. In complex codebases, that approach is inefficient and prohibitively expensive. 💸
 
@@ -22,21 +22,61 @@ True **Context Engineering** is a strategy. It’s about giving the AI the *righ
 
 4️⃣ **Evolve Context Continuously:** Treat context as a living system that grows with your code and makes the AI smarter over time.
 
-This framework shifts the paradigm from simple **prompting** to strategic **governing**, transforming any AI assistant into a true "Companion Expert" that understands your project's unique standards.
+This framework shifts the paradigm from simple **prompting** to strategic **governing**, transforming any AI Agent into a true "Companion Expert" that understands your project's unique standards.
 
-## 🚀 The "Companion Expert" Workflow
+## 🚀 Your "Codebase Expert Agent" Workflow: From Idea to Flawless Feature
 
-This framework is designed to turn your AI assistant into a **companion expert** that learns and grows with your project. The workflow is simple:
+This structured workflow guides you and your AI Agent from a high-level concept to a fully implemented and compliant feature. Each step uses a specific protocol from the `/dev-workflow/` directory.
 
-1.  **Bootstrap Your Project (One-Time Setup):** Run the `0-bootstrap-your-project.md` protocol. The AI will analyze your codebase and work with you to create a foundational "Context Kit" of `READMEs` and project-specific rules.
-2.  **Develop Features:** Use the main 4-step development workflow (starting with `1-create-prd.md`) to create or modify features. The AI will now be significantly more accurate because it uses the context you built together.
-3.  **Evolve the Context:** With each feature you build, the AI will get smarter. Use the `4-implementation-retrospective.md` protocol to identify gaps and continuously enrich your project's rules and documentation.
+*(Note: The examples below use the `@` syntax to reference the protocol files. Depending on your AI tool, you may need to provide the full path, e.g., `@ai-dev-assistant-framework/dev-workflow/1-create-prd.md`)*
 
-### A Note on the First Run: The Learning Curve
+### 1️⃣ Create a Product Requirement Document (PRD)
 
-Your first few interactions with the AI using this framework might require more corrections and clarifications. **This is normal and by design.** You are actively *teaching* the assistant the specific nuances of your codebase.
+Start by defining the "what" and "why" of your feature. The AI will act as a Product Manager, interviewing you to create a comprehensive specification.
 
-Think of it as onboarding a new junior developer. The initial investment in teaching pays off exponentially. With each iteration, the AI's context gets richer, its proposals become more accurate, and it evolves from a generic tool into a true expert companion for your project.
+In your AI tool, initiate PRD creation:
+```text
+Apply instructions from @1-create-prd.md
+Here's the feature I want to build: [Describe your feature in detail]
+```
+*(Pro Tip: For complex features, it's recommended to use your AI tool's most powerful model. For **Cursor users**, using **Max Mode** is highly recommended for better results, especially for this step.)*
+
+### 2️⃣ Generate Your Task List from the PRD
+
+Once the PRD is created (e.g., `prd-my-feature.md`), transform it into a granular, step-by-step technical plan for your AI developer.
+
+```text
+Apply instructions from @2-generate-tasks.md to @prd-my-feature.md
+```
+*(Note: Replace `@prd-my-feature.md` with the actual filename of the PRD you generated in step 1.)*
+
+*(Pro Tip: For **Cursor users**, using **Max Mode** is also recommended for this step to ensure a more detailed and accurate breakdown of the PRD.)*
+
+You'll get a well-structured task list, providing a clear roadmap for implementation.
+
+### 3️⃣ Execute Tasks Sequentially
+
+Now, instruct the AI to work through the generated plan. This protocol ensures the AI tackles one sub-task at a time and waits for your validation before proceeding, giving you full control.
+
+1.  Tell the AI to start with the first task:
+    ```text
+    Apply instructions from @3-process-tasks.md to @tasks-my-feature.md. Start on task 1.1
+    ```
+    *(Note: Replace `@tasks-my-feature.md` with the task file generated in step 2. You only need to invoke this protocol for the *first* task; the protocol itself guides the AI for subsequent tasks.)*
+
+2.  **Review, Approve, and Progress ✅**
+    As the AI completes each sub-task, it will present the changes for your review.
+    *   If the changes are correct, reply with "yes" or "continue" to have the AI mark the task as complete and move to the next one.
+    *   If changes are needed, provide corrective feedback before proceeding.
+
+### 4️⃣ Conduct an Implementation Retrospective
+
+Once all tasks are complete, the final step is to reflect on the process to improve future collaborations. The AI will act as a QA Lead, auditing the code and interviewing you to refine the project's rules and workflows.
+
+```text
+Apply instructions from @4-implementation-retrospective.md
+```
+This final step is crucial for evolving your "Context Kit", making the AI smarter and more aligned with your project's standards over time.
 
 ## 🗂️ Framework Structure
 
