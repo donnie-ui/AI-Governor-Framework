@@ -32,9 +32,9 @@ This framework shifts the paradigm from simple **prompting** to strategic **gove
 
 ---
 
-## 🚀 Workflow at a Glance
+## 🚀 Your "Codebase Expert Agent" Workflow: From Idea to Flawless Feature
 
-The AI will guide you through the following phases. For detailed instructions on steps 0-4, please refer to the [`/dev-workflow/README.md`](dev-workflow/README.md).
+The framework is built around a series of sequential protocols, each designed for a specific phase of the development lifecycle. This structured approach ensures that both you and the AI are always aligned, moving from a high-level idea to a well-implemented feature with clarity and control.
 
 ---
 
