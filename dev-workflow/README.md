@@ -1,9 +1,9 @@
 
 This directory contains a series of numbered protocols that define a structured, repeatable, and AI-powered development workflow.
 
-The process is designed to be sequential. You should always start with Protocol 0 for any new project.
+## 🚀 Your "Codebase Expert Agent" Workflow: From Idea to Flawless Feature
 
-### The Protocols
+The process is designed to be sequential. You should always start with Protocol 0 for any new project.
 
 1.  **`0-bootstrap-your-project.md`**: **(Run this first!)** This is a one-time setup protocol. The AI will analyze your codebase, install the framework's rule structure, and generate a foundational "Context Kit" of `READMEs` and project-specific rules.
 
