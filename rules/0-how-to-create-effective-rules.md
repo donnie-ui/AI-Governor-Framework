@@ -21,8 +21,14 @@ Every rule you create **MUST** be built upon these four pillars.
 A rule that cannot be found is useless. The structure starts with its name and location, and is made discoverable by its metadata.
 
 1.  **Naming & Placement:**
-    *   **Name:** Use the `{category}-{subject}-{descriptor}.md` convention.
-    *   **Location:** Place it in the correct directory (`/master-rules`, `/common-rules`, `/project-rules`) to define its scope and granularity.
+    *   **Location:** Place it in the correct directory (`/master-rules`, `/common-rules`, `/project-rules`) to define its scope and granularity, as detailed in the main `README.md`.
+    *   **Naming Conventions:** Strict naming conventions help the AI easily identify a rule's scope.
+        *   **Master Rules:** `master-rule-[domain]-[subject]-[specificity].md`
+            *   *Example:* `master-rule-code-development-guidelines.md`
+        *   **Common Rules:** `common-rule-[domain]-[subject]-[specificity].md`
+            *   *Example:* `common-rule-storage-versioning-cache.md`
+        *   **Project Rules:** `[project_name]-[subject]-rule.md`
+            *   *Example:* `my-app-api-endpoints-rule.md`
 
 2.  **Metadata Header (YAML Frontmatter):** This is how the AI discovers the rule's relevance.
     ```yaml
@@ -123,9 +129,9 @@ Before finalizing a new rule, use this checklist:
 
 ### 💡 Implementation Note
 
-Remember that for these rules to be active and automatically discovered by an AI assistant, they must be placed in a dedicated, queryable directory within your project (e.g., `.cursor/rules/`, `.ai-docs/`).
+Remember that for these rules to be active and automatically discovered by an AI assistant, they must be placed in a dedicated, queryable directory within your project. We recommend a structure like `.ai/rules/`, but you should consult your specific tool's documentation.
 
-*   **For tools like Cursor:** The file extension must be `.mdc` for the rule to be automatically loaded.
-*   **For other tools:** You may need to provide the content of the relevant rule files as part of your prompt.
+*   **Activation:** Some tools require a specific file extension. For example, assistants like **Cursor** require the file extension to be `.mdc` for the rule to be automatically loaded.
+*   **Contextualization:** For other tools, you may need to provide the content of the relevant rule files as part of your prompt or configure a specific context provider.
 
-For more details on specific implementations, refer to the documentation of your chosen AI coding assistant. 
+Always refer to the documentation of your chosen AI coding assistant for the most accurate and up-to-date implementation details. 

@@ -6,6 +6,20 @@ It provides a set of structured Markdown files—protocols and rules—that guid
 
 ---
 
+## 🚀 Quickstart
+
+Getting started is simple. The framework is designed to be **fully bootstrapped by an AI assistant**. Your only task is to instruct your AI to follow the first step of the development workflow.
+
+**Your instruction to the AI:**
+> "Let's get started. Please execute the protocol defined in `dev-workflow/0-bootstrap-your-project.md` to set up my project."
+
+The AI will then:
+1.  **Set up the Framework:** Automatically create the necessary rule directories and copy the starter kit.
+2.  **Analyze Your Codebase:** Intelligently scan your project to understand its technologies and conventions.
+3.  **Generate a Context Kit:** Propose and create tailored `README.md` files and `project-rules` to form a foundational knowledge base.
+
+Once this one-time setup is complete, you can follow the rest of the `dev-workflow` for your development tasks.
+
 ## 🌟 The Philosophy: Context is King
 
 Working with AI agents reveals one core truth: **Context is King.** 👑
@@ -24,64 +38,58 @@ True **Context Engineering** is a strategy. It’s about giving the AI the *righ
 
 This framework shifts the paradigm from simple **prompting** to strategic **governing**, transforming any AI Agent into a true "Companion Expert" that understands your project's unique standards.
 
-## 🚀 Your "Codebase Expert Agent" Workflow: From Idea to Flawless Feature
-
-This structured workflow guides you and your AI Agent from a high-level concept to a fully implemented and compliant feature. Each step uses a specific protocol from the `/dev-workflow/` directory.
-
-*(Note: The examples below use the `@` syntax to reference the protocol files. Depending on your AI tool, you may need to provide the full path, e.g., `@ai-dev-assistant-framework/dev-workflow/1-create-prd.md`)*
-
-### 1️⃣ Create a Product Requirement Document (PRD)
-
-Start by defining the "what" and "why" of your feature. The AI will act as a Product Manager, interviewing you to create a comprehensive specification.
-
-In your AI tool, initiate PRD creation:
-```text
-Apply instructions from @1-create-prd.md
-Here's the feature I want to build: [Describe your feature in detail]
-```
-*(Pro Tip: For complex features, it's recommended to use your AI tool's most powerful model. For **Cursor users**, using **Max Mode** is highly recommended for better results, especially for this step.)*
-
-### 2️⃣ Generate Your Task List from the PRD
-
-Once the PRD is created (e.g., `prd-my-feature.md`), transform it into a granular, step-by-step technical plan for your AI developer.
-
-```text
-Apply instructions from @2-generate-tasks.md to @prd-my-feature.md
-```
-*(Note: Replace `@prd-my-feature.md` with the actual filename of the PRD you generated in step 1.)*
-
-*(Pro Tip: For **Cursor users**, using **Max Mode** is also recommended for this step to ensure a more detailed and accurate breakdown of the PRD.)*
-
-You'll get a well-structured task list, providing a clear roadmap for implementation.
-
-### 3️⃣ Execute Tasks Sequentially
-
-Now, instruct the AI to work through the generated plan. This protocol ensures the AI tackles one sub-task at a time and waits for your validation before proceeding, giving you full control.
-
-1.  Tell the AI to start with the first task:
-    ```text
-    Apply instructions from @3-process-tasks.md to @tasks-my-feature.md. Start on task 1.1
-    ```
-    *(Note: Replace `@tasks-my-feature.md` with the task file generated in step 2. You only need to invoke this protocol for the *first* task; the protocol itself guides the AI for subsequent tasks.)*
-
-2.  **Review, Approve, and Progress ✅**
-    As the AI completes each sub-task, it will present the changes for your review.
-    *   If the changes are correct, reply with "yes" or "continue" to have the AI mark the task as complete and move to the next one.
-    *   If changes are needed, provide corrective feedback before proceeding.
-
-### 4️⃣ Conduct an Implementation Retrospective
-
-Once all tasks are complete, the final step is to reflect on the process to improve future collaborations. The AI will act as a QA Lead, auditing the code and interviewing you to refine the project's rules and workflows.
-
-```text
-Apply instructions from @4-implementation-retrospective.md
-```
-This final step is crucial for evolving your "Context Kit", making the AI smarter and more aligned with your project's standards over time.
+---
 
 ## 🗂️ Framework Structure
 
--   **`/dev-workflow/`**: Contains the sequential protocols that guide the development process from idea to retrospective.
+-   **`/dev-workflow/`**: Contains the sequential protocols that guide the development process. See the `README.md` in this directory for detailed instructions.
 -   **`/rules/`**: Contains a starter kit of foundational "Master Rules" that govern the AI's behavior and thinking process.
+
+---
+
+## Workflow at a Glance
+
+The workflow is designed to be used in order, starting with the `0-bootstrap-your-project.md` protocol for initial setup, followed by the main 4-step development cycle for creating or modifying features.
+
+---
+
+### 0️⃣ **`0-bootstrap-your-project.md`**
+-   **Phase:** 0 (One-Time Setup)
+-   **Role:** AI Codebase Analyst & Context Architect
+-   **Why:** To build a shared knowledge base that turns a generic AI into a project-specific expert.
+-   **Goal:** To analyze a codebase and create a foundational "Context Kit" of `READMEs` and project-specific rules.
+
+---
+
+### 1️⃣ **`1-create-prd.md`**
+-   **Phase:** 1 (Feature Definition)
+-   **Role:** AI Product Manager
+-   **Why:** To clarify the "what" and "why," ensuring the feature fits the existing architecture before any code is written.
+-   **Goal:** To transform a user request into a detailed Product Requirements Document (PRD).
+
+---
+
+### 2️⃣ **`2-generate-tasks.md`**
+-   **Phase:** 2 (Technical Planning)
+-   **Role:** AI Tech Lead
+-   **Why:** To decompose complexity into small, manageable tasks, dramatically improving AI accuracy and predictability.
+-   **Goal:** To convert the PRD into a step-by-step technical execution plan in a markdown checklist format.
+
+---
+
+### 3️⃣ **`3-process-tasks.md`**
+-   **Phase:** 3 (Controlled Implementation)
+-   **Role:** AI Meticulous Task Executor
+-   **Why:** To ensure a high-quality, controlled implementation by executing tasks sequentially with human-in-the-loop validation.
+-   **Goal:** To implement the feature by systematically completing each task from the plan, producing code that is validated at each step.
+
+---
+
+### 4️⃣ **`4-implementation-retrospective.md`**
+-   **Phase:** 4 (Continuous Improvement)
+-   **Role:** AI Code Auditor & Framework Refiner
+-   **Why:** To create a continuous improvement loop where each new feature makes the AI smarter and refines the framework for the future.
+-   **Goal:** To audit the implemented code against existing rules, and then to identify and propose concrete improvements to the framework's protocols and rules.
 
 ---
 
