@@ -35,6 +35,7 @@ This framework shifts the paradigm from simple **prompting** to strategic **gove
 
 The framework is built around a series of sequential protocols, each designed for a specific phase of the development lifecycle. This structured approach ensures that both you and the AI are always aligned, moving from a high-level idea to a well-implemented feature with clarity and control.
 
+For detailed instructions on how to execute each protocol, please refer to the `README.md` inside the `/dev-workflow/` directory.
 
 ### 0️⃣ **`0-bootstrap-your-project.md`**
 -   **Phase:** 0 (One-Time Setup)
