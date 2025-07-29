@@ -5,6 +5,12 @@ A pragmatic, plug-and-play governance framework for AI-assisted software develop
 It provides a set of structured Markdown files—protocols and rules—that guide an AI through the entire development lifecycle, from initial codebase analysis to continuous improvement.
 
 
+## 🗂️ Framework Structure
+
+-   **`/dev-workflow/`**: Contains the sequential protocols that guide the development process. See the `README.md` in this directory for detailed instructions.
+-   **`/rules/`**: Contains a starter kit of foundational "Master Rules" that govern the AI's behavior and thinking process.
+
+
 ## 🌟 The Philosophy: Context is King
 
 Working with AI agents reveals one core truth: **Context is King.** 👑
@@ -25,18 +31,10 @@ This framework shifts the paradigm from simple **prompting** to strategic **gove
 
 ---
 
-## 🗂️ Framework Structure
-
--   **`/dev-workflow/`**: Contains the sequential protocols that guide the development process. See the `README.md` in this directory for detailed instructions.
--   **`/rules/`**: Contains a starter kit of foundational "Master Rules" that govern the AI's behavior and thinking process.
-
----
-
 ## 🚀 Your "Codebase Expert Agent" Workflow: From Idea to Flawless Feature
 
 The framework is built around a series of sequential protocols, each designed for a specific phase of the development lifecycle. This structured approach ensures that both you and the AI are always aligned, moving from a high-level idea to a well-implemented feature with clarity and control.
 
----
 
 ### 0️⃣ **`0-bootstrap-your-project.md`**
 -   **Phase:** 0 (One-Time Setup)
@@ -44,7 +42,6 @@ The framework is built around a series of sequential protocols, each designed fo
 -   **Why:** To build a shared knowledge base that turns a generic AI into a project-specific expert.
 -   **Goal:** To analyze a codebase and create a foundational "Context Kit" of `READMEs` and project-specific rules.
 
----
 
 ### 1️⃣ **`1-create-prd.md`**
 -   **Phase:** 1 (Feature Definition)
@@ -52,7 +49,6 @@ The framework is built around a series of sequential protocols, each designed fo
 -   **Why:** To clarify the "what" and "why," ensuring the feature fits the existing architecture before any code is written.
 -   **Goal:** To transform a user request into a detailed Product Requirements Document (PRD).
 
----
 
 ### 2️⃣ **`2-generate-tasks.md`**
 -   **Phase:** 2 (Technical Planning)
@@ -60,7 +56,6 @@ The framework is built around a series of sequential protocols, each designed fo
 -   **Why:** To decompose complexity into small, manageable tasks, dramatically improving AI accuracy and predictability.
 -   **Goal:** To convert the PRD into a step-by-step technical execution plan in a markdown checklist format.
 
----
 
 ### 3️⃣ **`3-process-tasks.md`**
 -   **Phase:** 3 (Controlled Implementation)
@@ -68,13 +63,21 @@ The framework is built around a series of sequential protocols, each designed fo
 -   **Why:** To ensure a high-quality, controlled implementation by executing tasks sequentially with human-in-the-loop validation.
 -   **Goal:** To implement the feature by systematically completing each task from the plan, producing code that is validated at each step.
 
----
 
 ### 4️⃣ **`4-implementation-retrospective.md`**
 -   **Phase:** 4 (Continuous Improvement)
 -   **Role:** AI Code Auditor & Framework Refiner
 -   **Why:** To create a continuous improvement loop where each new feature makes the AI smarter and refines the framework for the future.
 -   **Goal:** To audit the implemented code against existing rules, and then to identify and propose concrete improvements to the framework's protocols and rules.
+
+
+## ⚡ Supercharge Your AI with Codified Rules
+
+The framework's magic comes from two core components working in synergy: a structured **workflow** that provides the process, and a rich **knowledge base of rules** that provides the project-specific expertise. This is how you teach the AI your project's unique architectural decisions, best practices, and non-negotiable constraints, turning it from a generic tool into a true core team member that understands and respects your project's DNA.
+
+The framework is designed to be plug-and-play. **Before writing rules from scratch, it is highly recommended to first run the `0-bootstrap-your-project.md` protocol.** This initial phase will analyze your codebase and generate a starter set of rules tailored to your project. The workflow is then built to help you continuously improve and fill gaps in this ruleset, especially during the `4-implementation-retrospective.md` phase.
+
+To learn more about the philosophy and structure of this powerful system, dive into our detailed guide in `/rules/README.md`.
 
 
 ## ❤️ Support This Project
