@@ -15,6 +15,15 @@ The process is designed to be sequential. You should always start with Protocol 
 
 5.  **`4-implementation-retrospective.md`**: After implementation, this protocol guides the AI to act as a QA Lead, auditing the work, identifying areas for improvement, and updating the project's rules to enhance future performance.
 
+### 0️⃣ Bootstrap Your Project (One-Time Setup)
+
+This is the very first step. It's a one-time protocol that analyzes your codebase and creates the foundational "Context Kit" of rules and documentation.
+
+In your AI tool, initiate the bootstrap process:
+```text
+Apply instructions from @0-bootstrap-your-project.md
+```
+
 ### 1️⃣ Create a Product Requirement Document (PRD)
 
 Start by defining the "what" and "why" of your feature. The AI will act as a Product Manager, interviewing you to create a comprehensive specification.
