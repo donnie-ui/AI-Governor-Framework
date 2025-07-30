@@ -33,6 +33,25 @@ This process must be as autonomous as possible for the AI, and as frictionless a
         *   `cp -R <user_path>/rules/common-rules .ai/rules/`
     *   **Action:** Announce the successful copy of the starter kit.
 
+4.  **`[MUST]` Configure Rules for Cursor (Conditional):**
+    *   **Action:** If the user responded "yes" to using Cursor in step 2, perform the following configuration steps. Otherwise, announce that this step is being skipped.
+    *   **Announce the Goal:**
+        > "As you are using Cursor, I will now configure the `master-rules`. This involves renaming them to `.mdc` and adding the required YAML metadata to each one using a reliable CLI script."
+    *   **Rename Master Rules to `.mdc`:** Execute the rename commands for all master rules (e.g., `mv .../rule.md .../rule.mdc`). Announce the successful renaming.
+    *   **`[MUST]` Add Metadata via CLI `echo` (Iterative Process):**
+        > "I will now add the required metadata to each master rule file using the recommended `echo` method."
+    *   **Action:** For each master rule file:
+        1.  Follow the process from `0-how-to-create-effective-rules.md`:
+        2.  **Define** the correct YAML metadata block for the rule.
+        3.  **Check** if metadata already exists in the file.
+        4.  **Remove** the old metadata if it exists.
+        5.  **Prepend** the new, correct metadata using an `echo` command.
+        6.  **Halt and await user approval** before moving to the next file.
+    *   **Example for the first file:**
+        > "I am now adding metadata to `1-master-rule-ai-collaboration-guidelines.mdc`. I will run the check/remove/prepend commands. Do you approve?"
+        > 
+        > *AI then runs the necessary CLI commands.*
+
 ### STEP 2: Initial Codebase Mapping
 
 1.  **`[MUST]` Announce the Goal:**
@@ -90,7 +109,7 @@ This process must be as autonomous as possible for the AI, and as frictionless a
     > "Thank you for the validation. I will now create or enrich the `README.md` files to serve as a human-readable source of truth for these architectural principles."
 2.  **`[MUST]` Generate, Review, and Validate READMEs:**
     *   Propose a plan of `README.md` to create/update.
-    *   Generate each file iteratively, based on the **validated principles** from STEP 5, and await user approval for each one.
+    *   Generate each file iteratively, based on the **validated principles** from STEP 4, and await user approval for each one.
 
 ### STEP 7: Iterative Generation Phase 2: Project Rules
 
@@ -106,3 +125,4 @@ This process must be as autonomous as possible for the AI, and as frictionless a
 > This is a living system. Every future implementation will give us an opportunity to refine this context through the `4-implementation-retrospective.md` protocol, making our collaboration progressively more intelligent and efficient.
 >
 > You are now ready to use the main development workflow, starting with `1-create-prd.md`." 
+

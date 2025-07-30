@@ -21,34 +21,26 @@ Every rule you create **MUST** be built upon these four pillars.
 A rule that cannot be found is useless. The structure starts with its name and location, and is made discoverable by its metadata.
 
 1.  **Naming & Placement:**
-    *   **Location:** Place it in the correct directory (`/master-rules`, `/common-rules`, `/project-rules`) to define its scope and granularity, as detailed in the main `README.md`.
-    *   **Naming Conventions:** Strict naming conventions help the AI easily identify a rule's scope.
-        *   **Master Rules:** `master-rule-[domain]-[subject]-[specificity].md`
-            *   *Example:* `master-rule-code-development-guidelines.md`
-        *   **Common Rules:** `common-rule-[domain]-[subject]-[specificity].md`
-            *   *Example:* `common-rule-storage-versioning-cache.md`
-        *   **Project Rules:** `[project_name]-[subject]-rule.md`
-            *   *Example:* `my-app-api-endpoints-rule.md`
+    *   **Location:** Place it in the correct directory (`/master-rules`, `/common-rules`, `/project-rules`) to define its scope.
+    *   **Naming Conventions:** Use clear, hyphen-separated names that describe the rule's purpose (e.g., `project-name-api-conventions.mdc`).
 
-2.  **Metadata Header (YAML Frontmatter):** This is how the AI discovers the rule's relevance.
+2.  **Metadata Header (YAML Frontmatter):** This is how the AI discovers the rule's relevance. It **MUST** be at the very top of the file.
     ```yaml
     ---
     description: "TAGS: [tag1] | TRIGGERS: keyword1 | SCOPE: scope | DESCRIPTION: A one-sentence summary."
     alwaysApply: false
     ---
     ```
-    *   **`alwaysApply: false`**: **This is the default.** Trust the AI to determine relevance. Only set to `true` for the most foundational rules that define the AI's core operation.
-    *   **`description` string**: This is the primary tool for context discovery.
-        *   `TAGS`: Helps the AI categorize.
-        *   `TRIGGERS`: Keywords that scream "look at me!" for a given task.
-        *   `SCOPE`: Narrows the focus to a specific part of the codebase.
-        *   `DESCRIPTION`: The one-sentence elevator pitch for the rule.
+    *   **`[MUST]`** The YAML block **must** only contain the keys `description` (a string) and `alwaysApply` (a boolean).
+    *   **`[MUST NOT]`** Do not use any other keys at the root of the YAML (e.g., `name`, `title`).
+    *   **`alwaysApply: false`**: This is the default. Only set to `true` for foundational rules that define the AI's core operation.
+    *   **`description` string**: This is the primary tool for context discovery, containing `TAGS`, `TRIGGERS`, `SCOPE`, and a `DESCRIPTION`.
 
 ### 👤 Pillar 2: Personality & Intent
 
 A rule must tell the AI *how to think*.
 
-1.  **Assign a Persona:** Start the rule body by defining the AI's role. This is the most powerful way to frame its behavior.
+1.  **Assign a Persona:** Start the rule body by defining the AI's role.
     > *Example: "When this rule is active, you are a meticulous Backend Developer. Your priority is security and performance."*
 2.  **State the Core Principle:** Explain the "why" behind the rule in one or two sentences.
     > *Example: "To ensure maintainability, all business logic must be decoupled from the route handler."*
@@ -58,14 +50,14 @@ A rule must tell the AI *how to think*.
 A rule must be unambiguous and actionable.
 
 1.  **Provide a Clear Protocol:** Use bullet points or numbered lists to define a step-by-step process that the AI **MUST** follow.
-2.  **Be Imperative:** Use directive language (`MUST`, `DO NOT`, `ALWAYS`, `NEVER`). These are non-negotiable constraints, not suggestions.
+2.  **Be Imperative:** Use directive language (`MUST`, `DO NOT`, `ALWAYS`, `NEVER`).
 
 ### 🖼️ Pillar 4: Exemplarity & Contrast
 
 A rule must show, not just tell.
 
 1.  **Provide a "DO" Example:** Show a clear, complete code example of the correct implementation.
-2.  **Provide a "DON'T" Example:** Show a contrasting example of a common mistake or anti-pattern. This is often more instructive than the correct example.
+2.  **Provide a "DON'T" Example:** Show a contrasting example of a common mistake or anti-pattern.
 
 ---
 
@@ -76,6 +68,7 @@ A rule must show, not just tell.
 ```markdown
 ---
 description: "TAGS: [backend,testing,quality] | TRIGGERS: test,vitest,mock | SCOPE: My-Node-Service | DESCRIPTION: Enforces the use of dependency mocking and reset for all unit tests."
+alwaysApply: false
 ---
 # Rule: Unit Test Isolation
 
@@ -89,37 +82,12 @@ A unit test must validate a single unit of code in complete isolation...
 1. **`[MUST]` Isolate Dependencies...**
 2. **`[MUST]` Reset Mocks...**
 
-## Examples
-
-### ✅ Correct: Isolated Test
-```javascript
-// ... (code for correct implementation)
-```
-
-### ❌ Incorrect: Leaky Test
-```javascript
-// ... (code for incorrect implementation)
-```
-```
-
-### ❌ A Bad Rule (Example to Avoid)
-
-This is an anti-pattern. It is not discoverable, not specific, and not actionable.
-
-```markdown
----
-description: "make good tests"
----
-
-You should test your code. Make sure to write good tests for the functions. It is important that the tests work correctly.
-```
-
----
 
 ## 5. Final Review Checklist
 
 Before finalizing a new rule, use this checklist:
 -   `[ ]` **Structure:** Does it have a clear name, location, and complete metadata?
+-   `[ ]` **Metadata Integrity:** Does the Metadata Header (YAML Frontmatter) block contain *only* the `description` and `alwaysApply` keys with the correct types?
 -   `[ ]` **Personality:** Does it define a Persona and a Core Principle?
 -   `[ ]` **Precision:** Is the protocol clear and written with imperative language?
 -   `[ ]` **Exemplarity:** Does it include both a "DO" and a "DON'T" example?
@@ -127,11 +95,24 @@ Before finalizing a new rule, use this checklist:
 
 ---
 
-### 💡 Implementation Note
+## 6. Implementation Notes for Cursor
 
-Remember that for these rules to be active and automatically discovered by an AI assistant, they must be placed in a dedicated, queryable directory within your project. We recommend a structure like `.ai/rules/`, but you should consult your specific tool's documentation.
+### Rule Activation
+*   **Rule Directory:** For rules to be discovered, they must be placed in a dedicated directory. This project uses `.cursor/rules/`.
+*   **File Extension:** The file extension is critical for automatic loading. **Cursor requires the `.mdc` extension**. Standard `.md` files will be ignored.
 
-*   **Activation:** Some tools require a specific file extension. For example, assistants like **Cursor** require the file extension to be `.mdc` for the rule to be automatically loaded.
-*   **Contextualization:** For other tools, you may need to provide the content of the relevant rule files as part of your prompt or configure a specific context provider.
+### Creating & Modifying Rule Files
+To ensure the critical YAML frontmatter is always formatted correctly, the assistant **MUST** handle file creation and modification by proposing the **full file content** for the user to apply. This avoids corruption of the sensitive metadata block.
 
-Always refer to the documentation of your chosen AI coding assistant for the most accurate and up-to-date implementation details. 
+1.  **For Creation:**
+    *   The assistant generates the complete content for the new file (metadata + body).
+    *   The assistant proposes the creation of the file with its full content.
+
+2.  **For Modification:**
+    *   The assistant reads the existing file.
+    *   The assistant generates the complete, updated content.
+    *   The assistant presents the full content as a diff, explaining the process:
+        > *"Voici les modifications pour le fichier `.mdc`. Vous devriez pouvoir les appliquer directement, car l'assistant ne peut pas modifier ces métadonnées de manière fiable."*
+
+### Alternative for Automated Workflows (CLI)
+For scripted workflows, direct file manipulation is an option. Use `echo` to prepend the metadata block, as it is generally more reliable than `cat <<'EOF'`.
