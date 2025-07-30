@@ -34,6 +34,7 @@ A rule that cannot be found is useless. The structure starts with its name and l
     *   **`[MUST]`** The YAML block **must** only contain the keys `description` (a string) and `alwaysApply` (a boolean).
     *   **`[MUST NOT]`** Do not use any other keys at the root of the YAML (e.g., `name`, `title`).
     *   **`alwaysApply: false`**: This is the default. Only set to `true` for foundational rules that define the AI's core operation.
+    *   **`[MUST]` For `project-rules`:** The `alwaysApply` property **MUST** always be set to `false`, as they are context-specific and should not be active at all times.
     *   **`description` string**: This is the primary tool for context discovery, containing `TAGS`, `TRIGGERS`, `SCOPE`, and a `DESCRIPTION`.
 
 ### 👤 Pillar 2: Personality & Intent
