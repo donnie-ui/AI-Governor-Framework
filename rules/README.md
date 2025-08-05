@@ -2,9 +2,7 @@
 
 This document explains how to organize and govern AI assistant rules. It provides a structured way to codify your project's expert knowledge, ensuring the AI has the *right context* at the *right time*.
 
-This framework is designed to be flexible, supporting both single-project repositories and complex monorepos, and is compatible with any modern AI development assistant.
-
-The main guide, `0-how-to-create-effective-rules.md`, located at the root of this directory, explains the practical steps for creating your own high-quality rules.
+The main guide, `0-how-to-create-effective-rules.md`, located in the `master-rules` directory, explains the practical steps for creating your own high-quality rules.
 
 ## 🎯 The Purpose: Rules as Codified Context
 
@@ -19,13 +17,15 @@ By creating a knowledge base of rules, you provide the AI with on-demand, precis
 
 ### Trust and AI Autonomy
 
-Once this expert context is codified, we must trust the AI to use it intelligently. The system is designed to grant the AI **full autonomy** to work optimally. It can:
+Once this expert context is codified, we must trust the AI to use it intelligently. The system is designed to grant the AI **full autonomy** based on a stable foundation.
 
--   **Scan Dynamically:** Automatically discover all available rules.
--   **Evaluate Freely:** Independently decide which rules are relevant to the current task.
--   **Load Selectively:** Activate only the most useful rules to perform its work.
+-   **Deterministic Boot Sequence:** The AI first loads a minimal, non-negotiable "kernel" (`context-discovery` and `collaboration` rules). This boot process is predictable and safe.
+-   **Dynamic Task Context:** From this stable kernel, the AI then:
+    -   **Scans Dynamically:** Automatically discovers all available task-specific rules.
+    -   **Evaluates Freely:** Independently decides which rules are relevant to the current task.
+    -   **Loads Selectively:** Activates only the most useful rules to perform its work.
 
-💡 **Core Principle:** First, we codify our expertise into rules. Then, we trust the AI to apply that expertise.
+💡 **Core Principle:** First, we codify our expertise into rules. Then, we trust the AI to apply that expertise, starting from a predictable and secure foundation.
 
 ## 📁 Understanding the Rule Structure
 
@@ -37,8 +37,8 @@ Each rule type has a unique, non-negotiable location. The examples below use the
 
 #### ✅ Master Rules (`.ai/rules/master-rules/`)
 -   **LOCATION:** Repository root ONLY.
--   **PURPOSE:** To govern the rule system itself and collaboration protocols.
--   **EXAMPLES:** How to create rules, naming conventions, conflict resolution, code development directives.
+-   **PURPOSE:** To govern the rule system itself and collaboration protocols. These form the AI's "operating system".
+-   **EXAMPLES:** `1-master-rule-context-discovery.mdc`, `2-master-rule-ai-collaboration-guidelines.mdc`.
 
 #### ✅ Common Rules (`.ai/rules/common-rules/`)
 -   **LOCATION:** Repository root ONLY.
@@ -52,10 +52,7 @@ Each rule type has a unique, non-negotiable location. The examples below use the
 
 ## 📚 References
 
-Consult the documentation for your specific AI assistant to understand how it discovers and applies context rules. Below are some examples for popular tools.
+Consult the documentation for your specific AI assistant to understand how it discovers and applies context rules.
 
 -   **Cursor:**
     -   [Official Documentation on Rules](https://docs.cursor.com/context/rules)
-    
--   **Other Tools:**
-    -   Refer to the documentation for tools like Claude Code, Windsurf, cline, etc., for instructions on providing context.

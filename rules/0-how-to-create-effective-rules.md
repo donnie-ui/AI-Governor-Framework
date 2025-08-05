@@ -31,10 +31,10 @@ A rule that cannot be found is useless. The structure starts with its name and l
     alwaysApply: false
     ---
     ```
-    *   **`[MUST]`** The YAML block **must** only contain the keys `description` (a string) and `alwaysApply` (a boolean).
-    *   **`[MUST NOT]`** Do not use any other keys at the root of the YAML (e.g., `name`, `title`).
+    *   **`[STRICT]`** The YAML block **must** only contain the keys `description` (a string) and `alwaysApply` (a boolean).
+    *   **`[STRICT]`** Do not use any other keys at the root of the YAML (e.g., `name`, `title`).
     *   **`alwaysApply: false`**: This is the default. Only set to `true` for foundational rules that define the AI's core operation.
-    *   **`[MUST]` For `project-rules`:** The `alwaysApply` property **MUST** always be set to `false`, as they are context-specific and should not be active at all times.
+    *   **`[STRICT]` For `project-rules`:** The `alwaysApply` property **MUST** always be set to `false`, as they are context-specific and should not be active at all times.
     *   **`description` string**: This is the primary tool for context discovery, containing `TAGS`, `TRIGGERS`, `SCOPE`, and a `DESCRIPTION`.
 
 ### 👤 Pillar 2: Personality & Intent
@@ -50,15 +50,18 @@ A rule must tell the AI *how to think*.
 
 A rule must be unambiguous and actionable.
 
-1.  **Provide a Clear Protocol:** Use bullet points or numbered lists to define a step-by-step process that the AI **MUST** follow.
-2.  **Be Imperative:** Use directive language (`MUST`, `DO NOT`, `ALWAYS`, `NEVER`).
+1.  **`[STRICT]` Provide a Clear Protocol:** Use bullet points or numbered lists to define a step-by-step process.
+2.  **`[STRICT]` Be Imperative:** Use directive language (`MUST`, `DO NOT`, `ALWAYS`, `NEVER`).
+3.  **`[STRICT]` Use Explicit Prefixes:** To remove any ambiguity, every directive in a protocol **MUST** be prefixed with either `[STRICT]` or `[GUIDELINE]`.
+    *   `[STRICT]`: For non-negotiable actions that the AI must perform exactly as described.
+    *   `[GUIDELINE]`: For best practices or strong recommendations that the AI should follow, but where context might justify a deviation (which must be explained).
 
 ### 🖼️ Pillar 4: Exemplarity & Contrast
 
-A rule must show, not just tell.
+A rule must show, not just tell. It **MUST** include both positive and negative examples.
 
-1.  **Provide a "DO" Example:** Show a clear, complete code example of the correct implementation.
-2.  **Provide a "DON'T" Example:** Show a contrasting example of a common mistake or anti-pattern.
+1.  **`[STRICT]` Provide a "DO" Example:** Show a clear, complete code example of the correct implementation under a `### ✅ Correct Implementation` heading.
+2.  **`[STRICT]` Provide a "DON'T" Example:** Show a contrasting example of a common mistake or anti-pattern under a `### ❌ Anti-Pattern to Avoid` heading. Explaining *why* it's wrong is crucial.
 
 ---
 
@@ -80,9 +83,19 @@ When this rule is active, you are a Senior QA Engineer...
 A unit test must validate a single unit of code in complete isolation...
 
 ## Protocol for Unit Testing
-1. **`[MUST]` Isolate Dependencies...**
-2. **`[MUST]` Reset Mocks...**
+1. **`[STRICT]` Isolate Dependencies...**
+2. **`[STRICT]` Reset Mocks...**
+3. **`[GUIDELINE]` Test files SHOULD be co-located...**
 
+### ✅ Correct Implementation
+```javascript
+// ... good example ...
+```
+
+### ❌ Anti-Pattern to Avoid
+```javascript
+// ... bad example with explanation ...
+```
 ```
 
 
@@ -92,8 +105,8 @@ Before finalizing a new rule, use this checklist:
 -   `[ ]` **Structure:** Does it have a clear name, location, and complete metadata?
 -   `[ ]` **Metadata Integrity:** Does the Metadata Header (YAML Frontmatter) block contain *only* the `description` and `alwaysApply` keys with the correct types?
 -   `[ ]` **Personality:** Does it define a Persona and a Core Principle?
--   `[ ]` **Precision:** Is the protocol clear and written with imperative language?
--   `[ ]` **Exemplarity:** Does it include both a "DO" and a "DON'T" example?
+-   `[ ]` **Precision:** Is the protocol clear and written with imperative language? Does it use `[STRICT]` and `[GUIDELINE]` prefixes for all directives?
+-   `[ ]` **Exemplarity:** Does it include both a "DO" (`✅`) and a "DON'T" (`❌`) example as mandatory sections?
 -   `[ ]` **Clarity:** Could another developer or AI apply this rule without asking for clarification?
 
 ---
