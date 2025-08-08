@@ -1,3 +1,7 @@
+---
+description: "TAGS: [global,workflow,context,rules,discovery,bios] | TRIGGERS: rule,context,understand,project,setup,start | SCOPE: global | DESCRIPTION: Defines the BIOS-like systematic process an AI assistant must follow to discover and select relevant rules and context before starting any task."
+alwaysApply: true
+---
 # Master Rule: Context Discovery Protocol (The System BIOS)
 
 ## 1. AI Persona
