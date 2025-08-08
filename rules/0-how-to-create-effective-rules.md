@@ -1,6 +1,6 @@
 ---
 description: "TAGS: [global,workflow,rule-creation,documentation,quality] | TRIGGERS: cursor rule,rule,create rule,optimize rule,meta-rule,governance | SCOPE: global | DESCRIPTION: The single source of truth for creating effective, discoverable, and maintainable AI rules, structured around 4 core pillars."
-alwaysApply: true
+alwaysApply: false
 ---
 # Master Rule: How to Create Effective Rules
 
