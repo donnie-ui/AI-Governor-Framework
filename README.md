@@ -27,9 +27,9 @@ The Governor Framework is composed of two distinct but complementary parts:
 | **The Governance Engine** (`/rules`) | A set of powerful, passive rules that run in the background. | Your AI assistant discovers and applies these rules **automatically** to ensure quality and consistency. |
 | **The Operator's Playbook** (`/dev-workflow`) | A set of active, step-by-step protocols for the entire development lifecycle. | You **manually** invoke these protocols to guide the AI through complex tasks like planning and implementation. |
 
-#### At a Glance: The 5-Step Operator's Playbook
+#### At a Glance: The 4-Step Operator's Playbook
 > The framework is built around a series of sequential protocols that move a feature from idea to production with clarity and control:
-> -   0️⃣ **Bootstrap:** Turns a generic AI into a project-specific expert.
+> -   0️⃣ **Bootstrap:** Turns a generic AI into a project-specific expert. (One-Time Setup)
 > -   1️⃣ **Define:** Transforms an idea into a detailed PRD.
 > -   2️⃣ **Plan:** Converts the PRD into a step-by-step technical plan.
 > -   3️⃣ **Implement:** Executes the plan with human validation at each step.

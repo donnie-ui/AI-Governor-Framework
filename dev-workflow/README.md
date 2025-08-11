@@ -11,7 +11,7 @@ The goal is to make AI-powered development:
 -   **Controllable:** You are always in the loop for key decisions.
 -   **Efficient:** The AI does the heavy lifting, you provide the strategic direction.
 
-## 2. How it Works: The 5-Step Development Lifecycle
+## 2. How it Works: The 4-Step Development Lifecycle
 
 This workflow guides you through the entire development process, from initial setup to continuous improvement. Each step assigns a specific role to the AI, ensuring a structured and predictable collaboration.
 
