@@ -21,7 +21,67 @@ This workflow guides you through the entire development process, from initial se
 4.  **`3-process-tasks.md`**: The AI acts as a Paired Developer, implementing the plan one task at a time and waiting for your approval at each step.
 5.  **`4-implementation-retrospective.md`**: The AI acts as a QA Lead, auditing the work and helping you refine the framework's rules for the future.
 
-## 3. What: Your Practical Guide to Execution
+## 3. Quick Start: Installation & Activation
+
+This guide provides a safe, non-destructive process to integrate the framework into any project.
+
+### Option 1: For a New Project (Recommended)
+The simplest way to start. Click the green **"Use this template"** button on the main repository page. This creates a new repository for you, pre-loaded with The Governor Framework, ready for the bootstrap protocol.
+
+### Option 2: For an Existing Project
+This process safely integrates the framework's components into their correct locations.
+
+1.  **Download the Framework Blueprints:**
+    First, get the framework's files by cloning them into a temporary folder.
+    ```bash
+    git clone https://github.com/Fr-e-d/The-Governor-Framework.git temp-governor
+    ```
+
+2.  **Copy the Components to Your Project:**
+    The next step depends on your primary AI assistant.
+
+    #### For Cursor Users (Recommended)
+    Cursor needs the rules in a specific `.cursor` directory for automatic detection. The workflows can be placed in a separate directory for clarity.
+    ```bash
+    # 1. Create the mandatory directory for rules
+    mkdir -p .cursor/rules
+
+    # 2. Copy the framework's rule sets (this is safe and will not overwrite your personal rules)
+    cp -r temp-governor/rules/master-rules .cursor/rules/
+    cp -r temp-governor/rules/common-rules .cursor/rules/
+
+    # 3. Create a separate directory for the manual workflows
+    mkdir governor-workflows
+
+    # 4. Copy the workflows into it
+    cp -r temp-governor/dev-workflow governor-workflows/
+    ```
+
+    #### For Other AI Assistants
+    For other tools, you can place all components inside a single `.ai-governor` directory for simplicity.
+    ```bash
+    # 1. Create a single directory for the framework
+    mkdir .ai-governor
+
+    # 2. Copy the rules and workflows into it
+    cp -r temp-governor/rules .ai-governor/
+    cp -r temp-governor/dev-workflow .ai-governor/
+    ```
+    *You can now safely delete the temporary `temp-governor` folder.*
+
+### Activating the Governor: The Bootstrap Protocol
+Once the framework files are in your project, you need to activate the Governor by running the bootstrap protocol.
+
+Open your project in your editor and give your AI assistant the correct path to the protocol:
+```bash
+# For Cursor Users:
+Apply instructions from governor-workflows/dev-workflow/0-bootstrap-your-project.md
+
+# For Other Users:
+Apply instructions from .ai-governor/dev-workflow/0-bootstrap-your-project.md
+```
+
+## 4. What: Your Practical Guide to Execution
 
 Here’s how to use the protocols to build your next feature.
 

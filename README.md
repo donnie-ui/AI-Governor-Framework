@@ -3,50 +3,45 @@
 
 **Stop fighting your AI assistant. Start governing it.**
 
-Tired of AI-generated code that's buggy, inconsistent, and ignores your architecture? The Governor Framework turns your coding assistant from a chaotic code-suggester into a disciplined, project-aware engineering partner.
+Tired of AI-generated code that's buggy, inconsistent, and ignores your architecture? The Governor Framework is a safe, plug-and-play system designed to teach your AI your project's unique DNA. It provides a set of rules and workflows to turn any AI assistant from a chaotic tool into a disciplined engineering partner that respects your architectural decisions, best practices, and non-negotiable constraints.
 
 Reclaim control. Enforce your coding standards. Ship with confidence.
 
-## 🚀 Quick Start: Get Value in 2 Minutes
+---
 
-1.  **Create Your Project from the Template:**
-    Click the green **"Use this template"** button at the top of this page and select **"Create a new repository"**. This will create your own copy of the framework, ready to be customized.
+## ✨ The Philosophy: From Prompting & Fixing to Governing
+Our approach is rooted in one core principle: **Context Engineering**.
 
-2.  **Bootstrap Your Project:**
-    Once you have your new repository, clone it locally. Open your AI assistant inside the project and give it this command:
-    ```
-    Apply instructions from dev-workflow/0-bootstrap-your-project.md
-    ```
-    The AI will now analyze your codebase and configure the framework for you.
+This isn't about bigger prompts or dumping your entire codebase into one, which is both ineffective and expensive. It's about giving the AI the *right information* at the *right time*. This framework achieves that by building a knowledge base of robust `rules` (the orders) and architectural `READMEs` (the context) that the AI consults on-demand.
 
-3.  **Build Your First Feature:**
-    You are now ready to develop with a context-aware AI. Use the structured workflow to define, plan, and implement your first feature:
-    ```
-    Apply instructions from /path/to/The-Governor-Framework/dev-workflow/1-create-prd.md
+This is how we shift from the endless loop of **prompting and fixing** to strategic **Governing**.
 
-    Here's the feature I want to build: [Describe your feature]
-    ```
+---
 
-## ✨ The Philosophy: From Prompting to Governing
+## 🚀 How It Works: Two Core Components
 
-The key to unlocking an AI's full potential is **Context Engineering**.
+The Governor Framework is composed of two distinct but complementary parts:
 
-This isn't about bigger prompts. It's about giving the AI the *right information* at the *right time*. This framework provides a lightweight yet powerful structure to achieve that by:
+| Component | What It Is | How It's Used |
+| :--- | :--- | :--- |
+| **The Governance Engine** (`/rules`) | A set of powerful, passive rules that run in the background. | Your AI assistant discovers and applies these rules **automatically** to ensure quality and consistency. |
+| **The Operator's Playbook** (`/dev-workflow`) | A set of active, step-by-step protocols for the entire development lifecycle. | You **manually** invoke these protocols to guide the AI through complex tasks like planning and implementation. |
 
-1.  **Decomposing Complexity:** Breaking large features into small, focused tasks.
-2.  **Codifying Knowledge:** Building a library of rules and `READMEs` that the AI can consult on-demand.
-3.  **Evolving Continuously:** Treating your "Context Kit" as a living system that gets smarter with every feature you ship.
+#### At a Glance: The 5-Step Operator's Playbook
+> The framework is built around a series of sequential protocols that move a feature from idea to production with clarity and control:
+> -   0️⃣ **Bootstrap:** Turns a generic AI into a project-specific expert.
+> -   1️⃣ **Define:** Transforms an idea into a detailed PRD.
+> -   2️⃣ **Plan:** Converts the PRD into a step-by-step technical plan.
+> -   3️⃣ **Implement:** Executes the plan with human validation at each step.
+> -   4️⃣ **Improve:** Audits the code to make the AI smarter for the future.
 
-This framework helps you shift from simple **prompting** to strategic **governing**, turning your AI assistant into a true "Companion Expert."
+---
 
-## 🗂️ What's Inside?
+## ▶️ Get Started
 
-This repository contains two core components:
+Ready to install the framework and run your first governed task?
 
-*   **`/dev-workflow/`**: A set of sequential protocols that guide you and the AI through the entire development lifecycle, from idea to production.
-    *   ➡️ **[Discover the Workflow (`dev-workflow/README.md`)](./dev-workflow/README.md)**
-*   **`/rules/`**: A powerful, three-layer governance system that allows you to codify your project's architectural decisions, best practices, and constraints.
-    *   ➡️ **[Master the Rules (`rules/README.md`)](./rules/README.md)**
+**[➡️ Go to the Quick Start Guide](./dev-workflow/README.md)**
 
 ## ❤️ Support This Project
 
