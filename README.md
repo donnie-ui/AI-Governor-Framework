@@ -10,7 +10,7 @@ Reclaim control. Enforce your coding standards. Ship with confidence.
 ---
 
 ## ✨ The Philosophy: From Prompting & Fixing to Governing
-Our approach is rooted in one core principle: **Context Engineering**.
+This approach is rooted in one core principle: **Context Engineering**.
 
 This isn't about bigger prompts or dumping your entire codebase into one, which is both ineffective and expensive. It's about giving the AI the *right information* at the *right time*. This framework achieves that by building a knowledge base of robust `rules` (the orders) and architectural `READMEs` (the context) that the AI consults on-demand.
 

@@ -2,7 +2,7 @@
 
 ## 1. Why: A Structured Workflow for Predictable Results
 
-Working with AI can sometimes feel unpredictable. The Governor Framework provides a development workflow designed to fix that.
+Working with AI can sometimes feel unpredictable. The Governor Framework provides a development workflow designed to fix that, for both new and existing projects.
 
 It provides a structured, sequential process that transforms your AI from a simple code generator into a reliable engineering partner. By following these five protocols, you ensure that both you and the AI are always aligned, moving from a high-level idea to a well-implemented feature with clarity, control, and consistency.
 
@@ -15,21 +15,15 @@ The goal is to make AI-powered development:
 
 This workflow guides you through the entire development process, from initial setup to continuous improvement.
 
-1.  **`0-bootstrap-your-project.md`**: **(One-Time Setup)** The AI analyzes your codebase and builds a foundational "Context Kit" of `READMEs` and project-specific rules.
-2.  **`1-create-prd.md`**: The AI acts as a Product Manager, interviewing you to create a detailed Product Requirements Document (PRD).
-3.  **`2-generate-tasks.md`**: The AI acts as a Tech Lead, converting the PRD into a granular, step-by-step technical execution plan.
-4.  **`3-process-tasks.md`**: The AI acts as a Paired Developer, implementing the plan one task at a time and waiting for your approval at each step.
-5.  **`4-implementation-retrospective.md`**: The AI acts as a QA Lead, auditing the work and helping you refine the framework's rules for the future.
+0.  **`0-bootstrap-your-project.md`**: **(One-Time Setup)** The AI analyzes your codebase and builds a foundational "Context Kit" of `READMEs` and project-specific rules.
+1.  **`1-create-prd.md`**: The AI acts as a Product Manager, interviewing you to create a detailed Product Requirements Document (PRD).
+2.  **`2-generate-tasks.md`**: The AI acts as a Tech Lead, converting the PRD into a granular, step-by-step technical execution plan.
+3.  **`3-process-tasks.md`**: The AI acts as a Paired Developer, implementing the plan one task at a time and waiting for your approval at each step.
+4.  **`4-implementation-retrospective.md`**: The AI acts as a QA Lead, auditing the work and helping you refine the framework's rules for the future.
 
 ## 3. Quick Start: Installation & Activation
 
-This guide provides a safe, non-destructive process to integrate the framework into any project.
-
-### Option 1: For a New Project (Recommended)
-The simplest way to start. Click the green **"Use this template"** button on the main repository page. This creates a new repository for you, pre-loaded with The Governor Framework, ready for the bootstrap protocol.
-
-### Option 2: For an Existing Project
-This process safely integrates the framework's components into their correct locations.
+This guide provides a safe, non-destructive process to integrate the framework into any project. 
 
 1.  **Download the Framework Blueprints:**
     First, get the framework's files by cloning them into a temporary folder.
@@ -40,7 +34,7 @@ This process safely integrates the framework's components into their correct loc
 2.  **Copy the Components to Your Project:**
     The next step depends on your primary AI assistant.
 
-    #### For Cursor Users (Recommended)
+    #### For Cursor Users
     Cursor needs the rules in a specific `.cursor` directory for automatic detection. The workflows can be placed in a separate directory for clarity.
     ```bash
     # 1. Create the mandatory directory for rules
@@ -48,8 +42,7 @@ This process safely integrates the framework's components into their correct loc
 
     # 2. Copy the framework's rule sets (this is safe and will not overwrite your personal rules)
     cp -r temp-governor/rules/master-rules .cursor/rules/
-    cp -r temp-governor/rules/common-rules .cursor/rules/
-
+    
     # 3. Create a separate directory for the manual workflows
     mkdir governor-workflows
 
@@ -85,17 +78,16 @@ Apply instructions from .ai-governor/dev-workflow/0-bootstrap-your-project.md
 
 Here’s how to use the protocols to build your next feature.
 
-> **Pro Tip:** For the best results, especially during the PRD and task generation phases, use your AI tool's most powerful model (e.g., **Max Mode** for Cursor users).
-
-### Step 1: Bootstrap Your Project (One-Time Setup)
+### Step 0: Bootstrap Your Project (One-Time Setup)
 
 This is the very first step. It's a one-time protocol that turns a generic AI into a project-specific expert.
 
 ```
 Apply instructions from @0-bootstrap-your-project.md
 ```
+*(For best results, Cursor users should use Max Mode for this step.)*
 
-### Step 2: Create a Product Requirements Document (PRD)
+### Step 1: Create a Product Requirements Document (PRD)
 
 Define the "what" and "why" of your feature.
 
@@ -104,17 +96,21 @@ Apply instructions from @1-create-prd.md
 
 Here's the feature I want to build: [Describe your feature in detail]
 ```
+*(For best results, Cursor users should use Max Mode for this step.)*
 
-### Step 3: Generate Your Task List
+### Step 2: Generate Your Task List
 
 Transform the PRD into a detailed technical plan.
 
 ```
 Apply instructions from @2-generate-tasks.md to @prd-my-feature.md
 ```
+
 *(Note: Replace `@prd-my-feature.md` with the actual filename of your PRD.)*
 
-### Step 4: Execute Tasks Sequentially
+*(For best results, Cursor users should use Max Mode for this step.)*
+
+### Step 3: Execute Tasks Sequentially
 
 Instruct the AI to work through the generated plan with full control.
 
@@ -129,7 +125,7 @@ Instruct the AI to work through the generated plan with full control.
     -   If the changes are correct, reply with **"yes"** or **"continue"**.
     -   If changes are needed, provide corrective feedback.
 
-### Step 5: Conduct a Retrospective
+### Step 4: Conduct a Retrospective
 
 Reflect on the process to make the AI smarter for the next collaboration.
 
