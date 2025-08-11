@@ -1,80 +1,84 @@
+# The Governor Workflow: From Idea to Production
 
-This directory contains a series of numbered protocols that define a structured, repeatable, and AI-powered development workflow.
+## 1. Why: A Structured Workflow for Predictable Results
 
-## 🚀 Your "Codebase Expert Agent" Workflow: From Idea to Flawless Feature
+Working with AI can sometimes feel unpredictable. The Governor Framework provides a development workflow designed to fix that.
 
-The process is designed to be sequential. You should always start with Protocol 0 for any new project.
+It provides a structured, sequential process that transforms your AI from a simple code generator into a reliable engineering partner. By following these five protocols, you ensure that both you and the AI are always aligned, moving from a high-level idea to a well-implemented feature with clarity, control, and consistency.
 
-1.  **`0-bootstrap-your-project.md`**: **(Run this first!)** This is a one-time setup protocol. The AI will analyze your codebase, install the framework's rule structure, and generate a foundational "Context Kit" of `READMEs` and project-specific rules.
+The goal is to make AI-powered development:
+-   **Predictable:** Each step has a clear purpose and output.
+-   **Controllable:** You are always in the loop for key decisions.
+-   **Efficient:** The AI does the heavy lifting, you provide the strategic direction.
 
-2.  **`1-create-prd.md`**: This protocol guides the AI to act as a Product Manager, helping you think through a new feature and generate a clear Product Requirements Document (PRD).
+## 2. How: The 5-Step Development Lifecycle
 
-3.  **`2-generate-tasks.md`**: The AI takes the PRD and, acting as a Tech Lead, breaks it down into a detailed, actionable task list for implementation.
+This workflow guides you through the entire development process, from initial setup to continuous improvement.
 
-4.  **`3-process-tasks.md`**: This is the core execution loop. The AI follows the generated task list, implementing each sub-task sequentially and waiting for your explicit approval before committing changes and moving to the next step.
+1.  **`0-bootstrap-your-project.md`**: **(One-Time Setup)** The AI analyzes your codebase and builds a foundational "Context Kit" of `READMEs` and project-specific rules.
+2.  **`1-create-prd.md`**: The AI acts as a Product Manager, interviewing you to create a detailed Product Requirements Document (PRD).
+3.  **`2-generate-tasks.md`**: The AI acts as a Tech Lead, converting the PRD into a granular, step-by-step technical execution plan.
+4.  **`3-process-tasks.md`**: The AI acts as a Paired Developer, implementing the plan one task at a time and waiting for your approval at each step.
+5.  **`4-implementation-retrospective.md`**: The AI acts as a QA Lead, auditing the work and helping you refine the framework's rules for the future.
 
-5.  **`4-implementation-retrospective.md`**: After implementation, this protocol guides the AI to act as a QA Lead, auditing the work, identifying areas for improvement, and updating the project's rules to enhance future performance.
+## 3. What: Your Practical Guide to Execution
 
-### 0️⃣ Bootstrap Your Project (One-Time Setup)
+Here’s how to use the protocols to build your next feature.
 
-This is the very first step. It's a one-time protocol that analyzes your codebase and creates the foundational "Context Kit" of rules and documentation.
+> **Pro Tip:** For the best results, especially during the PRD and task generation phases, use your AI tool's most powerful model (e.g., **Max Mode** for Cursor users).
 
-In your AI tool, initiate the bootstrap process:
-```text
+### Step 1: Bootstrap Your Project (One-Time Setup)
+
+This is the very first step. It's a one-time protocol that turns a generic AI into a project-specific expert.
+
+```
 Apply instructions from @0-bootstrap-your-project.md
 ```
 
-### 1️⃣ Create a Product Requirement Document (PRD)
+### Step 2: Create a Product Requirements Document (PRD)
 
-Start by defining the "what" and "why" of your feature. The AI will act as a Product Manager, interviewing you to create a comprehensive specification.
+Define the "what" and "why" of your feature.
 
-In your AI tool, initiate PRD creation:
-```text
+```
 Apply instructions from @1-create-prd.md
+
 Here's the feature I want to build: [Describe your feature in detail]
 ```
-*(Pro Tip: For complex features, it's recommended to use your AI tool's most powerful model. For **Cursor users**, using **Max Mode** is highly recommended for better results, especially for this step.)*
 
-### 2️⃣ Generate Your Task List from the PRD
+### Step 3: Generate Your Task List
 
-Once the PRD is created (e.g., `prd-my-feature.md`), transform it into a granular, step-by-step technical plan for your AI developer.
+Transform the PRD into a detailed technical plan.
 
-```text
+```
 Apply instructions from @2-generate-tasks.md to @prd-my-feature.md
 ```
-*(Note: Replace `@prd-my-feature.md` with the actual filename of the PRD you generated in step 1.)*
+*(Note: Replace `@prd-my-feature.md` with the actual filename of your PRD.)*
 
-*(Pro Tip: For **Cursor users**, using **Max Mode** is also recommended for this step to ensure a more detailed and accurate breakdown of the PRD.)*
+### Step 4: Execute Tasks Sequentially
 
-You'll get a well-structured task list, providing a clear roadmap for implementation.
+Instruct the AI to work through the generated plan with full control.
 
-### 3️⃣ Execute Tasks Sequentially
-
-Now, instruct the AI to work through the generated plan. This protocol ensures the AI tackles one sub-task at a time and waits for your validation before proceeding, giving you full control.
-
-1.  Tell the AI to start with the first task:
-    ```text
+1.  **Start the first task:**
+    ```
     Apply instructions from @3-process-tasks.md to @tasks-my-feature.md. Start on task 1.1
     ```
-    *(Note: Replace `@tasks-my-feature.md` with the task file generated in step 2. You only need to invoke this protocol for the *first* task; the protocol itself guides the AI for subsequent tasks.)*
+    *(Note: The protocol itself guides the AI for subsequent tasks.)*
 
-2.  **Review, Approve, and Progress ✅**
-    As the AI completes each sub-task, it will present the changes for your review.
-    *   If the changes are correct, reply with "yes" or "continue" to have the AI mark the task as complete and move to the next one.
-    *   If changes are needed, provide corrective feedback before proceeding.
+2.  **Review and Approve:**
+    As the AI completes each task, it will present the changes for your review.
+    -   If the changes are correct, reply with **"yes"** or **"continue"**.
+    -   If changes are needed, provide corrective feedback.
 
-### 4️⃣ Conduct an Implementation Retrospective
+### Step 5: Conduct a Retrospective
 
-Once all tasks are complete, the final step is to reflect on the process to improve future collaborations. The AI will act as a QA Lead, auditing the code and interviewing you to refine the project's rules and workflows.
+Reflect on the process to make the AI smarter for the next collaboration.
 
-```text
+```
 Apply instructions from @4-implementation-retrospective.md
 ```
-This final step is crucial for evolving your "Context Kit", making the AI smarter and more aligned with your project's standards over time. 
 
+---
 
-## 💡 A Note on the First Run: The Learning Curve
+### A Note on the Learning Curve
 
-Your first few interactions with the AI using this framework might require more corrections and clarifications. **This is normal and by design.** You are actively *teaching* the assistant the specific nuances of your codebase.
-
-Think of it as onboarding a new junior developer. The initial investment in teaching pays off exponentially. With each iteration, the AI's context gets richer, its proposals become more accurate, and it evolves from a generic tool into a true expert companion for your project.
+Your first few interactions with this framework might require more corrections. **This is normal and by design.** You are actively *teaching* the AI the nuances of your codebase. The initial investment pays off exponentially as the AI's context gets richer, its proposals become more accurate, and it evolves into a true expert companion for your project.

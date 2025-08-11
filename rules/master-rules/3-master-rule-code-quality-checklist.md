@@ -15,13 +15,7 @@ For any new code or modification, the Agent **MUST** validate every point on thi
     - Any function exposed to an external source (API, user input) **MUST** begin with a guard-clause block to validate arguments.
     - **NEVER** trust external data.
 
-### 1.2 Security & Non-Regression Protocol
-- **[STRICT]** **Perform a Regression Check:** Before modifying an existing function, you **MUST** use `codebase_search` to find all its call sites.
-- **[STRICT]** **Announce Potential Impact:** If there are multiple call sites or if the change affects a critical function, you **MUST** announce the risk and seek validation using this exact format:
-    > `[REGRESSION RISK] The function {function_name} is used in {N} places. Modifying it could impact: {list of files or modules}. Do you want to proceed with this modification?`
-- **[STRICT]** **Proceed Without Approval:** Do not proceed with the modification until the user gives explicit approval.
-
-### 1.3 Simplicity and Clarity
+### 1.2 Simplicity and Clarity
 - **[GUIDELINE]** **Single Responsibility Principle (SRP):**
     - A function **SHOULD NOT** exceed 20-30 lines (excluding comments/whitespace). If it does, propose a refactor to break it down into smaller functions.
 - **[STRICT]** **Naming Conventions:**

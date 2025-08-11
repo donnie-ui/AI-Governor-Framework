@@ -10,43 +10,27 @@ alwaysApply: false
 
 ## 1. Task Initialization Protocol (On every new request)
 
-- **[STRICT]** **Read the Architectural Source of Truth:** Once the work scope has been identified (e.g., a specific Microservice, a UI App), it is **IMPERATIVE and NON-NEGOTIABLE** to read the `README.md` file located at the root of that scope.
-    *   **Justification:** The `README.md` is the **architectural source of truth**. Ignoring it will inevitably lead to architectural violations. It defines critical project constraints:
-        *   Authorized communication flows (e.g., "UI can only call the API for read-only operations").
-        *   The hierarchy of technologies to use (e.g., "RPC is preferred over HTTP for inter-service calls").
-        *   Mandatory helper modules or functions to use (e.g., `callApi.js`, `restApiClient.js`, etc.).
-        *   Scope conventions (e.g., "UI" refers to `the-ui-app` unless specified otherwise).
+- **[STRICT]** **Read the Architectural Source of Truth:** Once the work scope has been identified (e.g., a specific microservice, a UI application), it is **IMPERATIVE and NON-NEGOTIABLE** to read the `README.md` file located at the root of that scope.
+    *   **Justification:** The `README.md` is the **architectural source of truth**. Ignoring it will inevitably lead to architectural violations. It defines critical project constraints such as:
+        *   High-level architectural principles.
+        *   Preferred communication patterns (e.g., RPC vs. REST).
+        *   Mandatory helper modules or core libraries to use.
+        *   Key project conventions and scope definitions.
 
 ---
 
-## 2. Pre-Modification File Analysis
-
-Before proposing a modification to a file, this two-step analysis is **MANDATORY**:
-
-1.  **[STRICT]** **Architectural Role Identification:**
-    *   **Action:** First, based on the file's name, location, and a quick read of its first few lines, state its architectural purpose.
-    *   **Classification Examples:** "This appears to be a **configuration file**," "This is a **utility/helper function**," "This is a **business logic module**," "This is a **UI component**," "This is a **route handler/controller**."
-    *   **Justification:** This step forces an architectural mindset *before* any code is written, preventing the misplacement of logic.
-
-2.  **[STRICT]** **Full Context Reading:**
-    *   **Action:** Once the role is identified, read the file in-depth to understand its content, structure, and existing logic.
-    *   **Tool:** `read_file`.
-    *   **Justification:** "Now that I've identified this as a {architectural_role}, I am reading the full file to ensure my modifications respect its conventions and purpose."
-
----
-
-## 3. Conflict and Doubt Resolution Protocol
+## 2. Conflict and Doubt Resolution Protocol
 
 *   **[STRICT]** **Scenario 1: Direct Conflict.** If a user instruction contradicts an existing rule:
     *   **Action:** Halt all execution.
     *   **Communication:** Notify the user using this strict format: `[RULE CONFLICT] The instruction "{user_instruction}" conflicts with the rule "{rule_name}," which states: "{quote_from_rule}". How should I proceed?`
 *   **[STRICT]** **Scenario 2: Uncertainty or Ambiguity.** If the user's request is ambiguous, incomplete, or if multiple approaches are possible:
     *   **Action:** Do not make assumptions.
-    *   **Communication:** Ask a concise clarification question. `[CLARIFICATION QUESTION] {your_question_here}`. Example: `[CLARIFICATION QUESTION] Should I apply this change only to microservice A, or also to microservice B?`
+    *   **Communication:** Ask a concise clarification question. `[CLARIFICATION QUESTION] {your_question_here}`. Example: `[CLARIFICATION QUESTION] Should I apply this change only to module A, or also to module B?`
 
 ---
 
-## 4. Continuous Improvement Protocol
+## 3. Continuous Improvement Protocol
 
 *   **[GUIDELINE]** **Trigger:** If you identify an opportunity to improve a rule or create a new one based on an interaction.
 *   **[GUIDELINE]** **Action:** Formulate a structured proposal.
@@ -63,6 +47,22 @@ Before proposing a modification to a file, this two-step analysis is **MANDATORY
 
 ---
 
-## 5. Communication Protocol
+## 5. Protocol for Modifying Governance Rules
 
-- **[STRICT]** All messages related to the application of these meta-rules **MUST** use the formalisms defined above (`[RULE CONFLICT]`, `[CLARIFICATION QUESTION]`, `[RULE IMPROVEMENT SUGGESTION]`).
+*   **[STRICT]** **Trigger:** This protocol **MUST** be activated when the user's request involves creating or modifying a `master-rule`.
+*   **[STRICT]** **Core Principle:** Modifying the governance system itself requires a higher level of systemic analysis. Before proposing any change, you **MUST** answer the following questions to yourself:
+    1.  **Orchestration Impact:** How does this change affect the overall workflow defined in the architectural `README.md`? Does it alter the sequence or hierarchy of the 3 layers (Foundation, Execution, Specialization)?
+    2.  **Responsibility Overlap:** Does this change introduce a responsibility that conflicts or overlaps with another master rule? (e.g., adding a security check to the `Collaboration Rule` when it belongs in the `Modification Safety Rule`).
+    3.  **Interaction vs. Content:** Is the goal to change a rule's *content*, or to change how it *interacts* with other rules? Could the goal be better achieved by adjusting its position in the hierarchy or its activation triggers?
+*   **[STRICT]** **Communication:** Your proposal to modify a master rule **MUST** be prefaced by a summary of your systemic analysis.
+    > "[GOVERNANCE MODIFICATION PROPOSAL]
+    > I am proposing a change to `{rule_name}`.
+    > - **Systemic Impact:** This change {clarifies/strengthens/does not alter} its role in Layer {N} and has no negative impact on the orchestration.
+    > - **Justification:** {Briefly explain why the change is necessary}.
+    > Here is the proposed diff:"
+
+---
+
+## 6. Communication Protocol
+
+- **[STRICT]** All messages related to the application of these meta-rules **MUST** use the formalisms defined above (`[RULE CONFLICT]`, `[CLARIFICATION QUESTION]`, `[RULE IMPROVEMENT SUGGESTION]`, `[GOVERNANCE MODIFICATION PROPOSAL]`).

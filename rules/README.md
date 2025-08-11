@@ -1,56 +1,65 @@
-# AI Assistant Rule Governance
+# Rule Governance in The Governor Framework
 
-This document explains how to organize and govern AI assistant rules. It provides a structured way to codify your project's expert knowledge, ensuring the AI has the *right context* at the *right time*.
+## 1. Why: The Power of Codified Knowledge
 
-The main guide, `0-how-to-create-effective-rules.md`, located in the `master-rules` directory, explains the practical steps for creating your own high-quality rules.
+The core philosophy of The Governor Framework is **Context Engineering**.
 
-## 🎯 The Purpose: Rules as Codified Context
+An AI's effectiveness is limited by the quality of its context. Simply dumping your entire codebase into a prompt is inefficient and expensive. **Rules are the solution.**
 
-The core philosophy of this framework is **Context Engineering**. While AI can do incredible things, its effectiveness is limited by the quality of the context it receives. Simply dumping all your codebase files into a prompt is inefficient and expensive.
+They are a structured way to codify your project's unwritten expert knowledge, turning implicit conventions into explicit, machine-readable instructions. This is how you teach an AI:
 
-**Rules are the solution.** They are a formal way to distill and codify critical information that is often unstated:
 -   **Architectural Decisions:** *Why* your app is built a certain way.
 -   **Best Practices:** The coding patterns that lead to quality and maintainability.
--   **Project Constraints:** The non-negotiable requirements of your tech stack or platform.
+-   **Project Constraints:** The non-negotiable requirements of your tech stack.
 
-By creating a knowledge base of rules, you provide the AI with on-demand, precise context.
+By building a knowledge base of rules, you give your AI on-demand, precise context, transforming it from a generic tool into a true team member.
 
-### Trust and AI Autonomy
+## 2. How: The 3-Layer Hierarchy
 
-Once this expert context is codified, we must trust the AI to use it intelligently. The system is designed to grant the AI **full autonomy** based on a stable foundation.
+To grant the AI full autonomy safely, The Governor Framework organizes governance into a **3-Layer Hierarchical System**. It's a defense-in-depth architecture that activates context with surgical precision.
 
--   **Deterministic Boot Sequence:** The AI first loads a minimal, non-negotiable "kernel" (`context-discovery` and `collaboration` rules). This boot process is predictable and safe.
--   **Dynamic Task Context:** From this stable kernel, the AI then:
-    -   **Scans Dynamically:** Automatically discovers all available task-specific rules.
-    -   **Evaluates Freely:** Independently decides which rules are relevant to the current task.
-    -   **Loads Selectively:** Activates only the most useful rules to perform its work.
+-   **Layer 1: Foundation (The BIOS):** Establishes the non-negotiable protocols for context discovery and collaboration, ensuring every task starts from a known, safe state.
+-   **Layer 2: Execution (The Guardians):** Acts as a mandatory quality gate for all code modifications, validating both the intrinsic quality of the code and the safety of the change itself.
+-   **Layer 3: Specialization (The Experts):** Provides in-depth knowledge for complex scenarios, activated conditionally when a task requires specialized handling.
 
-💡 **Core Principle:** First, we codify our expertise into rules. Then, we trust the AI to apply that expertise, starting from a predictable and secure foundation.
+This architecture builds trust. By starting with a stable foundation, applying robust guards, and invoking expert knowledge only when necessary, we grant the AI the autonomy to work efficiently and safely.
 
-## 📁 Understanding the Rule Structure
+## 3. What: The Rule Structure
 
-The framework organizes rules into three distinct categories based on their scope. This separation is key to maintaining a clear and scalable governance system.
+The framework organizes rules into three categories based on their scope and location.
 
-### Strict Placement Rules
+> **Note for Cursor Users:** For tools like Cursor, you **MUST** use a `.cursor/rules/` directory at the root of your project for these rules to be effective. For other AI assistants, a `.ai/rules/` directory is the standard. The examples below use `.ai/rules/` as a generic placeholder.
 
-Each rule type has a unique, non-negotiable location. The examples below use the recommended `.ai/rules/` path, but **Cursor users MUST replace this with `.cursor/rules/` for the rules to be effective.**
+### How to Create Your First Rule
+
+The best way to create high-quality rules is to follow a simple, two-step process:
+
+1.  **Run the Bootstrap Protocol:** The `0-bootstrap-your-project.md` protocol is designed to analyze your codebase and automatically generate a starter set of `project-rules` tailored to your stack.
+2.  **Consult the Guide:** The `0-how-to-create-effective-rules.md` file in this directory provides a detailed, step-by-step guide for writing your own effective rules from scratch.
+
+### Rule Categories
 
 #### ✅ Master Rules (`.ai/rules/master-rules/`)
--   **LOCATION:** Repository root ONLY.
--   **PURPOSE:** To govern the rule system itself and collaboration protocols. These form the AI's "operating system".
--   **EXAMPLES:** `1-master-rule-context-discovery.mdc`, `2-master-rule-ai-collaboration-guidelines.mdc`.
+
+-   **Location:** Repository root ONLY.
+-   **Purpose:** To govern the rule system itself and define the high-level collaboration protocols. These rules form the AI's "operating system" and are organized according to the 3-Layer Hierarchy.
+-   **Examples:** `1-master-rule-context-discovery.md`, `3-master-rule-code-quality-checklist.mdc`.
 
 #### ✅ Common Rules (`.ai/rules/common-rules/`)
--   **LOCATION:** Repository root ONLY.
--   **PURPOSE:** To define technical protocols shared across multiple codebases.
--   **EXAMPLES:** Document versioning on cloud storage, shared authentication standards.
+
+-   **Location:** Repository root ONLY.
+-   **Purpose:** To define technical protocols that are shared across multiple codebases within a monorepo.
+-   **Examples:** Document versioning on cloud storage, shared authentication standards between a frontend and backend.
 
 #### ✅ Project Rules (`{project-folder}/.ai/rules/project-rules/`)
--   **LOCATION:** Inside each specific project/codebase folder.
--   **PURPOSE:** To contain protocols specific to that project's tech stack.
--   **EXAMPLES:** Rules for Cloudflare Workers, React components, or REST API endpoints.
 
-## 📚 References
+-   **Location:** Inside each specific project/codebase folder.
+-   **Purpose:** To contain protocols and conventions specific to that project's tech stack.
+-   **Examples:** Rules for interacting with Cloudflare Workers, patterns for React components, or conventions for REST API endpoints.
+
+---
+
+### 📚 References
 
 Consult the documentation for your specific AI assistant to understand how it discovers and applies context rules.
 

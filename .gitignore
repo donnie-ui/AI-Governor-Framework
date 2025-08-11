@@ -59,22 +59,6 @@ tmp/
 temp/
 *.tmp
 
-# === SPÉCIFIQUE PROJET ===
-# Microservices
-TaxiCRM-MicroServices/**/dist/
-TaxiCRM-MicroServices/**/.wrangler/
-
-# REST API
-TaxiCRM-REST-API/logs/
-TaxiCRM-REST-API/tmp/
-
-# UI
-TaxiCRM-UI-App/**/dist/
-TaxiCRM-UI-Forms/**/dist/
-
-# R2 Buckets - garder les templates mais ignorer les fichiers temporaires
-TaxiCRM-R2-buckets/**/*.tmp
-
 # === SÉCURITÉ ===
 *.key
 *.pem
