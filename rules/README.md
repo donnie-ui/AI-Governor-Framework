@@ -28,7 +28,11 @@ This architecture builds trust. By starting with a stable foundation, applying r
 
 The framework organizes rules into three categories based on their scope and location.
 
-> **Note for Cursor Users:** For tools like Cursor, you **MUST** use a `.cursor/rules/` directory at the root of your project for these rules to be effective. For other AI assistants, a `.ai/rules/` directory is the standard. The examples below use `.ai/rules/` as a generic placeholder.
+> **Note on Rule Directories:** The framework uses two standard locations for rules:
+> - **`.ai-governor/rules/`**: The default location after cloning.
+> - **`.cursor/rules/`**: A required location for Cursor users.
+>
+> For assistants like **Claude Code** or **OpenCode**, both locations are supported thanks to the boot sequences defined in [`CLAUDE.md`](../../CLAUDE.md) and [`OpenCode.md`](../../OpenCode.md). The examples below use `.cursor/rules/` as a generic placeholder for simplicity.
 
 ### How to Create Your First Rule
 
@@ -39,19 +43,19 @@ The best way to create high-quality rules is to follow a simple, two-step proces
 
 ### Rule Categories
 
-#### ✅ Master Rules (`.ai/rules/master-rules/`)
+#### ✅ Master Rules (`.cursor/rules/master-rules/`)
 
 -   **Location:** Repository root ONLY.
 -   **Purpose:** To govern the rule system itself and define the high-level collaboration protocols. These rules form the AI's "operating system" and are organized according to the 3-Layer Hierarchy.
 -   **Examples:** `1-master-rule-context-discovery.md`, `3-master-rule-code-quality-checklist.mdc`.
 
-#### ✅ Common Rules (`.ai/rules/common-rules/`)
+#### ✅ Common Rules (`.cursor/rules/common-rules/`)
 
 -   **Location:** Repository root ONLY.
 -   **Purpose:** To define technical protocols that are shared across multiple codebases within a monorepo.
 -   **Examples:** Document versioning on cloud storage, shared authentication standards between a frontend and backend.
 
-#### ✅ Project Rules (`{project-folder}/.ai/rules/project-rules/`)
+#### ✅ Project Rules (`{project-folder}/.cursor/rules/project-rules/`)
 
 -   **Location:** Inside each specific project/codebase folder.
 -   **Purpose:** To contain protocols and conventions specific to that project's tech stack.

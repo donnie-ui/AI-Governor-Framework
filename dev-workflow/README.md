@@ -74,32 +74,6 @@ Finally, the AI helps you audit the completed work and reflect on the process. T
 Apply instructions from .ai-governor/dev-workflow/4-implementation-retrospective.md
 ```
 
-## 3. Quick Start: Installation
-
-This guide provides a safe, non-destructive process to integrate the framework into any project.
-
-**1. Clone the Framework**
-
-Open a terminal at the root of your project and run the following command:
-```bash
-git clone https://github.com/Fr-e-d/The-Governor-Framework.git .ai-governor
-```
-This downloads the entire framework into a hidden `.ai-governor` directory within your project.
-
-**2. Configure for Your Assistant**
-
-The final step depends on your AI assistant:
-
-#### For Cursor Users
-Cursor requires rules to be in a specific `.cursor` directory to load them automatically. Run this command to copy them:
-```bash
-mkdir -p .cursor/rules && cp -r .ai-governor/rules/master-rules .cursor/rules/
-```
-The workflows are ready to be used from the `.ai-governor/dev-workflow` directory.
-
-#### For Other AI Assistants
-No extra steps are needed. The framework is ready to use. You can point your assistant to the rules and workflows inside the `.ai-governor` directory.
-
 ---
 
 ### A Note on the Learning Curve
