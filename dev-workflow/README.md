@@ -11,112 +11,52 @@ The goal is to make AI-powered development:
 -   **Controllable:** You are always in the loop for key decisions.
 -   **Efficient:** The AI does the heavy lifting, you provide the strategic direction.
 
-## 2. How: The 5-Step Development Lifecycle
+## 2. How it Works: The 5-Step Development Lifecycle
 
-This workflow guides you through the entire development process, from initial setup to continuous improvement.
-
-0.  **`0-bootstrap-your-project.md`**: **(One-Time Setup)** The AI analyzes your codebase and builds a foundational "Context Kit" of `READMEs` and project-specific rules.
-1.  **`1-create-prd.md`**: The AI acts as a Product Manager, interviewing you to create a detailed Product Requirements Document (PRD).
-2.  **`2-generate-tasks.md`**: The AI acts as a Tech Lead, converting the PRD into a granular, step-by-step technical execution plan.
-3.  **`3-process-tasks.md`**: The AI acts as a Paired Developer, implementing the plan one task at a time and waiting for your approval at each step.
-4.  **`4-implementation-retrospective.md`**: The AI acts as a QA Lead, auditing the work and helping you refine the framework's rules for the future.
-
-## 3. Quick Start: Installation & Activation
-
-This guide provides a safe, non-destructive process to integrate the framework into any project. 
-
-1.  **Download the Framework Blueprints:**
-    First, get the framework's files by cloning them into a temporary folder.
-    ```bash
-    git clone https://github.com/Fr-e-d/The-Governor-Framework.git temp-governor
-    ```
-
-2.  **Copy the Components to Your Project:**
-    The next step depends on your primary AI assistant.
-
-    #### For Cursor Users
-    Cursor needs the rules in a specific `.cursor` directory for automatic detection. The workflows can be placed in a separate directory for clarity.
-    ```bash
-    # 1. Create the mandatory directory for rules
-    mkdir -p .cursor/rules
-
-    # 2. Copy the framework's rule sets (this is safe and will not overwrite your personal rules)
-    cp -r temp-governor/rules/master-rules .cursor/rules/
-    
-    # 3. Create a separate directory for the manual workflows
-    mkdir governor-workflows
-
-    # 4. Copy the workflows into it
-    cp -r temp-governor/dev-workflow governor-workflows/
-    ```
-
-    #### For Other AI Assistants
-    For other tools, you can place all components inside a single `.ai-governor` directory for simplicity.
-    ```bash
-    # 1. Create a single directory for the framework
-    mkdir .ai-governor
-
-    # 2. Copy the rules and workflows into it
-    cp -r temp-governor/rules .ai-governor/
-    cp -r temp-governor/dev-workflow .ai-governor/
-    ```
-    *You can now safely delete the temporary `temp-governor` folder.*
-
-### Activating the Governor: The Bootstrap Protocol
-Once the framework files are in your project, you need to activate the Governor by running the bootstrap protocol.
-
-Open your project in your editor and give your AI assistant the correct path to the protocol:
-```bash
-# For Cursor Users:
-Apply instructions from governor-workflows/dev-workflow/0-bootstrap-your-project.md
-
-# For Other Users:
-Apply instructions from .ai-governor/dev-workflow/0-bootstrap-your-project.md
-```
-
-## 4. What: Your Practical Guide to Execution
-
-Here’s how to use the protocols to build your next feature.
+This workflow guides you through the entire development process, from initial setup to continuous improvement. Each step assigns a specific role to the AI, ensuring a structured and predictable collaboration.
 
 ### Step 0: Bootstrap Your Project (One-Time Setup)
+**Role:** The AI acts as a **Project Analyst**.
 
-This is the very first step. It's a one-time protocol that turns a generic AI into a project-specific expert.
+First, the AI analyzes your entire codebase to build a "Context Kit"—a set of foundational `READMEs` and project-specific rules. This is a one-time protocol that turns a generic AI into a project-specific expert.
 
 ```
-Apply instructions from @0-bootstrap-your-project.md
+Apply instructions from .ai-governor/dev-workflow/0-bootstrap-your-project.md
 ```
 *(For best results, Cursor users should use Max Mode for this step.)*
 
 ### Step 1: Create a Product Requirements Document (PRD)
+**Role:** The AI acts as a **Product Manager**.
 
-Define the "what" and "why" of your feature.
+Next, you define the "what" and "why" of your feature. The AI interviews you to create a detailed Product Requirements Document (PRD), ensuring all requirements are captured before any code is written.
 
 ```
-Apply instructions from @1-create-prd.md
+Apply instructions from .ai-governor/dev-workflow/1-create-prd.md
 
 Here's the feature I want to build: [Describe your feature in detail]
 ```
 *(For best results, Cursor users should use Max Mode for this step.)*
 
 ### Step 2: Generate Your Task List
+**Role:** The AI acts as a **Tech Lead**.
 
-Transform the PRD into a detailed technical plan.
+The AI then transforms the PRD into a granular, step-by-step technical execution plan. This ensures that both you and the AI are aligned on the implementation strategy.
 
 ```
-Apply instructions from @2-generate-tasks.md to @prd-my-feature.md
+Apply instructions from .ai-governor/dev-workflow/2-generate-tasks.md to @prd-my-feature.md
 ```
-
 *(Note: Replace `@prd-my-feature.md` with the actual filename of your PRD.)*
 
 *(For best results, Cursor users should use Max Mode for this step.)*
 
 ### Step 3: Execute Tasks Sequentially
+**Role:** The AI acts as a **Paired Developer**.
 
-Instruct the AI to work through the generated plan with full control.
+Here, the AI implements the plan one task at a time, presenting the changes for your approval at each step. This gives you full control over the code while delegating the heavy lifting.
 
 1.  **Start the first task:**
     ```
-    Apply instructions from @3-process-tasks.md to @tasks-my-feature.md. Start on task 1.1
+    Apply instructions from .ai-governor/dev-workflow/3-process-tasks.md to @tasks-my-feature.md. Start on task 1.1
     ```
     *(Note: The protocol itself guides the AI for subsequent tasks.)*
 
@@ -126,12 +66,39 @@ Instruct the AI to work through the generated plan with full control.
     -   If changes are needed, provide corrective feedback.
 
 ### Step 4: Conduct a Retrospective
+**Role:** The AI acts as a **QA Lead**.
 
-Reflect on the process to make the AI smarter for the next collaboration.
+Finally, the AI helps you audit the completed work and reflect on the process. This is where you refine the framework's rules, making the AI smarter and more aligned for the next collaboration.
 
 ```
-Apply instructions from @4-implementation-retrospective.md
+Apply instructions from .ai-governor/dev-workflow/4-implementation-retrospective.md
 ```
+
+## 3. Quick Start: Installation
+
+This guide provides a safe, non-destructive process to integrate the framework into any project.
+
+**1. Clone the Framework**
+
+Open a terminal at the root of your project and run the following command:
+```bash
+git clone https://github.com/Fr-e-d/The-Governor-Framework.git .ai-governor
+```
+This downloads the entire framework into a hidden `.ai-governor` directory within your project.
+
+**2. Configure for Your Assistant**
+
+The final step depends on your AI assistant:
+
+#### For Cursor Users
+Cursor requires rules to be in a specific `.cursor` directory to load them automatically. Run this command to copy them:
+```bash
+mkdir -p .cursor/rules && cp -r .ai-governor/rules/master-rules .cursor/rules/
+```
+The workflows are ready to be used from the `.ai-governor/dev-workflow` directory.
+
+#### For Other AI Assistants
+No extra steps are needed. The framework is ready to use. You can point your assistant to the rules and workflows inside the `.ai-governor` directory.
 
 ---
 

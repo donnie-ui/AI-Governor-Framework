@@ -9,7 +9,7 @@ This `CLAUDE.md` file provides your boot sequence for operating within this repo
 You **MUST** follow these steps in this exact order before proceeding with any user request.
 
 ### Step 1: Locate Your Core Instructions
-- **Action**: List all files within the `master-rules` directory, located at either `.ai/rules/master-rules/` or `.cursor/rules/master-rules/`.
+- **Action**: List all files within the `master-rules` directory, located at either `.ai-governor/rules/master-rules/` or `.cursor/rules/master-rules/`.
 
 ### Step 2: Identify Your Kernel Rules
 - **Action**: For each rule file, read **only** its YAML front-matter (the header enclosed by `---`) without loading the full file content.
