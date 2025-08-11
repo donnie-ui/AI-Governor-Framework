@@ -67,11 +67,16 @@ mkdir -p .cursor/rules && cp -r .ai-governor/rules/master-rules .cursor/rules/
 #### For Other AI Assistants
 The framework is ready to use. You can point your assistant to the rules and workflows inside the `.ai-governor` directory.
 
-The workflows are ready to be used from the `.ai-governor/dev-workflow` directory.
 
-> [!IMPORTANT]
-> ## Ready to Run Your First Governed Task?
-> **[➡️ Go to the Full Workflow Guide](./dev-workflow/README.md)**
+> [!NOTE]
+> ## Ready to Start?
+>
+> **[➡️ Go to the Full Workflow Guide](./dev-workflow)**
+>
+> Got questions or ideas?
+>
+> **[🗣️ Join the Community on GitHub Discussions](https://github.com/Fr-e-d/The-Governor-Framework/discussions)**
+
 
 ## ❤️ Support This Project
 
