@@ -3,7 +3,7 @@
 
 **Stop fighting your AI assistant. Start governing it.**
 
-Tired of AI-generated code that's buggy, inconsistent, and ignores your architecture? The Governor Framework is a safe, plug-and-play system designed to teach your AI your project's unique DNA. It provides a set of rules and workflows to turn any AI assistant from a chaotic tool into a disciplined engineering partner that respects your architectural decisions, best practices, and non-negotiable constraints.
+Tired of AI-generated code that's buggy, inconsistent, and ignores your architecture? The AI Governor Framework is a safe, plug-and-play system designed to teach your AI your project's unique DNA. It provides a set of rules and workflows to turn any AI assistant from a chaotic tool into a disciplined engineering partner that respects your architectural decisions, best practices, and non-negotiable constraints.
 
 Reclaim control. Enforce your coding standards. Ship with confidence.
 
@@ -32,7 +32,7 @@ This is how we shift from the endless loop of **prompting and fixing** to strate
 
 ## 🚀 How It Works: Two Core Components
 
-The Governor Framework is composed of two distinct but complementary parts:
+The AI Governor Framework is composed of two distinct but complementary parts:
 
 | Component | What It Is | How It's Used |
 | :--- | :--- | :--- |

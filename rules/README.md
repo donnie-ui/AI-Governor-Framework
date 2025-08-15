@@ -1,8 +1,8 @@
-# Rule Governance in The Governor Framework
+# Rule Governance in The AI Governor Framework
 
 ## 1. Why: The Power of Codified Knowledge
 
-The core philosophy of The Governor Framework is **Context Engineering**.
+The core philosophy of The AI Governor Framework is **Context Engineering**.
 
 An AI's effectiveness is limited by the quality of its context. Simply dumping your entire codebase into a prompt is inefficient and expensive. **Rules are the solution.**
 
@@ -16,7 +16,7 @@ By building a knowledge base of rules, you give your AI on-demand, precise conte
 
 ## 2. How: The 3-Layer Hierarchy
 
-To grant the AI full autonomy safely, The Governor Framework organizes governance into a **3-Layer Hierarchical System**. It's a defense-in-depth architecture that activates context with surgical precision.
+To grant the AI full autonomy safely, The AI Governor Framework organizes governance into a **3-Layer Hierarchical System**. It's a defense-in-depth architecture that activates context with surgical precision.
 
 -   **Layer 1: Foundation (The BIOS):** Establishes the non-negotiable protocols for context discovery and collaboration, ensuring every task starts from a known, safe state.
 -   **Layer 2: Execution (The Guardians):** Acts as a mandatory quality gate for all code modifications, validating both the intrinsic quality of the code and the safety of the change itself.

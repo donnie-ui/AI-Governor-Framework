@@ -2,7 +2,7 @@
 
 ## 1. Why: A Structured Workflow for Predictable Results
 
-Working with AI can sometimes feel unpredictable. The Governor Framework provides a development workflow designed to fix that, for both new and existing projects.
+Working with AI can sometimes feel unpredictable. The AI Governor Framework provides a development workflow designed to fix that, for both new and existing projects.
 
 It provides a structured, sequential process that transforms your AI from a simple code generator into a reliable engineering partner. By following these five protocols, you ensure that both you and the AI are always aligned, moving from a high-level idea to a well-implemented feature with clarity, control, and consistency.
 
