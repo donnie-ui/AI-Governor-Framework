@@ -1,5 +1,5 @@
 ---
-description: "TAGS: [global,workflow,context,rules,discovery,bios] | TRIGGERS: rule,context,understand,project,setup,start | SCOPE: global | DESCRIPTION: Defines the BIOS-like systematic process an AI assistant must follow to discover and select relevant rules and context before starting any task."
+description: "TAGS: [global,workflow,context,rules,documentation,discovery,bios,dynamic-context] | TRIGGERS: rule,context,readme,documentation,understand,project,setup,start | SCOPE: global | DESCRIPTION: Defines the robust, BIOS-like protocol for discovering relevant rules and README.md documentation. It governs the initial context loading and its dynamic re-evaluation during a task."
 alwaysApply: true
 ---
 # Master Rule: Context Discovery Protocol (The System BIOS)
@@ -21,12 +21,24 @@ As the system's BIOS, this rule also defines the meaning of the directive prefix
 **[STRICT]** Before executing any code or command, you **MUST** imperatively follow these steps in this exact order to build your operational context.
 
 ### Context Optimization Principle
-- **[STRICT]** To optimize performance and reduce unnecessary costs, you **MUST NOT** re-read a rule file if its content is already available in the current conversation context.
-- **[STRICT]** You **MUST** only re-read a rule file if you have a specific reason to believe its content has been modified since it was last read.
+- **[STRICT]** To optimize performance and reduce unnecessary costs, you **MUST NOT** re-read a rule or context file (such as `README.md`) if its content is already available in the current conversation context.
+- **[STRICT]** You **MUST** only re-read such a file if you have a specific reason to believe its content has been modified since it was last read.
 
-### Step 1: Full Rule Inventory
-- **[STRICT]** **Action:** List all available rule files (e.g., `.mdc` files in the `.cursor/rules` directory) to create an exhaustive inventory.
-- **[GUIDELINE]** **Goal:** This ensures no potential context is missed, covering `master-rules`, `common-rules`, and `project-rules`.
+### Step 1: Exhaustive Rule Inventory Protocol
+**[STRICT]** To build a comprehensive inventory, you **MUST** execute the following search sequence in this exact order. This step is strictly limited to the discovery and listing of file paths. You **MUST NOT** read the content of any rule file during this inventory phase.
+
+1.  **Phase 1: Master and Common Rules Discovery (Repository Root)**
+    *   **Action:** In the repository root, you **MUST** search within both the `.cursor/rules/` and `.ai-governor/rules/` directories (if they exist).
+    *   **Scope:** Within these directories, scan the subdirectories `master-rules/` and `common-rules/`.
+    *   **Pattern:** Identify all files with extensions `.md` or `.mdc`.
+
+2.  **Phase 2: Project-Specific Rules Discovery (Targeted)**
+    *   **Context:** Use the list of "files concerned" by the user's request from the upcoming Step 2.
+    *   **Action:** For each unique directory containing a concerned file, traverse upwards towards the root. In each parent directory, you **MUST** search for the existence of a `.cursor/rules/project-rules/` or `.ai-governor/rules/project-rules/` directory.
+    *   **Pattern:** If found, identify all files with extensions `.md` or `.mdc` within them.
+
+3.  **Phase 3: Deduplication**
+    *   **Action:** Create a final, unique list of rule file paths to prevent processing the same rule twice.
 
 ### Step 2: Operational Context Gathering
 **[STRICT]** To inform rule selection, you **MUST** analyze and synthesize the following elements:
@@ -34,14 +46,16 @@ As the system's BIOS, this rule also defines the meaning of the directive prefix
 2.  **Keywords** and **intent** from the user's request to match against rule `TRIGGERS`.
 3.  The **type of operation** requested (e.g., creation, modification, debug, deployment).
 4.  The **files concerned** to understand the technology stack and specific domain.
-5.  **[GUIDELINE]** Understand the relationships between codebases to load related rules (e.g., if the task is on the UI, also consider rules for the microservices it calls).
+5.  **[STRICT]** **Targeted Documentation Context (`README.md`)**: To gain domain-specific knowledge, you **MUST** perform a hierarchical search for `README.md` files. Starting from the directory of each concerned file, traverse up to the project root. For each `README.md` found, you **MUST** load its content, strictly adhering to the **Context Optimization Principle**.
+6.  **[GUIDELINE]** Attempt to infer relationships between codebases to load related rules (e.g., if the task is on the UI, also consider rules for the microservices it calls). If you cannot confidently determine these relationships, you **MUST** explicitly state this uncertainty in your final announcement report (Step 4).
 
 ### Step 3: Relevance Evaluation and Selection
-**[STRICT]** For each rule found during the inventory, evaluate its relevance using the following heuristics, applied in descending order of priority.
+**[STRICT]** For each rule found during the inventory, evaluate its relevance using the following heuristics, applied in descending order of priority. The loading of any selected rule **MUST** strictly adhere to the **Context Optimization Principle**.
 
 1.  **Priority 1: Absolute Directives (The Kernel)**
     *   **[STRICT]** Automatically select any rule where `alwaysApply: true`. These are foundational and non-negotiable.
-    *   **[STRICT]** You **MUST** load the `2-master-rule-ai-collaboration-guidelines.mdc` rule, as it governs your fundamental interaction behavior.
+    *   **[STRICT]** You **MUST** select the `2-master-rule-ai-collaboration-guidelines` rule (regardless of its extension, .md or .mdc). This rule is a critical system component.
+    *   **[STRICT]** If this specific rule is not found in the inventory from Step 1, you **MUST** halt all further processing. Your only response **MUST** be to report a critical failure to the user, stating that the core collaboration protocol is missing and you cannot proceed safely.
 
 2.  **Priority 2: Scope Matching (`SCOPE`)**
     *   **[STRICT]** Give highest relevance to rules whose `SCOPE` perfectly matches the context gathered in Step 2 (e.g., 'WebApp' scope for a task in that directory).
@@ -127,3 +141,15 @@ alwaysApply: false
 - **[GUIDELINE]** If you are unsure about a rule's relevance, it is better to load it than to miss an important context.
 - **[GUIDELINE]** If the user mentions a new technology or context during the task, dynamically re-evaluate and search for relevant rules.
 - **[GUIDELINE]** Learn from user feedback to improve future selections.
+
+---
+
+## 7. Dynamic Context Re-evaluation Protocol
+
+**[GUIDELINE]** The initial context, while foundational, may become outdated if the task's scope changes significantly. You **SHOULD** trigger a re-execution of this entire Context Discovery Protocol if you detect one of the following "context shift" events:
+
+1.  **Domain Change:** The user's request introduces a new, distinct technology, library, or service not mentioned previously (e.g., switching from a "React component" task to a "Docker deployment" task).
+2.  **Location Change:** The user asks to work on files located in a completely different project or microservice within the monorepo.
+3.  **Explicit Pivot:** The user explicitly signals a major change in direction (e.g., "Ok, let's abandon this approach and try something else" or "Now let's focus on the backend API").
+
+When a trigger is detected, you **SHOULD** first announce your intent, for instance: *"I detect a context shift to {new_domain}. I will re-run the discovery protocol to load the most relevant rules and documentation for this new task."* This ensures transparency and avoids unnecessary token consumption on minor follow-ups.
