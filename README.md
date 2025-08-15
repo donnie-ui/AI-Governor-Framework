@@ -29,6 +29,8 @@ This isn't about bigger prompts or dumping your entire codebase into one, which 
 > -   **Perfect Synchronization:** Your AI's knowledge is always in sync with the codebase it's operating on. No stale data, no drift.
 > -   **Unquestionable Auditability:** Every change to the AI's "brain" is a git commit, providing a clear, auditable history of its evolving expertise.
 > -   **Zero-Infrastructure Portability:** Any developer or AI assistant can clone the repo and have immediate access to the complete, up-to-date context. No external services, no APIs, no complexity.
+>
+> For complex external documentation, such as third-party APIs or external library, this in-repo system can be seamlessly combined with a RAG-based MCP server, such as [Context7](https://context7.com), to fetch and inject that external knowledge on demand. This leverages the best of both worlds: robust, versioned governance for your internal architecture, and dynamic, on-demand context for external dependencies.
 
 This is how we shift from the endless loop of **prompting and fixing** to strategic **Governing**.
 
