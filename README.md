@@ -14,6 +14,22 @@ This approach is rooted in one core principle: **Context Engineering**.
 
 This isn't about bigger prompts or dumping your entire codebase into one, which is both ineffective and expensive. It's about giving the AI the *right information* at the *right time*. This framework achieves that by building a knowledge base of robust `rules` (the orders) and architectural `READMEs` (the context) that the AI consults on-demand.
 
+> #### Architectural Choice: In-Repo Knowledge vs. RAG
+>
+> While Retrieval-Augmented Generation (RAG) excels at connecting AIs to vast, external knowledge, a project's core architectural DNA raises a critical question: *how do you provide a rich, reliable, and up-to-date context without depending on fragile external systems?*
+>
+> Applying RAG internally can introduce risks that are critical in a governance context:
+> -   **Complexity & Brittleness:** It externalizes your knowledge base, requiring complex infrastructure (pipelines, vector DBs) that reduces portability and adds failure points.
+> -   **Data Staleness:** Without perfect synchronization, the AI's context can drift from the actual codebase, leading to architectural inconsistencies.
+> -   **Reduced Auditability:** With knowledge living outside the repo, human governance and versioned history become significantly harder.
+>
+> The Governor Framework is built on a simpler, more robust philosophy: **your knowledge base should be treated like an integral part of your codebase.**
+>
+> By keeping your rules and architectural `READMEs` versioned inside the repository, you gain three foundational advantages:
+> -   **Perfect Synchronization:** Your AI's knowledge is always in sync with the codebase it's operating on. No stale data, no drift.
+> -   **Unquestionable Auditability:** Every change to the AI's "brain" is a git commit, providing a clear, auditable history of its evolving expertise.
+> -   **Zero-Infrastructure Portability:** Any developer or AI assistant can clone the repo and have immediate access to the complete, up-to-date context. No external services, no APIs, no complexity.
+
 This is how we shift from the endless loop of **prompting and fixing** to strategic **Governing**.
 
 ---
