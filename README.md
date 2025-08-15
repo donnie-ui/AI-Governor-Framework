@@ -18,17 +18,13 @@ This isn't about bigger prompts or dumping your entire codebase into one, which 
 >
 > While Retrieval-Augmented Generation (RAG) excels at connecting AIs to vast, external knowledge, a project's core architectural DNA raises a critical question: *how do you provide a rich, reliable, and up-to-date context without depending on fragile external systems?*
 >
-> Applying RAG internally can introduce risks that are critical in a governance context:
-> -   **Complexity & Brittleness:** It externalizes your knowledge base, requiring complex infrastructure (pipelines, vector DBs) that reduces portability and adds failure points.
-> -   **Data Staleness:** Without perfect synchronization, the AI's context can drift from the actual codebase, leading to architectural inconsistencies.
-> -   **Reduced Auditability:** With knowledge living outside the repo, human governance and versioned history become significantly harder.
+> The Governor Framework is built on a simpler, more robust philosophy: **your knowledge base should be treated like an integral part of your codebase.** By keeping rules and architectural `READMEs` versioned in-repo, you gain several foundational advantages over using an internal RAG:
 >
-> The Governor Framework is built on a simpler, more robust philosophy: **your knowledge base should be treated like an integral part of your codebase.**
->
-> By keeping your rules and architectural `READMEs` versioned inside the repository, you gain three foundational advantages:
-> -   **Perfect Synchronization:** Your AI's knowledge is always in sync with the codebase it's operating on. No stale data, no drift.
-> -   **Unquestionable Auditability:** Every change to the AI's "brain" is a git commit, providing a clear, auditable history of its evolving expertise.
-> -   **Zero-Infrastructure Portability:** Any developer or AI assistant can clone the repo and have immediate access to the complete, up-to-date context. No external services, no APIs, no complexity.
+> 1.  **Richer Context & Better Performance:** Instead of retrieving fragmented chunks via similarity search, the framework loads complete, structured rules directly from the codebase. This gives the AI a more coherent operational context with zero network latency or scoring errors.
+> 2.  **Perfect Synchronization:** The AI's knowledge evolves in lock-step with your code in `git`, eliminating the risk of stale or misaligned context.
+> 3.  **Full Auditability:** Every change to the AI’s “brain” is versioned and reviewable, governed just like any other part of the system.
+> 4.  **Zero-Infrastructure Portability:** Any developer—human or AI—can clone the repo and instantly have the full, up-to-date context. No external services, API keys, or fragile pipelines required.
+> 5.  **Actionable, Not Just Informative:** The AI executes clear, enforceable protocols from the rules, rather than trying to interpret vague, out-of-context snippets retrieved from a vector database.
 >
 > For complex external documentation, such as third-party APIs or external library, this in-repo system can be seamlessly combined with a RAG-based MCP server, such as [Context7](https://context7.com), to fetch and inject that external knowledge on demand. This leverages the best of both worlds: robust, versioned governance for your internal architecture, and dynamic, on-demand context for external dependencies.
 
