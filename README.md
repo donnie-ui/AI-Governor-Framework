@@ -1,4 +1,4 @@
-# The Governor Framework
+# AI Governor Framework
 ### The Keystone for AI-Driven Code
 
 **Stop fighting your AI assistant. Start governing it.**
