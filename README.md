@@ -16,7 +16,7 @@ This isn't about bigger prompts or dumping your entire codebase into one, which 
 
 > #### Architectural Choice: An In-Repo Knowledge Base
 >
-> This framework is built on a simple, robust principle: **your project's knowledge base should be treated like your codebase.**
+> This framework is built on a simple, robust principle: **Treat your project's knowledge base like your codebase.**
 >
 > We leverage an **In-Repo** approach, keeping all governance rules and architectural context directly inside the repository. This makes the AI's knowledge base:
 > -   **Simple & Efficient:** Zero network latency and no complex external systems.
