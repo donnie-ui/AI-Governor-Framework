@@ -44,6 +44,16 @@ This major update marks a strategic redesign of the project's identity and gover
     *   **Minor Easing.** The requirement (`[STRICT]`) to analyze existing documentation standards before coding has been relaxed to a recommendation (`[GUIDELINE]`) for greater flexibility.
     *   The core of the rule—post-modification documentation synchronization—remains `[STRICT]` and robust.
 
+##### 📚 DOCUMENTATION
+
+1.  **Clarified Development Workflow in `README.md`**
+    *   **Why:** The previous instructions were mixed. The new structure clearly separates the "Why", "How" (the 5-step lifecycle), and "What" (practical execution steps).
+    *   **Impact:** Provides a much clearer and more actionable guide for new users to get started with the framework.
+
+2.  **Formalized the 3-Layer Rule Hierarchy in `rules/README.md`**
+    *   **Why:** To explain the defense-in-depth architecture of the rule system.
+    *   **Impact:** Introduces the concepts of Foundation (BIOS), Execution (Guardians), and Specialization (Experts), making the governance model easier to understand and extend.
+
 ##### 🚀 OVERALL IMPACT
 
 The governance framework has gained significant **substance, force, and robustness**. The shift to specialized rules creates a more mature "defense-in-depth" system, capable of differentiating risk levels and applying security protocols tailored to each context.
