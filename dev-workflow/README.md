@@ -11,7 +11,7 @@ The goal is to make AI-powered development:
 -   **Controllable:** You are always in the loop for key decisions.
 -   **Efficient:** The AI does the heavy lifting, you provide the strategic direction.
 
-## 2. How it Works: The 4-Step Development Lifecycle
+## 2. How it Works: The 3-Step Development Lifecycle
 
 This workflow guides you through the entire development process, from initial setup to continuous improvement. Each step assigns a specific role to the AI, ensuring a structured and predictable collaboration.
 
@@ -37,42 +37,35 @@ Here's the feature I want to build: [Describe your feature in detail]
 ```
 *(For best results, Cursor users should use Max Mode for this step.)*
 
-### Step 2: Generate Your Task List
-**Role:** The AI acts as a **Tech Lead**.
-
-The AI then transforms the PRD into a granular, step-by-step technical execution plan. This ensures that both you and the AI are aligned on the implementation strategy.
-
-```
-Apply instructions from .ai-governor/dev-workflow/2-generate-tasks.md to @prd-my-feature.md
-```
-*(Note: Replace `@prd-my-feature.md` with the actual filename of your PRD.)*
-
-*(For best results, Cursor users should use Max Mode for this step.)*
-
 ### Step 3: Execute Tasks Sequentially
 **Role:** The AI acts as a **Paired Developer**.
 
-Here, the AI implements the plan one task at a time, presenting the changes for your approval at each step. This gives you full control over the code while delegating the heavy lifting.
+Here, the AI implements the plan one parent task at a time, within a dedicated chat session. This gives you full control over the code while leveraging a clean, focused context for each major implementation step.
 
-1.  **Start the first task:**
+1.  **Start the first parent task in a new chat:**
     ```
-    Apply instructions from .ai-governor/dev-workflow/3-process-tasks.md to @tasks-my-feature.md. Start on task 1.1
+    Apply instructions from .ai-governor/dev-workflow/3-process-tasks.md to @tasks-my-feature.md. Start on task 1.
     ```
-    *(Note: The protocol itself guides the AI for subsequent tasks.)*
+    *(Note: Replace `@tasks-my-feature.md` with the actual filename of your task list.)*
 
-2.  **Review and Approve:**
-    As the AI completes each task, it will present the changes for your review.
+2.  **Review and Approve Sub-tasks:**
+    As the AI completes each sub-task, it will present the changes for your review.
     -   If the changes are correct, reply with **"yes"** or **"continue"**.
     -   If changes are needed, provide corrective feedback.
 
-### Step 4: Conduct a Retrospective
-**Role:** The AI acts as a **QA Lead**.
+3.  **After Each Parent Task: Learn and Reset**
+    Once a parent task (e.g., Task 1 and all its sub-tasks) is complete, it is **critical** to follow this two-step process before moving on:
 
-Finally, the AI helps you audit the completed work and reflect on the process. This is where you refine the framework's rules, making the AI smarter and more aligned for the next collaboration.
+    1.  **Run the Retrospective:** This captures learnings and improves the AI's context for the next steps.
+        ```
+        Apply instructions from .ai-governor/dev-workflow/4-implementation-retrospective.md
+        ```
 
-```
-Apply instructions from .ai-governor/dev-workflow/4-implementation-retrospective.md
-```
+    2.  **Start the next parent task in a new chat:** To ensure a clean context, clear the current session (e.g., with the `/clear` command) and start the next task.
+        ```
+        Apply instructions from .ai-governor/dev-workflow/3-process-tasks.md to @tasks-my-feature.md. Start on task 2.
+        ```
+        *(Note: Replace `@tasks-my-feature.md` with your task list's filename and `2` with the next parent task number.)*
 
 ---
 

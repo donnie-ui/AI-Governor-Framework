@@ -29,6 +29,23 @@ This major update marks a strategic redesign of the project's identity and gover
     *   **A new semantic safety layer.** This specialized rule activates upon detecting complex code, using heuristics based on size, cyclomatic complexity, and advanced design patterns.
     *   It mandates the creation of "context snapshots," a defensive modification strategy ("add rather than replace"), and proactive communication protocols (`[COMPLEX FEATURE DETECTED]`, `[COMPLEXITY OVERWHELM]`) for interventions in critical code.
     *   Aims to preserve the implicit business logic and development history that cannot be captured by purely mechanical analysis.
+    
+##### 🚀 WORKFLOW
+1.  **Simplified 3-Step Development Lifecycle**
+    *   **Why:** The previous 4-step process was unnecessarily complex. Merging task generation into the PRD creation simplifies the workflow and reduces friction.
+    *   **Impact:** The main `README.md` now presents a clearer, more direct 3-step process: **1. Create PRD & Tasks**, **2. Execute Tasks**, **3. Conduct Retrospective**.
+
+2.  **Introduced "Focus Mode" as the Default**
+    *   **Why:** To improve contextual stability and performance by executing all sub-tasks of a parent task in a single batch before requiring user validation.
+    *   **Impact:** The `3-process-tasks.md` protocol has been updated to operate exclusively in this mode, streamlining implementation.
+
+3.  **Formalized the "One Parent Task, One Chat" Rule in the Workflow**
+    *   **Why:** To prevent context window saturation ("token cannibalization") and maintain high performance during implementation.
+    *   **Impact:** The core development workflow (`3-process-tasks.md`) now mandates starting a new, clean chat session for each parent task.
+
+4.  **Added Context Management Protocol to Collaboration Guidelines (Rule #2)**
+    *   **Why:** To provide the AI with a formal protocol for proactively managing the conversation's context, supporting the "One Chat" rule.
+    *   **Impact:** `2-master-rule-ai-collaboration-guidelines.md` now includes a new section defining when and how the AI should suggest a `[CONTEXT REFRESH SUGGESTION]`, including criteria like context drift or the completion of a complex task.
 
 ##### ♻️ REFACTORING
 

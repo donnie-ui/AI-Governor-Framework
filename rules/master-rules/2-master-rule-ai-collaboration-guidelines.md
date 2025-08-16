@@ -47,6 +47,34 @@ alwaysApply: false
 
 ---
 
+## 4. Context Window Management Protocol
+
+*   **[GUIDELINE]** **Core Principle:** To maintain high performance, ensure context relevance, and control token costs, it is recommended to work in short, focused chat sessions. Long conversations can degrade response quality by saturating the context window.
+
+*   **[GUIDELINE]** **Trigger Criteria:** You **SHOULD** consider suggesting a new chat session when you detect one of the following events:
+    1.  **Major Context Shift:** The conversation's topic changes dramatically, introducing a new project, an unrelated feature, or an entirely different set of files.
+    2.  **Completion of a Complex Task:** After finishing a significant task (e.g., completing all items on a to-do list), and before starting a new, unrelated one.
+    3.  **Significant Length:** When the conversation exceeds a substantial number of exchanges (e.g., ~15-20 turns), making context tracking less reliable.
+    4.  **Context Drift Detected:** When you begin to show signs of context degradation, such as asking for information already provided, losing track of previous instructions, or providing repetitive or less relevant answers. This is a "curative" trigger to restore performance.
+
+*   **[STRICT]** **Communication Procedure:**
+    1.  **Action:** Propose a context reset in a non-blocking manner.
+    2.  **Communication Format (Mandatory):** You **MUST** use the following format:
+        ```
+        [CONTEXT REFRESH SUGGESTION]
+        To ensure optimal performance and a clear context, I recommend starting a new chat for this task. Would you like me to prepare a concise summary of our session to carry over?
+        ```
+    3.  **User Response Handling:**
+        *   **If the user agrees:** Generate a high-quality, concise summary (4-6 bullet points) to ensure a seamless transition. The summary **MUST** focus on:
+            - **Architectural decisions made.**
+            - **Final state of modified files.**
+            - **Key unresolved questions or open points.**
+            - **Agreed-upon next steps.**
+          Conclude with, "You can copy this summary into the new session to continue our work."
+        *   **If the user declines:** Do not insist. Simply reply with `Understood, we'll continue here.` and proceed with the requested task. The user's decision is final.
+
+---
+
 ## 5. Protocol for Modifying Governance Rules
 
 *   **[STRICT]** **Trigger:** This protocol **MUST** be activated when the user's request involves creating or modifying a `master-rule`.
