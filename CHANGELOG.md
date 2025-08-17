@@ -1,5 +1,16 @@
 ### CHANGELOG
 
+#### `v2.1.0` - UI Governance Ruleset
+
+##### ✨ NEW FEATURES
+
+1.  **Introduced UI Governance Rule Pack**
+    *   **Why:** To provide a specialized, ready-to-use governance layer for modern UI development, covering foundational design systems, accessibility, performance, and brand consistency for premium features.
+    *   **Impact:** Added three new `common-rules` to enforce best practices in UI engineering:
+        *   `common-rule-ui-foundation-design-system.mdc`: Ensures adherence to the core design system.
+        *   `common-rule-ui-interaction-a11y-perf.mdc`: Focuses on accessibility and interaction performance.
+        *   `common-rule-ui-premium-brand-dataviz-enterprise-gated.mdc`: Manages brand identity and access to premium UI components.
+
 #### `v2.0.0` - Architectural & Strategic Overhaul
 
 This major update marks a strategic redesign of the project's identity and governance system to better align with its core mission: providing robust governance for AI-driven software development.
