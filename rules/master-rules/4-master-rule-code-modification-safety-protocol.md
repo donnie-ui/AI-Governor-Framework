@@ -14,7 +14,7 @@ alwaysApply: false
 **[STRICT]** Before any modification, you **MUST**:
 
 1. **Confirm the Target:** Have I correctly understood the file to be modified and the final goal?
-2. **Read the Latest Version:** Use `read_file` to get the most current version of target file(s)
+2. **Read the Latest Version:** Following the **Tool Usage Protocol**, use the appropriate tool to get the most current version of target file(s).
 3. **Verify Inconsistencies:** If file content contradicts recent conversation history, **STOP** and ask for clarification
 4. **Apply Specific Rules:** Follow `1-master-rule-context-discovery.mdc` to load relevant project-specific rules
 
@@ -30,17 +30,17 @@ alwaysApply: false
 **[STRICT]** For each target file, you **MUST**:
 
 1. **Identify Connected Components:**
-   - **Tool:** `codebase_search`
+   - **Action:** Following the **Tool Usage Protocol**, use a codebase search tool.
    - **Query:** `"import.*{filename}" OR "from.*{filename}" OR "{functionName}(" OR "{className}"`
    - **Goal:** Understand dependency ecosystem
 
 2. **Analyze Function/Class Usages:**
-   - **Tool:** `codebase_search` 
+   - **Action:** Following the **Tool Usage Protocol**, use a codebase search tool.
    - **Query:** `"{functionName}(" OR ".{methodName}("`
    - **Goal:** Map all usage points
 
 3. **Identify Existing Tests:**
-   - **Tool:** `codebase_search`
+   - **Action:** Following the **Tool Usage Protocol**, use a codebase search tool.
    - **Query:** `"{functionName}" path:test OR "{functionName}" path:spec`
    - **Goal:** Understand test coverage
 
@@ -48,12 +48,12 @@ alwaysApply: false
 **[STRICT]** For multi-feature files, create feature inventory:
 
 1. **Map All Supported Features:**
-   - **Tool:** `grep_search`
+   - **Action:** Following the **Tool Usage Protocol**, use a tool for literal text search (e.g., grep).
    - **Pattern:** `type === '|case '|switch.*type`
    - **Goal:** Exhaustive list of handled features
 
 2. **Identify Feature Boundaries:**
-   - **Tool:** `codebase_search`
+   - **Action:** Following the **Tool Usage Protocol**, use a tool for semantic codebase search.
    - **Query:** "How does [FeatureName] work in this file?"
    - **Goal:** Map code sections to features
 
@@ -142,7 +142,7 @@ Risk level: {LOW/MEDIUM/HIGH}
    - **Goal:** Prevent runtime parameter errors
 
 3. **Linting Validation:**
-   - **Tool:** `read_lints` on all modified/created files
+   - **Action:** Following the **Tool Usage Protocol**, use a tool to read linter errors on all modified/created files.
    - **Goal:** Catch syntax and import errors immediately
 
 ### 5.2 Multi-Feature Validation Checklist

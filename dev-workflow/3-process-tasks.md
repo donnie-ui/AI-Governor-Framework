@@ -34,19 +34,19 @@ This ensures the AI works with a clean, relevant context for each major step of 
 2.  **Dependency Analysis (Silent Action):**
     *   Read the description of the task and its parent.
     *   Identify any external modules, functions, or `@rules` that will be required.
-    *   Use `read_file` or `codebase_search` to understand the signatures, parameters, and required configurations (`env` variables, etc.) of these dependencies. **This is a critical step to ensure error-free execution.**
+    *   Following the **Tool Usage Protocol**, use the appropriate tools (e.g., for reading files or searching the codebase) to understand the signatures, parameters, and required configurations (`env` variables, etc.) of these dependencies. **This is a critical step to ensure error-free execution.**
 3.  **Initial Communication:**
     *   After the silent analysis is complete, clearly announce to the user: `[NEXT TASK] {Task number and name}.`
     *   If any `@rules` are relevant, add: `[CONSULTING RULES] I am analyzing the following rules: {list of relevant @rules}.`
 
 ### STEP 2: EXECUTION
-1.  **Execute Task:** Use your tools (`edit_file`, `run_terminal_cmd`, etc.) to perform ONLY what is asked by the sub-task, strictly applying the consulted rules and the context gathered in Step 1.
+1.  **Execute Task:** Use your available tools (for file editing, running terminal commands, etc.) in accordance with the **Tool Usage Protocol** to perform ONLY what is asked by the sub-task, strictly applying the consulted rules and the context gathered in Step 1.
 2.  **Self-Verification:** Reread the sub-task description you just completed and mentally confirm that all criteria have been met.
 3.  **Error Handling:** If an error occurs (e.g., a test fails, a command fails), **IMMEDIATELY STOP** the loop. Do NOT check the task as complete. Report the failure to the user and await instructions.
 
 ### STEP 3: UPDATE AND SYNCHRONIZE
 1.  **Update Task File:**
-    *   Use `edit_file` to change the sub-task's status from `[ ]` to `[x]`.
+    *   Following the **Tool Usage Protocol**, use a file editing tool to change the sub-task's status from `[ ]` to `[x]`.
     *   If all sub-tasks of a parent task are now complete, check the parent task `[x]` as well.
 2.  **Parent Task Completion Checkpoint:**
     *   If a parent task was just completed, perform a compliance check and propose a Git commit.

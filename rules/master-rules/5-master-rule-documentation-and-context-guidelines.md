@@ -41,7 +41,7 @@ The project's codebase and its documentation (especially `README.md` files) must
 
 3.  **[STRICT]** **Propose an Update if Necessary:**
     *   If you find any divergence, you **MUST** immediately propose an update to the documentation file.
-    *   **Action:** Use the `edit_file` tool to provide a clear `diff` of the proposed documentation changes.
+    *   **Action:** Following the **Tool Usage Protocol**, use the appropriate tool to provide a clear `diff` of the proposed documentation changes.
     *   **Communication:** Announce your action clearly to the user.
         > *"To maintain documentation integrity, I have detected that my recent changes affect the module's usage. I will now update the `README.md` to reflect this."*
 
@@ -55,5 +55,5 @@ The project's codebase and its documentation (especially `README.md` files) must
 1.  The AI modifies `.../ApiHandler/index.js` to handle the `timeout` property.
 2.  **(Rule Activation)** The AI identifies `.../ApiHandler/README.md` as the relevant documentation.
 3.  The AI reads the README and sees that the "Configuration" section does not list the new `timeout` property.
-4.  The AI uses `edit_file` to add the new property to the documentation table in `README.md`.
+4.  The AI uses a file editing tool (in accordance with the **Tool Usage Protocol**) to add the new property to the documentation table in `README.md`.
 5.  The AI communicates: *"I have implemented the `timeout` property. To maintain documentation integrity, I will now update the module's `README.md` before finalizing the task."*

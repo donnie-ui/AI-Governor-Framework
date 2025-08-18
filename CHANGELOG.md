@@ -1,5 +1,24 @@
 ### CHANGELOG
 
+#### `v2.2.0` - Framework Agnosticism & Collaboration Overhaul
+
+##### 🚀 REFACTORING
+
+1.  **Overhauled the `AI Collaboration Guidelines` (Rule #2)**
+    *   **Why:** To create a more robust, structured, and clear protocol for AI-user interaction, moving beyond simple agnosticism to a comprehensive collaboration model.
+    *   **Impact:**
+        *   Introduced foundational `Core Principles of Interaction` (Think-First, Concise Communication).
+        *   Formalized a `Task Planning and Execution Protocol` with distinct phases (Planning, Breakdown, Execution).
+        *   Explicitly extended tool agnosticism to `Code Modification and Information Retrieval`.
+        *   Centralized all `Standard Communication Formats` for clarity and consistency.
+
+2.  **Made the Entire Framework Tool-Agnostic**
+    *   **Why:** To ensure the AI Governor Framework can be used with any LLM and in any AI-assisted code editor (Cursor, Windmill, etc.). The framework should not depend on specific, hardcoded tool names.
+    *   **Impact:**
+        *   Introduced a new **`Tool Usage Protocol`** in the `AI Collaboration Guidelines` (Rule #2). This protocol mandates a two-step process for the AI: first, discover available tools in its environment, and second, use the appropriate one.
+        *   All `master-rules` and `dev-workflow` protocols have been refactored to remove explicit tool names (e.g., `codebase_search`, `edit_file`) and now refer to this agnostic protocol. The framework now instructs the AI to "use a file editing tool" rather than "use `edit_file`".
+    *   **Benefit:** This change dramatically increases the portability and future-proofing of the framework, making it a truly universal standard for AI governance.
+
 #### `v2.1.0` - UI Governance Ruleset
 
 ##### ✨ NEW FEATURES
