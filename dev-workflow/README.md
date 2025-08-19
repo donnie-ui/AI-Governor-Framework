@@ -11,7 +11,7 @@ The goal is to make AI-powered development:
 -   **Controllable:** You are always in the loop for key decisions.
 -   **Efficient:** The AI does the heavy lifting, you provide the strategic direction.
 
-## 2. How it Works: The 3-Step Development Lifecycle
+## 2. How it Works: The 4-Step Development Lifecycle
 
 This workflow guides you through the entire development process, from initial setup to continuous improvement. Each step assigns a specific role to the AI, ensuring a structured and predictable collaboration.
 
@@ -35,6 +35,18 @@ Apply instructions from .ai-governor/dev-workflow/1-create-prd.md
 
 Here's the feature I want to build: [Describe your feature in detail]
 ```
+*(For best results, Cursor users should use Max Mode for this step.)*
+
+### Step 2: Generate Your Task List
+**Role:** The AI acts as a **Tech Lead**.
+
+The AI then transforms the PRD into a granular, step-by-step technical execution plan. This ensures that both you and the AI are aligned on the implementation strategy.
+
+```
+Apply instructions from .ai-governor/dev-workflow/2-generate-tasks.md to @prd-my-feature.md
+```
+*(Note: Replace `@prd-my-feature.md` with the actual filename of your PRD.)*
+
 *(For best results, Cursor users should use Max Mode for this step.)*
 
 ### Step 3: Execute Tasks Sequentially
