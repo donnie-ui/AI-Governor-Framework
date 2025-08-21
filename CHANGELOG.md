@@ -1,5 +1,13 @@
 ### CHANGELOG
 
+#### `v2.3.0` - Enhanced Developer Workflow
+
+##### 🚀 WORKFLOW
+
+1.  **Added Local Development Guide Protocol to Rule #5**
+    *   **Why:** To streamline the setup and usage of complex external services (e.g., Supabase, Stripe) during local development, reducing friction and preventing common setup issues.
+    *   **Impact:** The `Documentation and Context Guidelines` (Rule #5) now include a `[STRICT]` requirement to create a dedicated `README.md` for any complex service *before* implementation begins. This guide must document essential commands (start, stop), local URLs, and key troubleshooting steps, serving as a project-specific operational manual.
+
 #### `v2.2.0` - Framework Agnosticism & Collaboration Overhaul
 
 ##### 🚀 REFACTORING
