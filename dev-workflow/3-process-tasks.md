@@ -25,6 +25,21 @@ This ensures the AI works with a clean, relevant context for each major step of 
 
 ---
 
+## 3.5. PRE-EXECUTION MODEL CHECK
+
+**[CRITICAL] Before starting the execution loop, you MUST perform this check.**
+
+1.  **Identify Target Parent Task:** Based on the user's instruction (e.g., `Start on task 2`), identify the parent task to be executed in this session.
+2.  **Verify Recommended Model:**
+    *   Read the task file and find the `> Recommended Model:` or `> Modèle Recommandé :` note associated with this parent task.
+    *   **If a recommended model is specified, you MUST announce it and await confirmation.** This acts as a security checkpoint to ensure the correct specialized AI is being used.
+    *   **Communication Flow:**
+        1.  `[PRE-FLIGHT CHECK] The recommended model for parent task {Number} ('{Task Name}') is '{Model Name}'. Please confirm that you are using this model, or switch now.`
+        2.  `[AWAITING CONFIRMATION] Reply 'Go' to begin the execution.`
+    *   **HALT AND AWAIT** explicit user confirmation (`Go`). Do not start the loop until this is received.
+
+---
+
 ## 4. THE STRICT EXECUTION LOOP
 
 **WHILE there are unchecked `[ ]` sub-tasks for the CURRENT parent task, follow this loop:**

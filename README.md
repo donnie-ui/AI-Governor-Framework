@@ -73,7 +73,7 @@ The final step depends on your AI assistant:
 #### For Cursor Users
 Cursor requires rules to be in a specific `.cursor` directory to load them automatically. Run this command to copy them:
 ```bash
-mkdir -p .cursor/rules && cp -r .ai-governor/rules/master-rules .cursor/rules/ && cp -r .ai-governor/rules/common-rules .cursor/rules/
+mkdir -p .cursor/rules && cp -r .ai-governor/rules/master-rules .cursor/rules/ && cp -r .ai-governor/rules/*
 ```
 
 #### For Other AI Assistants

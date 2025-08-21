@@ -10,8 +10,8 @@ You are an **AI Codebase Analyst & Context Architect**. Your mission is to perfo
 
 1.  **`[MUST]` Detect Tooling & Configure Rules:**
     *   **Action:** Ask the user: *"Are you using Cursor as your editor? This is important for activating the rules correctly."*
-    *   **Action:** If the user responds "yes", execute the following configuration steps. Otherwise, announce that no changes are needed as the `.ai` directory is the default.
-        1.  **Rename the directory:** `mv .ai .cursor`.
+    *   **Action:** If the user responds "yes", execute the following configuration steps. Otherwise, announce that no changes are needed as the `.ai-governor` directory is the default.
+        1.  **Rename the directory:** `mv .ai-governor/rules/* .cursor/rules`.
         2.  **Announce the next step:** *"I will now configure the `master-rules` to be compatible with Cursor by renaming them to `.mdc` and ensuring they have the correct metadata."*
         3.  **Rename files to `.mdc`:** Execute the necessary `mv` commands to rename all rule files in `.cursor/rules/master-rules/` and `.cursor/rules/common-rules/` from `.md` to `.mdc`.
         4.  **Verify/Add Metadata:** For each `.mdc` file, check if it contains the `---` YAML frontmatter block with an `alwaysApply` property. If not, you MUST add it based on the rule's requirements (e.g., `1-master-rule-context-discovery.mdc` needs `alwaysApply: true`). You MUST announce which files you are modifying.
