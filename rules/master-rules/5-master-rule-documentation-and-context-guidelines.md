@@ -20,6 +20,17 @@ The project's codebase and its documentation (especially `README.md` files) must
 - **[GUIDELINE]** Announce the standard you have identified.
     > *"I have analyzed the documentation for `{ExistingFeature}`. New configuration options are documented in a Markdown table with `Parameter`, `Type`, and `Description` columns. I will follow this standard."*
 
+### Step 1bis: Local Development Guide Creation (For Complex Services)
+- **[STRICT]** When integrating a complex external service that requires a local development setup (e.g., Supabase, Stripe CLI), you **MUST** first create a `README.md` file in the service's primary directory (e.g., `supabase/README.md`).
+- **[STRICT]** This guide **MUST** be created **before** starting the implementation. It serves as the operational manual for the task.
+- **[STRICT]** The guide **MUST** include, at a minimum:
+    -   Commands to start, stop, and check the status of the local service.
+    -   Default URLs and ports for local access (e.g., API URL, Studio URL).
+    -   Instructions for connecting to the local database or service.
+    -   Key troubleshooting steps for common issues (e.g., applying migrations, handling empty data).
+- **[GUIDELINE]** Announce the creation of this guide.
+    > *"To ensure a smooth development process, I will first create a `supabase/README.md` to document the local setup and troubleshooting procedures. This will be our reference guide for this task."*
+
 ### Documentation Reading Optimization
 - **[STRICT]** To optimize performance and reduce unnecessary costs, you **MUST NOT** re-read a `README.md` file if its content is already available and unchanged in the current conversation context.
 - **[STRICT]** You **MUST** only re-read a `README.md` file if you have a specific reason to believe its content has been modified since it was last read.
