@@ -46,11 +46,15 @@ This ensures the AI works with a clean, relevant context for each major step of 
 
 ### STEP 1: TASK IDENTIFICATION AND ANALYSIS
 1.  **Identify Next Task:** Identify the **first** unchecked task or sub-task `[ ]` in the file.
-2.  **Dependency Analysis (Silent Action):**
+2.  **Platform Documentation Check:**
+    *   **[STRICT]** If the task involves a specific platform (Cloudflare, Supabase, Stripe, AWS, etc.), you **MUST** consult the official documentation first.
+    *   **[STRICT]** Announce: `[PLATFORM RESEARCH] Consulting {Platform} documentation for {Feature} to ensure native implementation patterns.`
+    *   **[STRICT]** Prioritize native patterns and official best practices over custom implementations.
+3.  **Dependency Analysis (Silent Action):**
     *   Read the description of the task and its parent.
     *   Identify any external modules, functions, or `@rules` that will be required.
     *   Following the **Tool Usage Protocol**, use the appropriate tools (e.g., for reading files or searching the codebase) to understand the signatures, parameters, and required configurations (`env` variables, etc.) of these dependencies. **This is a critical step to ensure error-free execution.**
-3.  **Initial Communication:**
+4.  **Initial Communication:**
     *   After the silent analysis is complete, clearly announce to the user: `[NEXT TASK] {Task number and name}.`
     *   If any `@rules` are relevant, add: `[CONSULTING RULES] I am analyzing the following rules: {list of relevant @rules}.`
 
@@ -64,12 +68,12 @@ This ensures the AI works with a clean, relevant context for each major step of 
     *   Following the **Tool Usage Protocol**, use a file editing tool to change the sub-task's status from `[ ]` to `[x]`.
     *   If all sub-tasks of a parent task are now complete, check the parent task `[x]` as well.
 2.  **Parent Task Completion Checkpoint:**
-    *   If a parent task was just completed, perform a compliance check and propose a Git commit.
+    *   If a parent task was just completed, perform a compliance check and **MUST** propose a Git commit.
     *   **Communication Flow:**
         1.  `[FEATURE CHECK] I have completed the feature '{Parent task name}'. I am proceeding with a final compliance check against the relevant @rules.`
         2.  `[COMPLIANCE REPORT] Compliance validated.`
-        3.  (Optional) `[GIT PROPOSAL] I suggest the following commit: 'feat: {concise description of parent task}'. Do you confirm?`
-        4.  Await confirmation before executing `git add .` and `git commit`.
+        3.  **[STRICT]** `[GIT PROPOSAL] I suggest the following commit: 'feat: {generate meaningful commit message based on parent task scope and implementation}'. Do you confirm?`
+        4.  **[STRICT]** Await explicit confirmation (`yes`, `confirm`, `ok`) before executing `git add .` and `git commit -m "{message}"`.
 
 ### STEP 4: CONTROL AND PAUSE (CHECKPOINT)
 1.  **Pause Execution:** [STOP_AND_WAIT]

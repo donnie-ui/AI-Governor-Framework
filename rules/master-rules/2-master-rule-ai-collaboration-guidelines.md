@@ -23,6 +23,12 @@ alwaysApply: false
     1.  **Step 1: Discovery.** First, introspect your current environment to determine if a suitable tool is available for the task (e.g., task management, file editing, codebase searching).
     2.  **Step 2: Execution.** If a tool is found, you **MUST** use it. If no suitable tool is available, you may fall back to a manual method (e.g., providing instructions or code in a Markdown block) after informing the user of the limitation.
 
+## 1ter. Platform Integration Protocol
+
+*   **[STRICT]** **Documentation-First Approach:** Before implementing any platform-specific functionality (Cloudflare, Supabase, Stripe, AWS, etc.), you **MUST** consult the official documentation first.
+*   **[STRICT]** **Native Pattern Prioritization:** Always prioritize platform-native patterns and official best practices over custom implementations.
+*   **[STRICT]** **Research Announcement:** You **MUST** announce: `[PLATFORM RESEARCH] Consulting {Platform} documentation for {Feature} to ensure native implementation patterns.`
+
 ---
 
 ## 2. Task Planning and Execution Protocol
@@ -90,7 +96,41 @@ alwaysApply: false
 
 ---
 
-## 6. Context Window Management Protocol
+## 6. Recommendation Self-Validation Protocol
+
+*   **[STRICT]** **Trigger:** This protocol **MUST** be activated when you formulate recommendations that affect:
+    *   Modifications to master-rules or common-rules
+    *   Changes to development protocols or workflows
+    *   Structural modifications to established processes
+    *   Conclusions from retrospective analyses
+
+*   **[STRICT]** **Auto-Critique Requirement:** Before finalizing such recommendations, you **MUST** perform a structured self-evaluation using this format:
+    ```
+    [RECOMMENDATION INITIAL]
+    {Your proposed recommendation}
+
+    [AUTO-CRITIQUE OBJECTIVE - Role: Quality Audit Expert]
+    - **Bias Check:** What personal or systemic bias might influence this recommendation?
+    - **Premise Validation:** Are the underlying assumptions actually valid?
+    - **Cost-Benefit Analysis:** Do the benefits truly justify the implementation costs?
+    - **Existing Value Preservation:** What currently works well that should be preserved?
+    - **Evidence Quality:** Is this recommendation based on solid evidence or speculation?
+
+    [RECOMMENDATION FINAL VALIDATED]
+    {Your final recommendation after self-critique - may be revised, reduced in scope, or completely withdrawn}
+    ```
+
+*   **[STRICT]** **Recursion Prevention:** This auto-critique protocol applies **ONLY** to the initial recommendation. Auto-critiques themselves are **NEVER** subject to further critique. Once the final validated recommendation is formulated, the process terminates.
+
+*   **[STRICT]** **Scope Limitation:** This protocol applies **ONLY** to recommendations affecting governance, processes, or structural changes. It does **NOT** apply to:
+    *   Technical implementation details
+    *   Code-specific suggestions
+    *   Routine task execution
+    *   Standard development practices
+
+---
+
+## 7. Context Window Management Protocol
 
 *   **[GUIDELINE]** **Core Principle:** To maintain high performance, ensure context relevance, and control token costs, it is recommended to work in short, focused chat sessions. Long conversations can degrade response quality by saturating the context window.
 
@@ -118,7 +158,7 @@ alwaysApply: false
 
 ---
 
-## 7. Protocol for Modifying Governance Rules
+## 8. Protocol for Modifying Governance Rules
 
 *   **[STRICT]** **Trigger:** This protocol **MUST** be activated when the user's request involves creating or modifying a `master-rule`.
 *   **[STRICT]** **Core Principle:** Modifying the governance system itself requires a higher level of systemic analysis. Before proposing any change, you **MUST** answer the following questions to yourself:
@@ -134,7 +174,7 @@ alwaysApply: false
 
 ---
 
-## 8. Standard Communication Formats
+## 9. Standard Communication Formats
 
 - **[STRICT]** All messages related to the application of these meta-rules **MUST** use the formalisms defined below:
     - `[PROPOSED PLAN]`
@@ -144,3 +184,6 @@ alwaysApply: false
     - `[RULE IMPROVEMENT SUGGESTION]`
     - `[GOVERNANCE MODIFICATION PROPOSAL]`
     - `[CONTEXT REFRESH SUGGESTION]`
+    - `[RECOMMENDATION INITIAL]`
+    - `[AUTO-CRITIQUE OBJECTIVE]`
+    - `[RECOMMENDATION FINAL VALIDATED]`
