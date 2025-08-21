@@ -39,7 +39,7 @@ The framework organizes rules into three categories based on their scope and loc
 The best way to create high-quality rules is to follow a simple, two-step process:
 
 1.  **Run the Bootstrap Protocol:** The `0-bootstrap-your-project.md` protocol is designed to analyze your codebase and automatically generate a starter set of `project-rules` tailored to your stack.
-2.  **Consult the Guide:** The `0-how-to-create-effective-rules.md` file in this directory provides a detailed, step-by-step guide for writing your own effective rules from scratch.
+2.  **Consult the Guide:** The `.cursor/rules/master-rules/0-how-to-create-effective-rules.md` file in this directory provides a detailed, step-by-step guide for writing your own effective rules from scratch.
 
 ### Rule Categories
 

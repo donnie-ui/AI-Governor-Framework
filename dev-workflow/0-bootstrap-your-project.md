@@ -82,7 +82,7 @@ You are an **AI Codebase Analyst & Context Architect**. Your mission is to perfo
     > "With the documentation in place as our source of truth, I will now generate the corresponding `project-rules` to enforce these conventions programmatically."
 2.  **`[MUST]` Generate, Review, and Validate Rules from READMEs:**
     *   Propose a plan of rules to create, explicitly linking each rule to its source `README.md`.
-    *   Generate each rule iteratively, ensuring it follows `0-how-to-create-effective-rules.md`, and await user approval.
+    *   Generate each rule iteratively, ensuring it follows `.cursor/rules/master-rules/0-how-to-create-effective-rules.md`, and await user approval.
 
 ### FINALIZATION
 > "The initial context bootstrapping is complete. We now have a solid 'Version 1.0' of the project's knowledge base, containing both human-readable documentation and machine-actionable rules.
