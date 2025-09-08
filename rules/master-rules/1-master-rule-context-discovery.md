@@ -42,10 +42,11 @@ Before ANY other action or response, you **MUST** perform the following silent i
     *   **Scope:** Within these directories, scan the subdirectories `master-rules/` and `common-rules/`.
     *   **Pattern:** Identify all files with extensions `.md` or `.mdc`.
 
-2.  **Phase 2: Project-Specific Rules Discovery (Targeted)**
-    *   **Context:** Use the list of "files concerned" by the user's request from the upcoming Step 2.
-    *   **Action:** For each unique directory containing a concerned file, traverse upwards towards the root. In each parent directory, you **MUST** search for the existence of a `.cursor/rules/project-rules/` or `.ai-governor/rules/project-rules/` directory.
-    *   **Pattern:** If found, identify all files with extensions `.md` or `.mdc` within them.
+2.  **Phase 2: Comprehensive Project Rules Discovery**
+    *   **Principle:** To ensure no relevant project rule is missed, the inventory phase MUST scan all potential project locations. The relevance of these discovered rules will be determined later in Step 3.
+    *   **Action:** You **MUST** perform a broad scan of the repository to locate all potential project-specific rule directories.
+    *   **Scope:** The scan **MUST** search for directories named `.cursor/rules/project-rules/` and `.ai-governor/rules/project-rules/` within all top-level application directories (e.g., `/apps/*`, `/microservices/*`, `/packages/*`). This avoids deep scans into irrelevant directories like `node_modules`.
+    *   **Pattern:** In every rule directory found, identify all files with extensions `.md` or `.mdc`.
 
 3.  **Phase 3: Deduplication**
     *   **Action:** Create a final, unique list of rule file paths to prevent processing the same rule twice.
@@ -60,6 +61,10 @@ Before ANY other action or response, you **MUST** perform the following silent i
 6.  **[GUIDELINE]** Attempt to infer relationships between codebases to load related rules (e.g., if the task is on the UI, also consider rules for the microservices it calls). If you cannot confidently determine these relationships, you **MUST** explicitly state this uncertainty in your final announcement report (Step 4).
 
 ### Step 3: Relevance Evaluation and Selection
+**[STRICT]** Your objective is to load **ALL** rules that are relevant to the user's request. Apply the existing priority system below to evaluate every rule discovered in Step 1.
+
+**[STRICT]** When in doubt about relevance, include the rule. It is better to have too much context than to miss critical information.
+
 **[STRICT]** For each rule found during the inventory, evaluate its relevance using the following heuristics, applied in descending order of priority. The loading of any selected rule **MUST** strictly adhere to the **Context Optimization Principle**.
 
 1.  **Priority 1: Absolute Directives (The Kernel)**
@@ -78,15 +83,25 @@ Before ANY other action or response, you **MUST** perform the following silent i
 
 5.  **Fallback Protocol (For Malformed Metadata):**
     *   **[STRICT]** If a rule's YAML frontmatter is missing or cannot be parsed, you **MUST NOT** read the entire file.
-    *   **[STRICT]** Read only the first ~15 lines to infer its purpose from the title and first paragraph. If the purpose remains ambiguous, discard the rule.
+    *   **[STRICT]** Read only the first ~20 lines to infer its purpose from the title and first paragraph.
+    *   **[STRICT]** If the purpose remains clearly ambiguous or the rule seems low-quality or obsolete, discard it. It is safer to operate without a confusing rule than with one.
 
 ### Step 4: Report and Application
 **[BLOCKING AND MANDATORY ACTION]**
 
 **[STRICT]** After selecting the most relevant rules, your VERY FIRST response **MUST** be to announce the loaded rules. You **MUST NOT** start any other action, explanation, or code generation before this.
 
+**[STRICT]** Keep the announcement concise. Group rules by domain when there are many (5+).
+
 #### ✅ Correct Announcement Format
-> *"I have loaded the `{rule-name-1}` and `{rule-name-2}` rules, which cover {relevant_domain} for your request. I am ready to begin."*
+
+> **Example 1 (Many rules - 5+):** *"I have loaded 8 rules covering authentication, UI components, database operations, and API integration relevant to your request. I am ready to begin."*
+>
+> **Example 2 (Few rules - 2-4):** *"I have loaded the `billing-service`, `stripe-integration`, and `error-handling` rules for your payment task. I am ready to begin."*
+>
+> **Example 3 (Single rule):** *"I have loaded the `{rule-name}` rule, which covers {relevant_domain} for your request. I am ready to begin."*
+>
+> **Example 4 (Very many rules - 10+):** *"I have loaded 12 rules covering {domain-1}, {domain-2}, {domain-3}, and related infrastructure concerns for your comprehensive request. I am ready to begin."*
 
 #### ❌ Incorrect Announcement Format
 > *"Based on my analysis, I've assigned a relevance score of 0.92 to `rule-1.mdc` due to scope matching and keyword triggers like 'UI' and 'component'. I've also loaded `rule-2.mdc` with a score of 0.75. I will now proceed with step 1 of the plan."*
