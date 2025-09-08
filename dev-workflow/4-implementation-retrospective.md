@@ -18,7 +18,7 @@ You must execute these phases in order. Phase 1 informs Phase 2.
 
 *This phase is mostly silent. You are gathering facts before presenting them.*
 
-1.  **`[MUST]` Invoke Context Discovery:** Before auditing, you **MUST** apply the `4-master-rule-context-discovery.md` protocol. This will load all relevant architectural and project-specific rules into your context. You will use these rules as the basis for your audit.
+1.  **`[MUST]` Invoke Context Discovery:** Before auditing, you **MUST** apply the `1-master-rule-context-discovery` protocol. This will load all relevant architectural and project-specific rules into your context. You will use these rules as the basis for your audit.
 
 2.  **Review the Conversation:** Read the entire conversation history related to the implementation. Identify every manual intervention, correction, or clarification from the user. These are "weak signals" of an imperfect rule or process.
 
