@@ -20,9 +20,15 @@ You must execute these phases in order. Phase 1 informs Phase 2.
 
 1.  **`[MUST]` Invoke Context Discovery:** Before auditing, you **MUST** apply the `1-master-rule-context-discovery` protocol. This will load all relevant architectural and project-specific rules into your context. You will use these rules as the basis for your audit.
 
-2.  **Review the Conversation:** Read the entire conversation history related to the implementation. Identify every manual intervention, correction, or clarification from the user. These are "weak signals" of an imperfect rule or process.
+2.  **`[MUST]` Verify Rule Compliance:** During the audit, check if any new rules were created and verify they follow the rule creation protocol:
+    *   **Location Compliance:** Ensure rules are in `.cursor/rules/` hierarchy (not `.ai-governor/rules/`)
+    *   **Classification Accuracy:** Verify master/common/project classification is correct
+    *   **Naming Convention:** Check proper prefixes (`common-rule-`, `{project-name}-`) are applied
+    *   **Discovery Protocol:** Confirm existing rules were searched before creation
 
-3.  **Audit the Source Code against Loaded Rules:**
+3.  **Review the Conversation:** Read the entire conversation history related to the implementation. Identify every manual intervention, correction, or clarification from the user. These are "weak signals" of an imperfect rule or process.
+
+4.  **Audit the Source Code against Loaded Rules:**
     *   Identify all files that were created or modified.
     *   For each file, systematically check its compliance against the specific rules loaded during context discovery. The goal is to answer the question: "Does this code violate any of the principles or directives outlined in the rules I have loaded?"
 
@@ -34,9 +40,10 @@ You must execute these phases in order. Phase 1 informs Phase 2.
         *   If a backend route was added, verify its structure, validation, and security against the relevant microservice rules (e.g., `your-route-handler-rule`, `your-data-validation-rule`).
         *   Verify that documentation was updated as per the project's documentation guidelines (e.g., `master-rule-documentation-and-context-guidelines.md`).
 
-4.  **Synthesize Self-Review:**
+5.  **Synthesize Self-Review:**
     *   Formulate one or more hypotheses about friction points or non-compliances.
     *   *Example Hypothesis: "The initial omission of the `README.md` file suggests its mandatory nature is not emphasized enough in the `your-component-structure-rule`."*
+    *   **Rule Creation Issues:** If rules were created in wrong locations or with incorrect naming, note this as a process failure requiring rule creation protocol reinforcement.
     *   (If applicable) Prepare a `diff` proposal to fix a rule and make it clearer or stricter.
 
 ### PHASE 2: Collaborative Retrospective with the User
@@ -55,7 +62,7 @@ You must execute these phases in order. Phase 1 informs Phase 2.
     *   **PRD Phase (`1-create-prd.md`):** "Was the PRD clear and complete enough? What missing information would have helped?"
     *   **Planning Phase (`2-generate-tasks.md`):** "Was the task list logical, complete, and easy to follow?"
     *   **Execution Phase (`3-process-tasks.md`):** "Where was our process least efficient? Were there any misunderstandings or frustrations?"
-    *   **Rules (`@rules`):** "Did you find any rule to be ambiguous or missing? Conversely, was any rule particularly helpful?"
+    *   **Rules (`@rules`):** "Did you find any rule to be ambiguous or missing? Were any rules created in the wrong location or with incorrect naming? Conversely, was any rule particularly helpful?"
 
 4.  **Propose Concrete Improvement Actions:**
     *   Based on the discussion, synthesize the key takeaways.

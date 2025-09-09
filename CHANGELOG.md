@@ -1,5 +1,26 @@
 ### CHANGELOG
 
+#### `v2.4.0` - Enhanced Workflow and Governance Rigor
+
+##### 🚀 WORKFLOW
+
+1.  **Enhanced Task Generation and Governance Protocols**
+    *   **Why:** To improve the clarity, rigor, and automation of the AI-driven development workflow.
+    *   **Impact:**
+        *   Added **Task Complexity Assessment** to the task generation phase (`2-generate-tasks.md`), allowing for better planning and risk management.
+        *   Introduced a **Global State Management Decomposition Template** to standardize how state management is implemented across projects.
+        *   Implemented a **Mandatory Rule Discovery Protocol** in the execution phase (`3-process-tasks.md`), ensuring all actions are compliant with governance rules from the start.
+        *   Strengthened the implementation retrospective (`4-implementation-retrospective.md`) with explicit rule compliance verification.
+
+##### 🏛️ GOVERNANCE
+
+1.  **Standardized Rule Creation and Discovery**
+    *   **Why:** To create a more robust and predictable system for creating, locating, and applying governance rules.
+    *   **Impact:**
+        *   Formalized a strict protocol for **rule creation** (`0-master-rule-how-to-create-effective-rules.mdc`), including classification (master, common, project), location, and naming conventions.
+        *   Mandated the use of the `.mdc` file extension for all rules to ensure compatibility with discovery tools.
+        *   Reinforced the **context discovery protocol** (`1-master-rule-context-discovery.md`) with dynamic re-evaluation triggers and collaboration checkpoints to ensure context is always relevant.
+
 #### `v2.3.0` - Enhanced Developer Workflow
 
 ##### 🚀 WORKFLOW

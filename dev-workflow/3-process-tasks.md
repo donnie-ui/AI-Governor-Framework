@@ -40,7 +40,33 @@ This ensures the AI works with a clean, relevant context for each major step of 
 
 ---
 
-## 4. THE STRICT EXECUTION LOOP
+## 4. MANDATORY PRE-EXECUTION: RULE DISCOVERY PROTOCOL
+
+**[CRITICAL] Before executing ANY task, you MUST perform complete Rule Discovery. This is non-negotiable.**
+
+### STEP 0: RULE DISCOVERY AND COMPLIANCE PREPARATION
+1. **Execute Context Discovery Protocol:**
+   - **[STRICT]** Load rules from `.cursor/rules/master-rules/`, `.cursor/rules/common-rules/`, and `.cursor/rules/project-rules/`
+   - **[STRICT]** Follow `1-master-rule-context-discovery.mdc` protocol completely
+   - **[STRICT]** Filter rules by task scope (security/UI/performance/architecture/etc.)
+
+2. **Create Compliance TodoWrite:**
+   - **[STRICT]** Create TodoWrite with task steps AND compliance checklist
+   - **[STRICT]** Include applicable rule validation items
+   - **[STRICT]** Add documentation requirements per Rule 5 & 23
+
+3. **Announce Rule Discovery:**
+   - **[MANDATORY]** `[RULE DISCOVERY] Loaded {X} rules across {Y} domains: {CONCISE_LIST}`
+   - **[MANDATORY]** `[COMPLIANCE SCOPE] Task scope: {SCOPE}. Applicable rules: {FILTERED_LIST}`
+   - **[MANDATORY]** Await user validation before proceeding
+
+4. **Validation Checkpoint:**
+   - **[STRICT]** Wait for explicit user confirmation (`Go`, `Proceed`, `OK`)
+   - **[STRICT]** Do NOT proceed without rule discovery validation
+
+---
+
+## 5. THE STRICT EXECUTION LOOP
 
 **WHILE there are unchecked `[ ]` sub-tasks for the CURRENT parent task, follow this loop:**
 
@@ -60,13 +86,39 @@ This ensures the AI works with a clean, relevant context for each major step of 
 
 ### STEP 2: EXECUTION
 1.  **Execute Task:** Use your available tools (for file editing, running terminal commands, etc.) in accordance with the **Tool Usage Protocol** to perform ONLY what is asked by the sub-task, strictly applying the consulted rules and the context gathered in Step 1.
-2.  **Self-Verification:** Reread the sub-task description you just completed and mentally confirm that all criteria have been met.
-3.  **Error Handling:** If an error occurs (e.g., a test fails, a command fails), **IMMEDIATELY STOP** the loop. Do NOT check the task as complete. Report the failure to the user and await instructions.
+2.  **Continuous Rule Compliance:** During execution, validate against loaded rules:
+    - **Rule 3:** Code quality standards (error handling, naming, simplicity)
+    - **Rule 5:** Documentation requirements (README updates, context preservation)  
+    - **Rule 8:** Logging architecture (audit vs debug separation)
+    - **Rule 9:** Caching strategy (where applicable)
+    - **Other applicable rules** from discovery phase
+3.  **Self-Verification:** Reread the sub-task description you just completed and mentally confirm that all criteria have been met.
+4.  **Rule Compliance Verification:** Validate task completion against all applicable rules loaded in STEP 0.
+5.  **Risk-Based Validation Checkpoints:**
+    - **Security/Architecture Changes:** If the task affects authentication, permissions, or core architecture, perform additional validation:
+      - Verify no security regressions introduced
+      - Check that architectural patterns are maintained
+      - Validate against relevant security rules
+    - **Database Changes:** If the task involves database migrations, verify:
+      - Migration follows `common-rule-database-migrations.mdc` standards
+      - Rollback procedure is documented and tested
+      - Data integrity is preserved
+    - **System Integration Check:** If the task involves global state, authentication, or system-wide changes, verify complete integration:
+      - **Global State Tasks:** Check initialization, cleanup, and documentation per `common-rule-global-state-management.mdc`
+      - **Authentication Tasks:** Verify session initialization and listener setup
+      - **System-wide Changes:** Confirm all affected components are properly integrated
+6.  **UI Component Validation:** If the task involves UI components, verify integration readiness:
+    - **Shadow DOM Communication:** Test cross-component communication and slot access
+    - **External Assets:** Validate icon/font loading and fallback strategies
+    - **Build Tool Compatibility:** Check dynamic imports and bundling warnings
+7.  **Error Handling:** If an error occurs (e.g., a test fails, a command fails), **IMMEDIATELY STOP** the loop. Do NOT check the task as complete. Report the failure to the user and await instructions.
 
 ### STEP 3: UPDATE AND SYNCHRONIZE
-1.  **Update Task File:**
-    *   Following the **Tool Usage Protocol**, use a file editing tool to change the sub-task's status from `[ ]` to `[x]`.
+1.  **[CRITICAL] Update Task File:**
+    *   **[MANDATORY]** Following the **Tool Usage Protocol**, use a file editing tool to change the sub-task's status from `[ ]` to `[x]` in the original task file (`.ai-governor/tasks/*.md`).
+    *   **[STRICT]** This step is NON-NEGOTIABLE and must be completed before any git operations.
     *   If all sub-tasks of a parent task are now complete, check the parent task `[x]` as well.
+    *   **[REMINDER]** The task file serves as the authoritative source of truth for project progress.
 2.  **Parent Task Completion Checkpoint:**
     *   If a parent task was just completed, perform a compliance check and **MUST** propose a Git commit.
     *   **Communication Flow:**

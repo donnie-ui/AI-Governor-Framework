@@ -23,6 +23,8 @@ For any new code or modification, the Agent **MUST** validate every point on thi
     - Booleans **MUST** start with a prefix like `is`, `has`, or `can` (e.g., `isUserAdmin`).
 - **[GUIDELINE]** **Nesting:**
     - The nesting depth of `if`/`for` blocks **SHOULD NOT** exceed 3 levels. Use guard clauses to reduce complexity.
+- **[GUIDELINE]** **Critical Dependencies:**
+    - When introducing security-critical dependencies (e.g., DOMPurify, bcrypt libraries), briefly document their purpose in comments or commit messages.
 
 ## Section 2: High-Level Project Standards
 

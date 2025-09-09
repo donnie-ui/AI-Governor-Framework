@@ -101,6 +101,23 @@ Before ANY other action or response, you **MUST** perform the following silent i
 
 **[STRICT]** Keep the announcement concise. Group rules by domain when there are many (5+).
 
+### Step 5: Collaboration Protocol Activation Checkpoint
+**[STRICT]** After announcing loaded rules, you **MUST** immediately evaluate and apply the following checkpoints:
+
+1. **Unstructured Request Detection:**
+   - **[STRICT]** If the user request is unstructured and requires multiple steps to complete → You **MUST** immediately apply Rule 2 (AI Collaboration Guidelines) Protocol.
+   - **[STRICT]** This means: Present a `[PROPOSED PLAN]`, await user validation, create structured TodoWrite, then execute sequentially.
+
+2. **TodoWrite Scope Transition Detection:**
+   - **[STRICT]** When transitioning between TodoWrite tasks with different scopes (security → UI, performance → architecture, etc.) → You **MUST** re-evaluate context relevance.
+   - **[STRICT]** If new scope requires different rules → Re-execute Steps 1-4 of this Context Discovery Protocol.
+
+3. **Rule 2 Compliance Validation:**
+   - **[STRICT]** You **MUST NOT** proceed with any multi-step task without explicit validation of Rule 2 applicability and activation.
+   - **[STRICT]** If Rule 2 applies but was not triggered → Halt execution and report protocol violation.
+
+**[STRICT]** These checkpoints are non-negotiable and apply throughout the entire task lifecycle, not just at initialization.
+
 #### ✅ Correct Announcement Format
 
 > **Example 1 (Many rules - 5+):** *"I have loaded 8 rules covering authentication, UI components, database operations, and API integration relevant to your request. I am ready to begin."*
@@ -179,10 +196,13 @@ alwaysApply: false
 
 ## 7. Dynamic Context Re-evaluation Protocol
 
-**[GUIDELINE]** The initial context, while foundational, may become outdated if the task's scope changes significantly. You **SHOULD** trigger a re-execution of this entire Context Discovery Protocol if you detect one of the following "context shift" events:
+**[STRICT]** The initial context, while foundational, may become outdated if the task's scope changes significantly. You **MUST** trigger a re-execution of this entire Context Discovery Protocol if you detect one of the following "context shift" events:
 
 1.  **Domain Change:** The user's request introduces a new, distinct technology, library, or service not mentioned previously (e.g., switching from a "React component" task to a "Docker deployment" task).
 2.  **Location Change:** The user asks to work on files located in a completely different project or microservice within the monorepo.
 3.  **Explicit Pivot:** The user explicitly signals a major change in direction (e.g., "Ok, let's abandon this approach and try something else" or "Now let's focus on the backend API").
+4.  **TodoWrite Scope Transition:** When transitioning between internal TodoWrite tasks that involve different domains or rule sets (as defined in Step 5.2).
 
-When a trigger is detected, you **SHOULD** first announce your intent, for instance: *"I detect a context shift to {new_domain}. I will re-run the discovery protocol to load the most relevant rules and documentation for this new task."* This ensures transparency and avoids unnecessary token consumption on minor follow-ups.
+**[STRICT]** When a trigger is detected, you **MUST** announce your intent and execute the protocol: *"I detect a context shift to {new_domain}. I will re-run the discovery protocol to load the most relevant rules and documentation for this new task."*
+
+**[STRICT]** After re-evaluation, you **MUST** re-apply Step 5 (Collaboration Protocol Activation Checkpoint) to ensure Rule 2 compliance for the new context.

@@ -20,11 +20,29 @@ Every rule you create **MUST** be built upon these four pillars.
 
 A rule that cannot be found is useless. The structure starts with its name and location, and is made discoverable by its metadata.
 
-1.  **Naming & Placement:**
-    *   **Location:** Place it in the correct directory (`/master-rules`, `/common-rules`, `/project-rules`) to define its scope.
-    *   **Naming Conventions:** Use clear, hyphen-separated names that describe the rule's purpose (e.g., `project-name-api-conventions.mdc`).
+1.  **Rule Classification & Verification:**
+    *   **`[STRICT]` Verify Rule Existence:** Before creating a new rule, search existing rules to avoid duplication.
+    *   **`[STRICT]` Classify Rule Type:** Determine if it's a `master-rule`, `common-rule`, or `project-rule` based on scope:
+        - `master-rule`: Global framework governance (workflow, meta-rules, quality standards)
+        - `common-rule`: Shared technical patterns across multiple projects
+        - `project-rule`: Specific to one project/application scope
 
-2.  **Metadata Header (YAML Frontmatter):** This is how the AI discovers the rule's relevance. It **MUST** be at the very top of the file.
+2.  **Location Strategy:**
+    *   **`[STRICT]` Use .cursor/rules/ as primary location** (Cursor compatibility)
+    *   **`[STRICT]` Directory Mapping:**
+        - `master-rule` → `.cursor/rules/master-rules/`
+        - `common-rule` → `.cursor/rules/common-rules/`  
+        - `project-rule` → `{project-path}/.cursor/rules/project-rules/`
+    *   **`[GUIDELINE]` Legacy .ai-governor/rules/ should be migrated to .cursor/rules/**
+
+3.  **Naming Conventions:**
+    *   **`[STRICT]` Prefix-based naming:**
+        - `master-rule` files: NO prefix required (e.g., `context-discovery.mdc`)
+        - `common-rule` files: `common-rule-` prefix (e.g., `common-rule-api-conventions.mdc`)
+        - `project-rule` files: `{project-name}-` prefix (e.g., `ui-app-component-structure.mdc`)
+    *   **`[STRICT]` Use hyphen-separated descriptive names** that clearly indicate the rule's purpose
+
+4.  **Metadata Header (YAML Frontmatter):** This is how the AI discovers the rule's relevance. It **MUST** be at the very top of the file.
     ```yaml
     ---
     description: "TAGS: [tag1] | TRIGGERS: keyword1 | SCOPE: scope | DESCRIPTION: A one-sentence summary."
@@ -113,9 +131,16 @@ Before finalizing a new rule, use this checklist:
 
 ## 6. Implementation Notes for Cursor
 
-### Rule Activation
-*   **Rule Directory:** For rules to be discovered, they must be placed in a dedicated directory. This project uses `.cursor/rules/`.
-*   **File Extension:** The file extension is critical for automatic loading. **Cursor requires the `.mdc` extension**. Standard `.md` files will be ignored.
+### Rule Activation & Discovery Protocol
+*   **`[STRICT]` Primary Rule Directory:** All rules **MUST** be placed in `.cursor/rules/` hierarchy for Cursor compatibility.
+*   **`[STRICT]` File Extension:** Rules **MUST** use the `.mdc` extension. Standard `.md` files are ignored by Cursor.
+*   **`[STRICT]` Pre-Creation Rule Discovery:** Before creating any new rule, execute this discovery protocol:
+    1. **Search existing rules:** Use `find .cursor/rules/ -name "*.mdc" -type f` to list all rules
+    2. **Grep for similar functionality:** Search rule content for related keywords
+    3. **Verify scope coverage:** Ensure the new rule doesn't overlap with existing ones
+    4. **Determine correct classification:** Apply the master/common/project classification logic
+    5. **Select appropriate location:** Map to correct directory based on classification
+    6. **Generate compliant name:** Apply proper prefix and descriptive naming
 
 ### Creating & Modifying Rule Files
 To ensure the critical YAML frontmatter is always formatted correctly, the assistant **MUST** handle file creation and modification by proposing the **full file content** for the user to apply. This avoids corruption of the sensitive metadata block.
