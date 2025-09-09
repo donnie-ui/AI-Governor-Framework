@@ -1,5 +1,5 @@
 ---
-description: "TAGS: [global,workflow,context,rules,documentation,discovery,bios,dynamic-context] | TRIGGERS: rule,context,readme,documentation,understand,project,setup,start | SCOPE: global | DESCRIPTION: Defines the robust, BIOS-like protocol for discovering relevant rules and README.md documentation. It governs the initial context loading and its dynamic re-evaluation during a task."
+description: "TAGS: [global,workflow,context,rules,documentation,discovery,bios,dynamic-context,robustness] | TRIGGERS: rule,context,readme,documentation,understand,project,setup,start,discovery | SCOPE: global | DESCRIPTION: Defines the robust, BIOS-like protocol for discovering relevant rules and README.md documentation with verification safeguards. It governs the initial context loading and its dynamic re-evaluation during a task."
 alwaysApply: true
 ---
 # Master Rule: Context Discovery Protocol (The System BIOS)
@@ -34,18 +34,26 @@ Before ANY other action or response, you **MUST** perform the following silent i
 - **[STRICT]** To optimize performance and reduce unnecessary costs, you **MUST NOT** re-read a rule or context file (such as `README.md`) if its content is already available in the current conversation context.
 - **[STRICT]** You **MUST** only re-read such a file if you have a specific reason to believe its content has been modified since it was last read.
 
+### Discovery Robustness Protocol
+**[STRICT]** The quality of subsequent work depends entirely on accurate rule discovery. Therefore:
+- **Verify before assuming** - Rule directory locations must be confirmed, never assumed
+- **Fail gracefully** - If expected structures aren't found, expand search scope systematically
+- **Document variance** - When actual structure differs from expectations, record the discovery for future sessions
+
 ### Step 1: Exhaustive Rule Inventory Protocol
 **[STRICT]** To build a comprehensive inventory, you **MUST** execute the following search sequence in this exact order. This step is strictly limited to the discovery and listing of file paths. You **MUST NOT** read the content of any rule file during this inventory phase.
 
 1.  **Phase 1: Master and Common Rules Discovery (Repository Root)**
-    *   **Action:** In the repository root, you **MUST** search within both the `.cursor/rules/` and `.ai-governor/rules/` directories (if they exist).
-    *   **Scope:** Within these directories, scan the subdirectories `master-rules/` and `common-rules/`.
+    *   **Action:** Search systematically for any directory containing "rules" in its path to discover all rule hierarchies.
+    *   **Verification Required:** Before proceeding, confirm that the discovered directories actually exist and are accessible.
+    *   **Scope:** Within discovered rule directories, scan subdirectories `master-rules/` and `common-rules/`.
     *   **Pattern:** Identify all files with extensions `.md` or `.mdc`.
+    *   **Discovery Method:** This approach automatically finds `.cursor/rules/`, `.ai-governor/rules/`, or any future rule organization structure.
 
 2.  **Phase 2: Comprehensive Project Rules Discovery**
     *   **Principle:** To ensure no relevant project rule is missed, the inventory phase MUST scan all potential project locations. The relevance of these discovered rules will be determined later in Step 3.
-    *   **Action:** You **MUST** perform a broad scan of the repository to locate all potential project-specific rule directories.
-    *   **Scope:** The scan **MUST** search for directories named `.cursor/rules/project-rules/` and `.ai-governor/rules/project-rules/` within all top-level application directories (e.g., `/apps/*`, `/microservices/*`, `/packages/*`). This avoids deep scans into irrelevant directories like `node_modules`.
+    *   **Action:** You **MUST** perform a broad scan of the repository to locate all project-specific rule directories containing "rules" in their path.
+    *   **Scope:** The scan **MUST** search within all top-level application directories (e.g., `/apps/*`, `/microservices/*`, `/packages/*`) for any directory structure containing "rules". This avoids deep scans into irrelevant directories like `node_modules`.
     *   **Pattern:** In every rule directory found, identify all files with extensions `.md` or `.mdc`.
 
 3.  **Phase 3: Deduplication**

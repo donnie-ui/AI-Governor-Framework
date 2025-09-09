@@ -50,7 +50,16 @@ The project's codebase and its documentation (especially `README.md` files) must
         *   Does my change introduce a new environment variable that needs to be mentioned?
         *   Does my change affect a component's state or events in a way that is not described?
 
-3.  **[STRICT]** **Propose an Update if Necessary:**
+3.  **[SECURITY IMPLEMENTATION MANDATORY]** **Special Protocol for Security Changes:**
+    *   **[STRICT]** Any modification related to security (authentication, authorization, cryptography, input validation, rate limiting, SQL injection prevention, timing attack protection) **MUST** include immediate documentation updates.
+    *   **[STRICT]** Security documentation updates are **NON-NEGOTIABLE** and must include:
+        *   Updated security feature descriptions in README files
+        *   New environment variables and configuration options
+        *   Security endpoint documentation 
+        *   Protection mechanisms implemented (timing attack protection, rate limiting specifics, etc.)
+    *   **[STRICT]** Security tasks in TodoWrite **MUST** automatically generate corresponding documentation tasks.
+
+4.  **[STRICT]** **Propose an Update if Necessary:**
     *   If you find any divergence, you **MUST** immediately propose an update to the documentation file.
     *   **Action:** Following the **Tool Usage Protocol**, use the appropriate tool to provide a clear `diff` of the proposed documentation changes.
     *   **Communication:** Announce your action clearly to the user.
@@ -68,3 +77,21 @@ The project's codebase and its documentation (especially `README.md` files) must
 3.  The AI reads the README and sees that the "Configuration" section does not list the new `timeout` property.
 4.  The AI uses a file editing tool (in accordance with the **Tool Usage Protocol**) to add the new property to the documentation table in `README.md`.
 5.  The AI communicates: *"I have implemented the `timeout` property. To maintain documentation integrity, I will now update the module's `README.md` before finalizing the task."*
+
+## 5. Security Implementation Example
+
+**[GUIDELINE]** This section demonstrates the mandatory security documentation protocol.
+
+**User Request:** "Implement timing attack protection for API key authentication."
+
+**AI Actions:**
+1.  The AI modifies `middleware/api-key.ts` to add constant-time delays for failed authentications.
+2.  **(Security Rule Activation)** The AI automatically creates two TodoWrite tasks:
+    *   "Implement timing attack protection for API keys"
+    *   "Update documentation to reflect timing attack protection implementation"
+3.  The AI identifies `apps/api-gateway/README.md` and `packages/iam/README.md` as relevant documentation.
+4.  **(MANDATORY)** The AI updates both README files to document:
+    *   New security feature in the security features section
+    *   Implementation details (constant-time delays)
+    *   Protection mechanism description
+5.  The AI communicates: *"I have implemented timing attack protection. Per security documentation requirements, I will now update both the API Gateway and IAM package documentation to reflect this critical security enhancement."*
