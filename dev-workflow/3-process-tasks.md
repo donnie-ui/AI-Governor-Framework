@@ -17,9 +17,10 @@ To optimize performance and context stability, this protocol operates exclusivel
 **[CRITICAL] To prevent context window saturation ("token cannibalization") and ensure high performance, each parent task MUST be executed in a separate, clean chat session.**
 
 1.  **Execute a full parent task** (e.g., Task 1 and all its sub-tasks) within the current chat.
-2.  Once complete, run the **`4-implementation-retrospective.md`** protocol.
-3.  **Start a new chat session.**
-4.  Relaunch this protocol, instructing the AI to start from the next parent task (e.g., `Start on task 2`).
+2.  Once complete, run the **`4-quality-control-protocol.md`** protocol to validate implementation quality.
+3.  Follow with the **`5-implementation-retrospective.md`** protocol to capture learnings.
+4.  **Start a new chat session.**
+5.  Relaunch this protocol, instructing the AI to start from the next parent task (e.g., `Start on task 2`).
 
 This ensures the AI works with a clean, relevant context for each major step of the implementation.
 
@@ -40,11 +41,31 @@ This ensures the AI works with a clean, relevant context for each major step of 
 
 ---
 
-## 4. MANDATORY PRE-EXECUTION: RULE DISCOVERY PROTOCOL
+## 4. MANDATORY PRE-EXECUTION: ENVIRONMENT & RULE DISCOVERY PROTOCOL
 
-**[CRITICAL] Before executing ANY task, you MUST perform complete Rule Discovery. This is non-negotiable.**
+**[CRITICAL] Before executing ANY task, you MUST perform complete Environment Validation and Rule Discovery. This is non-negotiable.**
 
-### STEP 0: RULE DISCOVERY AND COMPLIANCE PREPARATION
+### STEP 0: ENVIRONMENT VALIDATION PROTOCOL
+1. **[STRICT] Tool Version Verification:**
+   - **[MANDATORY]** Check CLI versions: `supabase --version`, `pnpm --version`, `wrangler --version`
+   - **[MANDATORY]** Verify Node.js version: `node --version` (≥ 18.0.0)
+   - **[MANDATORY]** Log versions in format: `[ENV_CHECK] Tool versions: Supabase v2.40.7, Node v18.x.x, pnpm v8.x.x`
+
+2. **[STRICT] Database Connectivity Test:**
+   - **[MANDATORY]** Test local database: `supabase status` or equivalent
+   - **[MANDATORY]** Verify migration capability with simple query
+   - **[MANDATORY]** Report status: `[ENV_CHECK] Database connectivity: OK/FAILED`
+
+3. **[STRICT] Infrastructure Discovery:**
+   - **[MANDATORY]** Identify existing database interface (D1, Hyperdrive, Supabase direct)
+   - **[MANDATORY]** Verify environment variables and bindings
+   - **[MANDATORY]** Announce: `[ENV_CHECK] Infrastructure: {DATABASE_TYPE}, {RUNTIME_ENV}`
+
+4. **[STRICT] Environment Validation Checkpoint:**
+   - **[MANDATORY]** Await user validation: `[ENV_CHECK] Environment validated. Proceed? (yes/no)`
+   - **[STRICT]** Do NOT proceed without explicit user confirmation
+
+### STEP 0.5: RULE DISCOVERY AND COMPLIANCE PREPARATION
 1. **Execute Context Discovery Protocol:**
    - **[STRICT]** Load rules from `.cursor/rules/master-rules/`, `.cursor/rules/common-rules/`, and `.cursor/rules/project-rules/`
    - **[STRICT]** Follow `1-master-rule-context-discovery.mdc` protocol completely
@@ -131,7 +152,7 @@ This ensures the AI works with a clean, relevant context for each major step of 
 1.  **Pause Execution:** [STOP_AND_WAIT]
 2.  **Communicate Status and Await Instruction:**
     *   **Sub-task completed:** `[TASK COMPLETE] Sub-task {Number} completed and checked off. May I proceed with the next sub-task?`
-    *   **Parent task completed:** `[PARENT TASK COMPLETE] Parent task {Number} and all its sub-tasks are complete. Please initiate the retrospective protocol before starting a new chat for the next task.`
+    *   **Parent task completed:** `[PARENT TASK COMPLETE] Parent task {Number} and all its sub-tasks are complete. Please initiate the quality control audit protocol followed by the retrospective protocol before starting a new chat for the next task.`
 3.  **Resume:** Do not proceed to the next loop iteration until you receive explicit confirmation from the user (`yes`, `continue`, `ok`, etc.).
 
 **END OF LOOP**

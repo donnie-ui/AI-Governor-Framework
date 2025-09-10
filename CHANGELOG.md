@@ -17,8 +17,8 @@
 1.  **Standardized Rule Creation and Discovery**
     *   **Why:** To create a more robust and predictable system for creating, locating, and applying governance rules.
     *   **Impact:**
-        *   Formalized a strict protocol for **rule creation** (`0-master-rule-how-to-create-effective-rules.mdc`), including classification (master, common, project), location, and naming conventions.
-        *   Mandated the use of the `.mdc` file extension for all rules to ensure compatibility with discovery tools.
+        *   Formalized a strict protocol for **rule creation** (`0-master-rule-how-to-create-effective-rules.md`), including classification (master, common, project), location, and naming conventions.
+        *   Mandated the use of the `.md` file extension for all rules to ensure compatibility with discovery tools.
         *   Reinforced the **context discovery protocol** (`1-master-rule-context-discovery.md`) with dynamic re-evaluation triggers and collaboration checkpoints to ensure context is always relevant.
 
 #### `v2.3.0` - Enhanced Developer Workflow
