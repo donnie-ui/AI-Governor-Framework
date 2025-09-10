@@ -1,5 +1,16 @@
 ### CHANGELOG
 
+#### `v2.5.0` - Refined AI Collaboration & Context Safety
+
+##### 🏛️ GOVERNANCE
+
+1.  **Refactored AI Collaboration & Context Preservation Rules**
+    *   **Why:** To streamline AI governance by merging redundant protocols and strengthening context management for complex tasks.
+    *   **Impact:**
+        *   The `Context Window Management Protocol` (Rule #2) has been upgraded to a more robust **`Context Window Preservation Protocol`**, ensuring critical rules remain accessible during extended development sessions.
+        *   A new **`Complex Feature Collaborative Safety Protocol`** has been integrated directly into the `AI Collaboration Guidelines` (Rule #2), enhancing safety for sophisticated code modifications.
+        *   The dedicated rule for complex features (`6-master-rule-complex-feature-context-preservation.md`) has been removed, and its core principles have been merged into Rule #2, creating a single, cohesive governance standard for AI interaction.
+
 #### `v2.4.0` - Enhanced Workflow and Governance Rigor
 
 ##### 🚀 WORKFLOW
