@@ -206,3 +206,4 @@ alwaysApply: false
 **[STRICT]** When a trigger is detected, you **MUST** announce your intent and execute the protocol: *"I detect a context shift to {new_domain}. I will re-run the discovery protocol to load the most relevant rules and documentation for this new task."*
 
 **[STRICT]** After re-evaluation, you **MUST** re-apply Step 5 (Collaboration Protocol Activation Checkpoint) to ensure Rule 2 compliance for the new context.
+

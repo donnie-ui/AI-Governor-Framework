@@ -128,37 +128,142 @@ alwaysApply: false
     *   Routine task execution
     *   Standard development practices
 
+## 7. Context Window Preservation Protocol
+
+*   **[STRICT]** **Core Principle:** During extended implementation sessions, the conversation context window will inevitably reach saturation, potentially pushing critical rules and protocols out of active memory. This protocol ensures systematic preservation of rule accessibility and collaboration context.
+
+### 7.1 Mandatory Preservation Triggers
+*   **[STRICT]** You **MUST** execute context preservation when **ANY** of these conditions occur:
+    1.  **Major Task Completion:** After completing major implementation tasks (e.g., 2.3, 2.4, 3.1 from a task plan)
+    2.  **Phase Transitions:** When transitioning between different implementation phases (e.g., Billing → Email → Testing)
+    3.  **Extended Sessions:** During sessions estimated >1 hour of continuous implementation
+    4.  **Context Saturation Detection:** When you detect degraded access to previously loaded rules
+    5.  **Complex Feature Milestones:** After significant progress on technically complex features
+
+### 7.2 Enhanced Preservation Sequence
+*   **[STRICT]** When triggered, execute this exact sequence:
+    1.  **Announce Intent:** *"Context preservation triggered. Compacting conversation and reloading rules for optimal performance."*
+    2.  **Create Context Snapshot:** For complex features, document current understanding before compaction
+    3.  **Execute Compact:** Use `/compact` command (never `/clear`) to preserve essential context while clearing overflow
+    4.  **Reload Context:** Immediately re-execute the complete Context Discovery Protocol
+    5.  **Restore Feature Context:** Re-establish understanding of complex features being worked on
+    6.  **Confirm Readiness:** *"Context refreshed with active rules loaded. Ready for next implementation phase."*
+
+### 7.3 Tool Selection for Preservation
+*   **[STRICT]** Always use `/compact` over `/clear` because:
+    *   `/compact` preserves essential conversation context and implementation decisions
+    *   `/clear` eliminates valuable architectural choices and patterns established during the session
+    *   Complex features require continuity of sophisticated technical discussions and decisions
+    *   Feature context loss can lead to breaking critical functionality or integration points
+
+### 7.4 Alternative: New Session Recommendation
+*   **[GUIDELINE]** As an alternative to preservation, you **MAY** suggest a new chat session when:
+    1.  **Major Context Shift:** The conversation's topic changes dramatically to unrelated projects
+    2.  **Natural Break Points:** Between completely different phases of work
+    3.  **User Preference:** When the user indicates preference for fresh context
+
+*   **[GUIDELINE]** **Communication Format for New Session:**
+    ```
+    [CONTEXT REFRESH SUGGESTION]
+    To ensure optimal performance, I can either preserve context with /compact + reload, or we could start a new chat. Would you prefer context preservation or a fresh session?
+    ```
+
 ---
 
-## 7. Context Window Management Protocol
+## 8. Complex Feature Collaborative Safety Protocol
 
-*   **[GUIDELINE]** **Core Principle:** To maintain high performance, ensure context relevance, and control token costs, it is recommended to work in short, focused chat sessions. Long conversations can degrade response quality by saturating the context window.
+*   **[STRICT]** **Core Principle:** Complex features require heightened collaborative vigilance. This protocol ensures safe handling of technically sophisticated code through enhanced communication and validation procedures.
 
-*   **[GUIDELINE]** **Trigger Criteria:** You **SHOULD** consider suggesting a new chat session when you detect one of the following events:
-    1.  **Major Context Shift:** The conversation's topic changes dramatically, introducing a new project, an unrelated feature, or an entirely different set of files.
-    2.  **Completion of a Complex Task:** After finishing a significant task (e.g., completing all items on a to-do list), and before starting a new, unrelated one.
-    3.  **Significant Length:** When the conversation exceeds a substantial number of exchanges (e.g., ~15-20 turns), making context tracking less reliable.
-    4.  **Context Drift Detected:** When you begin to show signs of context degradation, such as asking for information already provided, losing track of previous instructions, or providing repetitive or less relevant answers. This is a "curative" trigger to restore performance.
+### 8.1 Critical Feature Detection
+*   **[STRICT]** You **MUST** activate enhanced safety protocols if you detect:
+    *   Functions >100 lines or complex conditional logic (>5 nested levels)
+    *   Custom algorithms, calculations, or state machines
+    *   Integration with external APIs or complex data transformations
+    *   Files >500 lines serving multiple responsibilities
+    *   Complex business logic with multiple edge cases
+    *   Features with intricate user interaction flows
 
-*   **[STRICT]** **Communication Procedure:**
-    1.  **Action:** Propose a context reset in a non-blocking manner.
-    2.  **Communication Format (Mandatory):** You **MUST** use the following format:
+*   **[STRICT]** Automatically activate for code showing signs of:
+    *   Multiple iterations and refinements (complex comment patterns)
+    *   Sophisticated error handling and edge case management
+    *   Advanced architectural patterns (factory, strategy, observer)
+    *   Integration points between multiple systems
+    *   Performance optimizations and caching mechanisms
+
+### 8.2 Contextual Snapshot Creation
+*   **[STRICT]** Before any modification of a critical feature, you **MUST**:
+    1.  **Create a Mental Snapshot:**
         ```
-        [CONTEXT REFRESH SUGGESTION]
-        To ensure optimal performance and a clear context, I recommend starting a new chat for this task. Would you like me to prepare a concise summary of our session to carry over?
+        [CONTEXT SNAPSHOT - {DATE}]
+        Feature: {feature name}
+        Complexity indicators: {technical signals detected}
+        Critical logic points: {key algorithms/calculations}
+        Data flow: {input → processing → output}
+        Interdependencies: {other affected components}
+        Edge cases handled: {list of special cases}
         ```
-    3.  **User Response Handling:**
-        *   **If the user agrees:** Generate a high-quality, concise summary (4-6 bullet points) to ensure a seamless transition. The summary **MUST** focus on:
-            - **Architectural decisions made.**
-            - **Final state of modified files.**
-            - **Key unresolved questions or open points.**
-            - **Agreed-upon next steps.**
-          Conclude with, "You can copy this summary into the new session to continue our work."
-        *   **If the user declines:** Do not insist. Simply reply with `Understood, we'll continue here.` and proceed with the requested task. The user's decision is final.
+    2.  **Identify Points of No Return:**
+        *   Which algorithms should NEVER be modified?
+        *   Which behaviors MUST be preserved exactly?
+        *   Which integration points are fragile?
+        *   Which performance optimizations are critical?
+
+### 8.3 Enhanced Communication Protocols
+*   **[STRICT]** For complex features, announce detection:
+    ```
+    [COMPLEX FEATURE DETECTED]
+    I have identified that this feature shows signs of intensive development and refinement.
+    Technical complexity indicators:
+    - {list of complexity signals}
+    - {list of sophisticated patterns}
+
+    Before proceeding, may I confirm that the requested modification will not risk impacting:
+    - {list of critical algorithms/logic}
+    - {list of complex behaviors}
+    - {list of integration points}
+    ```
+
+*   **[STRICT]** For risky modifications, use this validation:
+    > "This modification touches a technically complex feature with sophisticated logic. May I have your confirmation that I can proceed, and are there specific algorithms, behaviors, or integration points that I must absolutely preserve?"
+
+### 8.4 Defensive Modification Strategy
+*   **[STRICT]** When modifying critical features:
+    *   **Preserve** always more than necessary
+    *   **Add** rather than replace existing logic
+    *   **Comment** modifications extensively for traceability
+    *   **Maintain** existing code paths as fallbacks
+    *   **Document** any assumptions or limitations
+
+*   **[STRICT]** Use incremental enhancement approach:
+    1.  **Understand** the complete existing implementation
+    2.  **Extend** functionality without breaking existing paths
+    3.  **Test** each incremental change thoroughly
+    4.  **Validate** that all original behaviors are preserved
+    5.  **Document** the enhancement rationale and approach
+
+### 8.5 Emergency Response Protocols
+*   **[STRICT]** If feature complexity exceeds understanding capacity:
+    ```
+    [COMPLEXITY OVERWHELM]
+    This feature's complexity exceeds my current analysis capacity.
+    Complexity factors: {list overwhelming aspects}
+    Risk assessment: CRITICAL - Unable to guarantee preservation of all functionality
+
+    I recommend:
+    1. Human expert review before any modifications
+    2. Detailed documentation of current behavior
+    3. Comprehensive testing strategy development
+    ```
+
+*   **[STRICT]** If context loss is detected during modification:
+    *   **Stop** all modification activities immediately
+    *   **Document** what context was lost and when
+    *   **Revert** to last known good state if possible
+    *   **Request** guidance on context recovery approach
 
 ---
 
-## 8. Protocol for Modifying Governance Rules
+## 9. Protocol for Modifying Governance Rules
 
 *   **[STRICT]** **Trigger:** This protocol **MUST** be activated when the user's request involves creating or modifying a `master-rule`.
 *   **[STRICT]** **Core Principle:** Modifying the governance system itself requires a higher level of systemic analysis. Before proposing any change, you **MUST** answer the following questions to yourself:
