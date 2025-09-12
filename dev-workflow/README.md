@@ -21,7 +21,7 @@ This workflow guides you through the entire development process, from initial se
 First, the AI analyzes your entire codebase to build a "Context Kit"—a set of foundational `READMEs` and project-specific rules. This is a one-time protocol that turns a generic AI into a project-specific expert.
 
 ```
-Apply instructions from .ai-governor/dev-workflow/0-bootstrap-your-project.md
+Apply instructions from dev-workflow/0-bootstrap-your-project.md
 ```
 *(For best results, Cursor users should use Max Mode for this step.)*
 
@@ -31,7 +31,7 @@ Apply instructions from .ai-governor/dev-workflow/0-bootstrap-your-project.md
 Next, you define the "what" and "why" of your feature. The AI interviews you to create a detailed Product Requirements Document (PRD), ensuring all requirements are captured before any code is written.
 
 ```
-Apply instructions from .ai-governor/dev-workflow/1-create-prd.md
+Apply instructions from dev-workflow/1-create-prd.md
 
 Here's the feature I want to build: [Describe your feature in detail]
 ```
@@ -43,7 +43,7 @@ Here's the feature I want to build: [Describe your feature in detail]
 The AI then transforms the PRD into a granular, step-by-step technical execution plan. This ensures that both you and the AI are aligned on the implementation strategy.
 
 ```
-Apply instructions from .ai-governor/dev-workflow/2-generate-tasks.md to @prd-my-feature.md
+Apply instructions from dev-workflow/2-generate-tasks.md to @prd-my-feature.md
 ```
 *(Note: Replace `@prd-my-feature.md` with the actual filename of your PRD.)*
 
@@ -56,7 +56,7 @@ Here, the AI implements the plan one parent task at a time, within a dedicated c
 
 1.  **Start the first parent task in a new chat:**
     ```
-    Apply instructions from .ai-governor/dev-workflow/3-process-tasks.md to @tasks-my-feature.md. Start on task 1.
+    Apply instructions from dev-workflow/3-process-tasks.md to @tasks-my-feature.md. Start on task 1.
     ```
     *(Note: Replace `@tasks-my-feature.md` with the actual filename of your task list.)*
 
@@ -70,19 +70,17 @@ Here, the AI implements the plan one parent task at a time, within a dedicated c
 
     1.  **Run the Quality Control Audit:** This validates the technical excellence and identifies any issues before proceeding.
         ```
-        Apply instructions from .ai-governor/dev-workflow/4-quality-control-protocol.md
+        Apply instructions from dev-workflow/4-quality-control-protocol.md
         ```
 
     2.  **Run the Implementation Retrospective:** This captures learnings and improves the AI's context for the next steps.
         ```
-        Apply instructions from .ai-governor/dev-workflow/5-implementation-retrospective.md
+        Apply instructions from dev-workflow/5-implementation-retrospective.md
         ```
 
     3.  **Start the next parent task in a new chat:** To ensure a clean context, clear the current session (e.g., with the `/clear` command) and start the next task.
         ```
-        Apply instructions from .ai-governor/dev-workflow/3-process-tasks.md to @tasks-my-feature.md. Start on task 2.
-
-        apply '/Users/fred/Dropbox/Development/MicroSaaS-Boilerplate/.ai-governor/dev-workflow/3-process-tasks.md' to 3.2 tasks and sub-tasks in .ai-governor/tasks/tasks-mvp-production-ready.md
+        Apply instructions from dev-workflow/3-process-tasks.md to @tasks-my-feature.md. Start on task 2.
         ```
         *(Note: Replace `@tasks-my-feature.md` with your task list's filename and `2` with the next parent task number.)*
 

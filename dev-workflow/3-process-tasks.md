@@ -82,8 +82,9 @@ This ensures the AI works with a clean, relevant context for each major step of 
 
 ### STEP 0.5: RULE DISCOVERY AND COMPLIANCE PREPARATION
 1. **Execute Context Discovery Protocol:**
-   - **[STRICT]** Load rules from `../rules/master-rules/`, `../rules/common-rules/`, and `../rules/project-rules/`
-   - **[STRICT]** Follow `1-master-rule-context-discovery` protocol completely
+   - **[STRICT]** Dynamically locate rule directories using: `find . -name "*rules" -type d`
+   - **[STRICT]** Load rules from discovered `master-rules`, `common-rules`, and `project-rules` directories
+   - **[STRICT]** Follow context discovery protocol from the located master-rules
    - **[STRICT]** Filter rules by task scope (security/UI/performance/architecture/etc.)
 
 2. **Create Compliance TodoWrite:**
@@ -136,11 +137,11 @@ This ensures the AI works with a clean, relevant context for each major step of 
       - Check that architectural patterns are maintained
       - Validate against relevant security rules
     - **Database Changes:** If the task involves database migrations, verify:
-      - Migration follows `common-rule-database-migrations` standards
+      - Migration follows database migration standards from common-rules
       - Rollback procedure is documented and tested
       - Data integrity is preserved
     - **System Integration Check:** If the task involves global state, authentication, or system-wide changes, verify complete integration:
-      - **Global State Tasks:** Check initialization, cleanup, and documentation per `common-rule-global-state-management`
+      - **Global State Tasks:** Check initialization, cleanup, and documentation per global state management rules
       - **Authentication Tasks:** Verify session initialization and listener setup
       - **System-wide Changes:** Confirm all affected components are properly integrated
 6.  **UI Component Validation:** If the task involves UI components, verify integration readiness:

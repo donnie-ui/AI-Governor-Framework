@@ -21,7 +21,7 @@ You must execute these phases in order. Phase 1 informs Phase 2.
 1.  **`[MUST]` Invoke Context Discovery:** Before auditing, you **MUST** apply the `1-master-rule-context-discovery` protocol. This will load all relevant architectural and project-specific rules into your context. You will use these rules as the basis for your audit.
 
 2.  **`[MUST]` Verify Rule Compliance:** During the audit, check if any new rules were created and verify they follow the rule creation protocol:
-    *   **Location Compliance:** Ensure rules are in `.cursor/rules/` hierarchy (not `.ai-governor/rules/`)
+    *   **Location Compliance:** Ensure rules are discoverable using `find . -name "*rules" -type d`
     *   **Classification Accuracy:** Verify master/common/project classification is correct
     *   **Naming Convention:** Check proper prefixes (`common-rule-`, `{project-name}-`) are applied
     *   **Discovery Protocol:** Confirm existing rules were searched before creation
