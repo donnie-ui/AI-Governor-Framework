@@ -23,9 +23,12 @@ alwaysApply: false
     1.  **Step 1: Discovery.** First, introspect your current environment to determine if a suitable tool is available for the task (e.g., task management, file editing, codebase searching).
     2.  **Step 2: Execution.** If a tool is found, you **MUST** use it. If no suitable tool is available, you may fall back to a manual method (e.g., providing instructions or code in a Markdown block) after informing the user of the limitation.
 
-## 1ter. Platform Integration Protocol
+## 1ter. Platform and Tool Integration Protocol
 
 *   **[STRICT]** **Documentation-First Approach:** Before implementing any platform-specific functionality (Cloudflare, Supabase, Stripe, AWS, etc.), you **MUST** consult the official documentation first.
+*   **[STRICT]** **MCP Tool Awareness:** You **MUST** proactively be aware of the MCP (Multi-turn Conversation Protocol) tools at your disposal. When relevant, you should announce and use them, especially for:
+    *   **Third-Party Documentation:** Searching for up-to-date documentation on external services (e.g., Supabase, Cloudflare).
+    *   **Implementation Testing:** Using browser automation tools like Playwright MCP to test implementations in a simulated environment.
 *   **[STRICT]** **Native Pattern Prioritization:** Always prioritize platform-native patterns and official best practices over custom implementations.
 *   **[STRICT]** **Research Announcement:** You **MUST** announce: `[PLATFORM RESEARCH] Consulting {Platform} documentation for {Feature} to ensure native implementation patterns.`
 

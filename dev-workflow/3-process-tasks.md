@@ -65,10 +65,25 @@ This ensures the AI works with a clean, relevant context for each major step of 
    - **[MANDATORY]** Await user validation: `[ENV_CHECK] Environment validated. Proceed? (yes/no)`
    - **[STRICT]** Do NOT proceed without explicit user confirmation
 
+### STEP 0.1: PRODUCTION READINESS VALIDATION
+1. **[STRICT] Implementation Standards Pre-Check:**
+   - **[MANDATORY]** Before implementing any feature, verify that the planned approach includes:
+     - **Real Database Integration**: No mock data in production endpoints; use actual database service patterns
+     - **Input Validation**: Proper validation schemas (Zod, Joi, or equivalent) for all user inputs
+     - **Configuration Externalization**: Environment variables for URLs, API keys, and configurable settings
+     - **Error Handling**: Comprehensive error handling with environment-based message sanitization
+     - **Production Logging**: Proper logging architecture with audit trails and debug separation
+   
+2. **[STRICT] Production Check Communication:**
+   - **Communication:** `[PRODUCTION CHECK] Validating implementation approach against production standards.`
+   - **Requirements Review:** Explicitly confirm that the implementation will be production-ready from the start
+   - **Anti-Pattern Prevention:** Flag and prevent planned use of mock data, hardcoded values, or development shortcuts
+   - **Quality Gate:** Implementation must pass production readiness before proceeding to development
+
 ### STEP 0.5: RULE DISCOVERY AND COMPLIANCE PREPARATION
 1. **Execute Context Discovery Protocol:**
-   - **[STRICT]** Load rules from `.cursor/rules/master-rules/`, `.cursor/rules/common-rules/`, and `.cursor/rules/project-rules/`
-   - **[STRICT]** Follow `1-master-rule-context-discovery.mdc` protocol completely
+   - **[STRICT]** Load rules from `../rules/master-rules/`, `../rules/common-rules/`, and `../rules/project-rules/`
+   - **[STRICT]** Follow `1-master-rule-context-discovery` protocol completely
    - **[STRICT]** Filter rules by task scope (security/UI/performance/architecture/etc.)
 
 2. **Create Compliance TodoWrite:**
@@ -121,11 +136,11 @@ This ensures the AI works with a clean, relevant context for each major step of 
       - Check that architectural patterns are maintained
       - Validate against relevant security rules
     - **Database Changes:** If the task involves database migrations, verify:
-      - Migration follows `common-rule-database-migrations.mdc` standards
+      - Migration follows `common-rule-database-migrations` standards
       - Rollback procedure is documented and tested
       - Data integrity is preserved
     - **System Integration Check:** If the task involves global state, authentication, or system-wide changes, verify complete integration:
-      - **Global State Tasks:** Check initialization, cleanup, and documentation per `common-rule-global-state-management.mdc`
+      - **Global State Tasks:** Check initialization, cleanup, and documentation per `common-rule-global-state-management`
       - **Authentication Tasks:** Verify session initialization and listener setup
       - **System-wide Changes:** Confirm all affected components are properly integrated
 6.  **UI Component Validation:** If the task involves UI components, verify integration readiness:

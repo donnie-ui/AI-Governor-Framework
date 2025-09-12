@@ -57,12 +57,26 @@ You must execute these phases in order. Phase 1 informs Phase 2.
     *   Present your analysis and hypotheses concisely.
     *   *Example: "My analysis shows the implementation is compliant. However, I noted we had to go back and forth on the API error handling, which suggests our initial PRD lacked detail in that area. Do you share that assessment?"*
 
-3.  **Conduct a Guided Interview:**
-    *   Ask open-ended questions about the different project phases, using your hypotheses as a starting point.
-    *   **PRD Phase (`1-create-prd.md`):** "Was the PRD clear and complete enough? What missing information would have helped?"
-    *   **Planning Phase (`2-generate-tasks.md`):** "Was the task list logical, complete, and easy to follow?"
-    *   **Execution Phase (`3-process-tasks.md`):** "Where was our process least efficient? Were there any misunderstandings or frustrations?"
-    *   **Rules (`@rules`):** "Did you find any rule to be ambiguous or missing? Were any rules created in the wrong location or with incorrect naming? Conversely, was any rule particularly helpful?"
+3.  **Conduct Process Analysis:**
+    *   **[STRICT]** Since the AI that executed the implementation has access to the complete execution data, you **MUST** first provide self-assessment answers based on observed patterns throughout the entire session.
+    *   **[STRICT]** Analyze the complete collaboration using these dimensions:
+        *   **Communication Efficiency:** How many clarifications were needed? Were instructions clear from the start?
+        *   **Technical Execution:** What rework, corrections, or backtracking occurred? Which approaches worked smoothly?
+        *   **Process Flow:** Where did the session flow smoothly vs. where did friction occur? What caused delays or confusion?
+        *   **Rule/Guideline Effectiveness:** Which rules or patterns helped vs. hindered progress? What was missing or ambiguous?
+        *   **User Experience:** What was the user's cognitive load? How many decisions or validations were required?
+        *   **Outcome Quality:** Did the final result meet expectations? Were there unexpected issues or benefits?
+    *   **[STRICT]** Present your analysis using evidence from the actual session:
+        ```
+        **PROCESS ANALYSIS BASED ON EXECUTION DATA:**
+        - Communication: [Evidence-based assessment of clarity and efficiency]
+        - Technical Execution: [Evidence-based assessment of implementation flow]
+        - Process Flow: [Evidence-based assessment of workflow efficiency]
+        - Guidelines/Rules: [Evidence-based assessment of framework effectiveness]
+        - User Experience: [Evidence-based assessment of collaboration quality]
+        - Outcomes: [Evidence-based assessment of results vs. expectations]
+        ```
+    *   **[GUIDELINE]** After presenting your analysis, invite user input: "Do you have anything to add or share regarding this implementation session that might improve our future collaborations?"
 
 4.  **Propose Concrete Improvement Actions:**
     *   Based on the discussion, synthesize the key takeaways.
@@ -71,7 +85,44 @@ You must execute these phases in order. Phase 1 informs Phase 2.
     *   If you prepared a `diff`, this is the time to present it.
 
 5.  **Validate and Conclude:**
-    *   Await user validation on the action plan.
+    *   **[GUIDELINE]** Await user validation on the action plan, unless user indicates autonomous completion is preferred
+    *   **[ALTERNATIVE]** If user requests autonomous retrospective, proceed with self-assessment and apply improvements directly
     *   Conclude the interview: "Excellent. I will incorporate these improvements for our future collaborations."
+
+---
+
+## 3. MANDATORY SELF-EVALUATION OF RETROSPECTIVE ANALYSIS
+
+**[STRICT]** After completing your technical self-review and before presenting findings to the user, you MUST perform an objective self-evaluation of your analysis:
+
+### ANALYSIS VALIDITY CHECK
+**[REQUIRED]** Critically examine your retrospective findings:
+- **Technical Accuracy:** Are your compliance assessments technically accurate for the specific technology stack?
+- **Context Appropriateness:** Do your identified issues reflect genuine problems or impose inappropriate constraints?
+- **Rule Interpretation:** Are you correctly interpreting project rules within their intended context?
+- **Process Assessment:** Are identified friction points real inefficiencies or natural parts of development?
+
+### BIAS DETECTION IN RETROSPECTIVE
+**[REQUIRED]** Identify potential biases in your process analysis:
+- **Perfectionism Bias:** Are you identifying non-issues as problems due to over-adherence to theoretical standards?
+- **Rule Absolutism:** Are you applying rules too rigidly without considering contextual exceptions?
+- **Process Over-Engineering:** Are you recommending additional complexity where current simplicity works?
+- **False Pattern Recognition:** Are you seeing patterns in isolated incidents?
+
+### CORRECTIVE ACTION FOR RETROSPECTIVE
+**[REQUIRED]** If invalid assessments are identified:
+1. **Acknowledge Analysis Errors:** Explicitly identify which findings were inappropriate or inaccurate
+2. **Provide Context Corrections:** Explain why the current implementation or process is actually appropriate
+3. **Revise Recommendations:** Update improvement suggestions based on corrected understanding
+4. **Focus on Genuine Improvements:** Identify only real friction points that merit attention
+
+### INTEGRATION WITH USER DISCUSSION
+**[REQUIRED]** Use your self-evaluation to:
+- Present only validated findings to the user
+- Ask targeted questions about genuine friction points
+- Avoid leading questions based on invalid assumptions
+- Focus discussion on areas where improvement would provide real value
+
+**[COMMUNICATION]** If your self-evaluation reveals errors in your initial analysis, present corrected findings using the format: "OBJECTIVE ANALYSIS OF RETROSPECTIVE FINDINGS" followed by your revised assessment.
 
 --- 

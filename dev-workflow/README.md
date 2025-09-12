@@ -11,7 +11,7 @@ The goal is to make AI-powered development:
 -   **Controllable:** You are always in the loop for key decisions.
 -   **Efficient:** The AI does the heavy lifting, you provide the strategic direction.
 
-## 2. How it Works: The 4-Step Development Lifecycle
+## 2. How it Works: The 5-Step Development Lifecycle
 
 This workflow guides you through the entire development process, from initial setup to continuous improvement. Each step assigns a specific role to the AI, ensuring a structured and predictable collaboration.
 
@@ -65,17 +65,24 @@ Here, the AI implements the plan one parent task at a time, within a dedicated c
     -   If the changes are correct, reply with **"yes"** or **"continue"**.
     -   If changes are needed, provide corrective feedback.
 
-3.  **After Each Parent Task: Learn and Reset**
-    Once a parent task (e.g., Task 1 and all its sub-tasks) is complete, it is **critical** to follow this two-step process before moving on:
+3.  **After Each Parent Task: Quality Assurance and Learning**
+    Once a parent task (e.g., Task 1 and all its sub-tasks) is complete, it is **critical** to follow this three-step process before moving on:
 
-    1.  **Run the Retrospective:** This captures learnings and improves the AI's context for the next steps.
+    1.  **Run the Quality Control Audit:** This validates the technical excellence and identifies any issues before proceeding.
         ```
-        Apply instructions from .ai-governor/dev-workflow/4-implementation-retrospective.md
+        Apply instructions from .ai-governor/dev-workflow/4-quality-control-protocol.md
         ```
 
-    2.  **Start the next parent task in a new chat:** To ensure a clean context, clear the current session (e.g., with the `/clear` command) and start the next task.
+    2.  **Run the Implementation Retrospective:** This captures learnings and improves the AI's context for the next steps.
+        ```
+        Apply instructions from .ai-governor/dev-workflow/5-implementation-retrospective.md
+        ```
+
+    3.  **Start the next parent task in a new chat:** To ensure a clean context, clear the current session (e.g., with the `/clear` command) and start the next task.
         ```
         Apply instructions from .ai-governor/dev-workflow/3-process-tasks.md to @tasks-my-feature.md. Start on task 2.
+
+        apply '/Users/fred/Dropbox/Development/MicroSaaS-Boilerplate/.ai-governor/dev-workflow/3-process-tasks.md' to 3.2 tasks and sub-tasks in .ai-governor/tasks/tasks-mvp-production-ready.md
         ```
         *(Note: Replace `@tasks-my-feature.md` with your task list's filename and `2` with the next parent task number.)*
 
