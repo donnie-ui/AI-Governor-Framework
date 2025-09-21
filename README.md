@@ -71,7 +71,7 @@ This guide provides a safe, non-destructive process to integrate the framework i
 
 Open a terminal at the root of your project and run the following command:
 ```bash
-git clone https://github.com/Fr-e-d/The-Governor-Framework.git .ai-governor
+git clone https://github.com/Fr-e-d/AI-Governor-Framework.git .ai-governor
 ```
 This downloads the entire framework into a hidden `.ai-governor` directory within your project.
 
