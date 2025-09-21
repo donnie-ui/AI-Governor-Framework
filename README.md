@@ -77,16 +77,26 @@ This downloads the entire framework into a hidden `.ai-governor` directory withi
 
 **2. Configure for Your Assistant**
 
-The final step depends on your AI assistant:
+The final step depends on your AI assistant. Choose the relevant section below.
 
 #### For Cursor Users
-Cursor requires rules to be in a specific `.cursor` directory to load them automatically. Run this command to copy them:
+To get the best experience, including custom commands like `/review`, copy both the rules and the prompts into your project's `.cursor` directory.
 ```bash
+# Copy governance rules
 mkdir -p .cursor/rules && cp -r .ai-governor/rules/* .cursor/rules/
+
+# Copy custom prompts for an enhanced workflow
+mkdir -p .cursor/prompts && cp -r .ai-governor/.cursor/prompts/* .cursor/prompts/
 ```
 
-#### For Other AI Assistants
-The framework is ready to use. You can point your assistant to the rules and workflows inside the `.ai-governor` directory.
+#### For Claude Code Users
+To enable custom commands like `/review`, copy the command definitions into your project's `.claude` directory.
+```bash
+mkdir -p .claude/commands && cp -r .ai-governor/.claude/commands/* .claude/commands/
+```
+
+#### For Other AI Assistants (e.g., OpenCode)
+The framework is ready to use without extra steps. Your assistant will find its boot sequence (`CLAUDE.md` or `OpenCode.md`) and the necessary rules within the `.ai-governor` directory.
 
 
 > [!NOTE]
