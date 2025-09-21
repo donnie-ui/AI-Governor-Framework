@@ -1,5 +1,26 @@
 ### CHANGELOG
 
+#### `v2.6.0` - Agnostic Workflow & Advanced Review Protocols
+
+##### 🚀 WORKFLOW
+
+1.  **Made the Entire Framework Stack-Agnostic**
+    *   **Why:** To make the framework a truly universal standard for AI governance, compatible with any technology stack.
+    *   **Impact:** Systematically removed all specific references to technologies like DDD, Cloudflare, and Supabase from all `dev-workflow` protocols and `master-rules`. The entire framework is now fully generalized.
+
+2.  **Introduced a New 7-Layer Quality Audit System**
+    *   **Why:** To provide a robust, comprehensive, and scalable system for code reviews, inspired by the battle-tested workflows used by Anthropic's team to build products like Claude Code.
+    *   **Impact:**
+        *   The old `4-quality-control-protocol.md` has been replaced by a powerful new `4-quality-audit.md` engine.
+        *   A full suite of specialized `review-protocols` has been introduced, covering Code Quality, Security, Architecture, Design Systems, and UI/UX.
+        *   A unified `review.md` orchestrator provides an interactive menu for selecting the appropriate audit, with safeguards to prevent infinite loops and intelligent fallbacks.
+
+##### 📚 DOCUMENTATION
+
+1.  **Clarified and Hardened Review Workflow Documentation**
+    *   **Why:** To ensure the new, more powerful review system is easy to understand and use.
+    *   **Impact:** All `README.md` files have been updated to explain the orchestrator/engine relationship between `review.md` and `4-quality-audit.md`. Instructions have been added to clarify direct-mode access and shortcuts like `/review` for a better user experience.
+
 #### `v2.5.0` - Refined AI Collaboration & Context Safety
 
 ##### 🏛️ GOVERNANCE
