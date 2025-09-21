@@ -1,130 +1,44 @@
-# PROTOCOL: Generic Security-Focused Audit
+# PROTOCOL: Generic Security-Focused Audit (Software Design Compliant)
 
-**IMPORTANT**: This protocol is a specialized pointer to the comprehensive quality audit.
+## Mission
+To perform a focused security audit, validating data protection, secure communication patterns, and multi-tenancy safeguards.
 
-**Primary Protocol**: `dev-workflow/4-quality-audit.md`
+## AUDIT FRAMEWORK: LAYER 2 Validation
 
-**Execution Mode**: `security`
-- **Layers**: LAYER 2 (Security) + LAYER 1 (Architectural Design)
-- **Usage**: For authentication/data changes, compliance checks, and security validation.
+### LAYER 2: SECURITY & MULTI-TENANT ASSURANCE
 
-## 1. Security Focus
+**[STRICT] Module/Boundary Security:**
+- Each module/component manages its own authentication where applicable.
+- Secrets are isolated by functional area (violation if shared inappropriately).
+- Input validation occurs at each module/component boundary.
+- Secure error handling is compliant with Master Rules.
 
-When applying the comprehensive protocol in `security` mode, focus on:
--   Multi-tenant data protection validation (if applicable).
--   Security isolation of modules.
--   Secure configuration of inter-service communication.
--   Input validation and authentication patterns.
+**[CRITICAL] Multi-Tenant Data Protection:**
+- MANDATORY data access policies (e.g., RLS) for all tenant tables.
+- `tenant_id` validation is performed at each database operation.
+- No data leakage between tenants.
+- A complete audit trail of cross-tenant access exists.
 
-## 2. Security Audit Framework
+**[CRITICAL] Security Audit Points:**
+- SQL injection in database queries.
+- Cross-Site Scripting (XSS) in user-generated content.
+- Missing input validation.
+- Authentication/authorization bypass vulnerabilities.
+- Exposure of secrets in logs or error messages.
+- Overly permissive Cross-Origin Resource Sharing (CORS) policies.
+- Missing security headers.
 
-### 2.1. Module Security (Critical)
-**[STRICT] Secure Isolation:**
--   Each module or service must manage its own authentication.
--   Secrets must not be shared between contexts.
--   Input validation must be performed at every context boundary.
--   Error handling must be secure and comply with established standards.
+**[STRICT] Secure Communication:**
+- Service entrypoints have access validation.
+- RPC methods are secure (stateless, validated).
+- Service configuration does not expose secrets.
+- Environment variables are correctly scoped.
 
-**[STRICT] Secure Inter-Module Communication:**
--   API contracts must be used for all communication; no direct internal calls.
--   Service-to-service authentication must be implemented via secure interfaces.
--   Parameters must be validated at every boundary.
--   Internal methods must not be exposed via public endpoints.
+## Audit Process
+1.  **Boundary Security Check:** Verify secret isolation and input validation at module boundaries.
+2.  **Data Protection Scan:** Check for mandatory RLS policies and `tenant_id` usage in all database operations.
+3.  **Vulnerability Scan:** Look for common vulnerabilities like SQL injection, XSS, and auth bypass patterns.
+4.  **Communication Security:** Review service entrypoints and configurations for potential security leaks.
 
-### 2.2. Secure Code Quality (Critical)
-**[STRICT] Security Standards:**
--   Input validation with guard clauses is MANDATORY.
--   All authentication operations must have `try/catch` error handling.
--   Use secure naming conventions (do not expose variables like `password` or `secret`).
--   Authentication functions should be short (<30 lines) for auditability (SRP).
--   Nesting depth should be limited (<3 levels) to avoid complex security bugs.
-
-### 2.3. Multi-Tenant Security (Critical, if applicable)
-**[STRICT] Data Isolation:**
--   Row-Level Security (RLS) policies are MANDATORY for all tenant-scoped tables.
--   A `tenant_id` must be validated with every database operation.
--   A complete audit trail for cross-tenant access is required.
--   There must be no data leakage between tenants.
-
-**[STRICT] Security Architecture:**
--   Implement defense-in-depth (Client → Gateway → Service → DB).
--   Centralize authentication, but distribute authorization to each context.
--   Isolate secrets management by business context.
--   Securely monitor inter-service communications.
-
-## 3. Vulnerability Categories
-
-### 3.1. Module Security Violations
--   Direct import of secrets between services.
--   Shared authentication logic between contexts.
--   Logs containing sensitive cross-context data.
--   Insecure communication between modules.
-
-### 3.2. Service Communication Security Issues
--   Direct calls between internal components of different modules.
--   Interfaces without access validation.
--   Configuration with exposed secrets.
--   Methods without input validation.
-
-### 3.3. Input Validation & Injection
--   SQL injection in database queries.
--   XSS in user-generated content.
--   Command injection in services.
--   NoSQL injection patterns.
-
-### 3.4. Configuration Security
--   Overly permissive CORS policies.
--   Weak or missing security headers.
--   Exposed debug endpoints in production.
--   Hard-coded secrets in the codebase.
-
-## 4. Report Format
-
-```markdown
-# Security Audit Report
-
-## Executive Summary
-- **Security Score**: X/10
-- **Module Security**: ✅/⚠️/🚨
-- **Service Communication Security**: ✅/⚠️/🚨
-- **Code Quality Security**: ✅/⚠️/🚨
-
-## Critical Vulnerabilities (High Confidence >0.8)
-
-### 🚨 CRITICAL [File:Line] Title of Vulnerability
-- **Category**: Module Security Violation
-- **Rule Violated**: A reference to a specific rule or standard.
-- **Vulnerability**: A precise description with context.
-- **Exploit Scenario**: How an attacker could exploit the vulnerability.
-- **Business Impact**: The impact on tenants, data, or the system.
-- **Fix**: Specific code examples.
-```typescript
-// ❌ INCORRECT - Standard Violation
-const user = await database.users.find(userId); // Without try/catch
-
-// ✅ CORRECT - Standard Compliant
-try {
-  const user = await database.users.find(userId);
-  if (!user) {
-    console.error(`User lookup failed: ${userId}`);
-    return null;
-  }
-  return user;
-} catch (error) {
-  console.error('Database error:', error.message);
-  throw new AuthenticationError('User validation failed');
-}
-```
-- **Confidence**: 0.95
-
-## Security Compliance
-- **Module Isolation**: ✅/⚠️/🚨
-- **Secure Service Communication**: ✅/⚠️/🚨
-- **Multi-Tenant Data Protection**: ✅/⚠️/🚨
-- **Secure Code Quality**: ✅/⚠️/🚨
-
-## Priority Recommendations
-1.  **[CRITICAL]** Fix critical security vulnerabilities immediately.
-2.  **[HIGH]** Implement missing secure communication patterns.
-3.  **[MEDIUM]** Complete multi-tenant security policies.
-4.  **[LOW]** Optimize defense-in-depth patterns.
+## Report Format
+The report must highlight critical security vulnerabilities with clear, actionable remediation steps. It should classify findings by severity and provide specific code examples for fixes.

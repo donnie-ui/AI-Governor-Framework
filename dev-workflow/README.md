@@ -4,16 +4,16 @@
 
 Working with AI can sometimes feel unpredictable. The AI Governor Framework provides a development workflow designed to fix that, for both new and existing projects.
 
-It provides a structured, sequential process that transforms your AI from a simple code generator into a reliable engineering partner. By following these protocols, you ensure that both you and the AI are always aligned, moving from a high-level idea to a well-implemented feature with clarity, control, and consistency.
+It provides a structured, sequential process that transforms your AI from a simple code generator into a reliable engineering partner. By following these five protocols, you ensure that both you and the AI are always aligned, moving from a high-level idea to a well-implemented feature with clarity, control, and consistency.
 
 The goal is to make AI-powered development:
 -   **Predictable:** Each step has a clear purpose and output.
 -   **Controllable:** You are always in the loop for key decisions.
--   **Efficient:** The AI does the heavy lifting, while you provide the strategic direction.
+-   **Efficient:** The AI does the heavy lifting, you provide the strategic direction.
 
-## 2. How it Works: The 5-Protocol Development Lifecycle
+## 2. How it Works: The Optimized 5-Protocol Development Lifecycle
 
-This workflow guides you through the entire development process, from initial setup to continuous improvement. Each protocol assigns a specific role to the AI, ensuring a structured and predictable collaboration with intelligent session management.
+This workflow guides you through the entire development process, from initial setup to continuous improvement. Each protocol assigns a specific role to the AI, ensuring a structured and predictable collaboration with **intelligent session management**.
 
 ### Step 0: Bootstrap Your Project (One-Time Setup)
 **Role:** The AI acts as a **Project Analyst**.
@@ -23,6 +23,7 @@ First, the AI analyzes your entire codebase to build a "Context Kit"—a set of 
 ```
 Apply instructions from dev-workflow/0-bootstrap-your-project.md
 ```
+*(For best results, Cursor users should use Max Mode for this step.)*
 
 ### Step 1: Create a Product Requirements Document (PRD)
 **Role:** The AI acts as a **Product Manager**.
@@ -34,6 +35,7 @@ Apply instructions from dev-workflow/1-create-prd.md
 
 Here's the feature I want to build: [Describe your feature in detail]
 ```
+*(For best results, Cursor users should use Max Mode for this step.)*
 
 ### Step 2: Generate Your Task List
 **Role:** The AI acts as a **Tech Lead**.
@@ -45,10 +47,12 @@ Apply instructions from dev-workflow/2-generate-tasks.md to @prd-my-feature.md
 ```
 *(Note: Replace `@prd-my-feature.md` with the actual filename of your PRD.)*
 
+*(For best results, Cursor users should use Max Mode for this step.)*
+
 ### Step 3: Execute Tasks with Integrated Quality Gates
 **Role:** The AI acts as a **Paired Developer** with built-in quality validation.
 
-Here, the AI implements the plan one parent task at a time, within a dedicated chat session. Each session includes implementation, a quality audit, and a retrospective for optimal context preservation.
+Here, the AI implements the plan one parent task at a time, within a dedicated chat session. Each session includes implementation + quality audit + retrospective for optimal context preservation.
 
 **🔄 Per Parent Task (New Chat Session):**
 
@@ -59,32 +63,31 @@ Here, the AI implements the plan one parent task at a time, within a dedicated c
     *(Note: Replace `@tasks-my-feature.md` with the actual filename of your task list.)*
 
 2.  **Implementation with Quick Reviews:**
-    - The AI implements sub-tasks with integrated validation.
-    - You review and approve the changes by replying with **"yes"** or **"continue"**.
+    - AI implements sub-tasks with **integrated quick validation**
+    - Critical issues are caught and fixed immediately
+    - You review and approve: **"yes"** or **"continue"**
 
 3.  **Protocol 4: Unified Quality Review (Same Session)**
-    Once the parent task is complete, use the unified review system:
+    Once the parent task is complete, use the unified review system by calling the central orchestrator:
     
+    **🎯 Tool-Agnostic Command:**
     ```
-    Apply instructions from dev-workflow/review-protocols/review.md
-    ```
-    *(Note for Cursor and Claude Code users: you can simply type `/review` to trigger this protocol.)*
-    
-    This protocol acts as an interactive menu. Based on your selection, it will trigger the powerful `4-quality-audit.md` protocol to perform the actual review. It will present you with the following options:
-    - ☐ **Code Review**
-    - ☐ **Comprehensive Review**
-    - ☐ **Security Check**
-    - ☐ **Architecture Review**
-    - ☐ **Design System Compliance**
-    - ☐ **UI/UX & Accessibility**
-    
-    Alternatively, if you know which review mode you need, you can call the audit protocol directly:
-    ```
-    Apply instructions from dev-workflow/4-quality-audit.md --mode security
+    Apply instructions from dev-workflow/4-quality-audit.md
     ```
     
+    **The orchestrator provides an interactive selection interface:**
+    - ☐ **Code Review** - DDD compliance + Code quality (quick feedback)
+    - ☐ **🚀 Run All** - Comprehensive 6-layer validation
+    - ☐ **Security Check** - Focus on auth/data/multi-tenant validation
+    - ☐ **Architecture Review** - Focus on performance + DDD architecture
+    - ☐ **Design System** - Component usage + Visual consistency
+    - ☐ **UI/UX & Accessibility** - WCAG compliance + Responsive design
+    - ☐ **Pre-Production Security** - Complete security validation
+    
+    **Automatic Fallback:** Custom protocols → Generic protocols (tool-agnostic)
+
 4.  **Protocol 5: Implementation Retrospective (Same Session)**
-    Capture learnings while the context is fresh:
+    Capture learnings while context is fresh:
     ```
     Apply instructions from dev-workflow/5-implementation-retrospective.md
     ```
@@ -96,14 +99,22 @@ Here, the AI implements the plan one parent task at a time, within a dedicated c
 
 ---
 
-### A Note on the Streamlined Workflow
+### A Note on the Revolutionary Unified Workflow
 
-This 5-protocol workflow with a unified review system is designed to be tool-agnostic and efficient. Key improvements include:
+This streamlined 5-protocol workflow with a **unified review system** eliminates tool-specific complexity while maintaining all quality benefits. **Key improvements:**
 
-- **Fewer steps** with a single, unified review interface.
-- **Tool-agnostic design** that works across different AI development environments.
-- **Context optimization** through intelligent session management.
-- **Interactive selection** for reviews, preventing tool-specific confusion.
-- **6-layer validation** including Design and UX coverage.
+- **Simplified entry point** with a single, central orchestrator
+- **Tool-agnostic design** works across Claude Code, Cursor, Aider
+- **Context optimization** through intelligent session management  
+- **Smart protocol selection** with automatic custom/generic fallback
+- **Interactive selection** prevents tool-specific confusion
+- **6-layer validation** including Design + UX coverage
 
-The initial structured approach pays off exponentially as the AI learns your codebase patterns and becomes a true expert companion for your project, delivering predictable, high-quality output.
+**Tool-Specific Usage:**
+
+**Claude Code:** Use the `/review` command for interactive selection.
+**Cursor:** Use `@review` for interactive selection.
+**Aider:** Use `/load .ai-governor/dev-workflow/4-quality-audit.md`
+**Universal:** All tools use the same underlying protocol system.
+
+The initial structured approach pays off exponentially as the AI learns your codebase patterns and becomes a true expert companion for your project with **predictable, high-quality output across any development tool**.

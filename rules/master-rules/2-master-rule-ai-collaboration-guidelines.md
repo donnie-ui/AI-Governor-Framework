@@ -1,5 +1,5 @@
 ---
-description: "TAGS: [global,collaboration,workflow,safety,rules] | TRIGGERS: rule,conflict,clarify,proceed,how to,question | SCOPE: global | DESCRIPTION: The supreme operational protocol governing AI-user collaboration, conflict resolution, doubt clarification, and continuous improvement."
+description: "TAGS: [global,collaboration,workflow,safety] | TRIGGERS: rule,conflict,clarify,proceed,how to,question | SCOPE: global | DESCRIPTION: The supreme operational protocol governing AI-user collaboration, conflict resolution, doubt clarification, and continuous improvement."
 alwaysApply: false
 ---
 # Master Rule: AI Collaboration Guidelines
@@ -25,7 +25,7 @@ alwaysApply: false
 
 ## 1ter. Platform and Tool Integration Protocol
 
-*   **[STRICT]** **Documentation-First Approach:** Before implementing any platform-specific functionality (e.g., a cloud provider, a payment gateway, an external API), you **MUST** consult the official documentation first.
+*   **[STRICT]** **Documentation-First Approach:** Before implementing any platform-specific functionality (Cloudflare, Supabase, Stripe, AWS, etc.), you **MUST** consult the official documentation first.
 *   **[STRICT]** **MCP Tool Awareness:** You **MUST** proactively be aware of the MCP (Multi-turn Conversation Protocol) tools at your disposal. When relevant, you should announce and use them, especially for:
     *   **Third-Party Documentation:** Searching for up-to-date documentation on external services (e.g., Supabase, Cloudflare).
     *   **Implementation Testing:** Using browser automation tools like Playwright MCP to test implementations in a simulated environment.

@@ -1,115 +1,187 @@
-# PROTOCOL: Generic UI/UX & Accessibility Review
+# PROTOCOL: Generic UI/UX Accessibility Review (DDD Compliant)
 
-**IMPORTANT**: This protocol is a specialized pointer to the comprehensive quality audit.
+**IMPORTANT**: This protocol is now a specialized pointer to the comprehensive quality audit.
 
-**Primary Protocol**: `dev-workflow/4-quality-audit.md`
+**Primary Protocol**: `.ai-governor/dev-workflow/4-quality-audit.md`
 
-**Execution Mode**: `ui`
-- **Layers**: LAYER 6 (UI/UX & Accessibility)
-- **Usage**: For UI/UX and accessibility validation.
+**Execution Mode**: Mode 7 (UI/UX Accessibility Review)
+- **Layers**: LAYER 1 (DDD Compliance) + LAYER 7 (UI/UX & Accessibility)
+- **Duration**: 10-20 minutes
+- **Usage**: UI/UX and accessibility validation
 
-## 1. UI/UX Focus
+## UI/UX Focus
+Please read and apply the comprehensive protocol with **Mode 7: UI/UX Accessibility** settings:
+- WCAG AA+ accessibility compliance
+- Responsive design validation
+- User experience patterns verification
+- Interaction flow consistency
 
-When applying the comprehensive protocol in `ui` mode, focus on:
--   WCAG AA+ accessibility compliance.
--   Responsive design validation.
--   Verification of user experience patterns.
--   Consistency of interaction flows.
+## UI/UX Review Framework (Standard Compliant)
 
-## 2. Review Framework
-
-### 2.1. Accessibility Compliance (Critical)
+### 1. Accessibility Compliance (Critical - WCAG Standards)
 **[STRICT] WCAG AA+ Validation:**
--   Color contrast must be at least 4.5:1 for normal text and 3:1 for large text.
--   All interactive elements must be fully navigable with a keyboard.
--   Appropriate ARIA attributes must be used for screen readers.
--   The HTML must have a correct semantic structure (headings, landmarks).
--   All inputs and controls must have explicit labels.
+- Color contrast minimum 4.5:1 (normal) / 3:1 (large)
+- Full keyboard navigation for all interactive elements
+- Appropriate ARIA attributes for screen readers
+- Correct semantic HTML structure (headings, landmarks)
+- Explicit labels for all inputs/controls
 
-### 2.2. Responsive Design (Critical)
+**[STRICT] Inclusive Design:**
+- Support for users with motor/visual/auditory/cognitive disabilities
+- Text alternatives for non-text content
+- No reliance on color alone for information
+- Accessible or disable-able timeouts
+- Prevention of seizures (animations, flashing)
+
+### 2. Responsive Design (Critical - Multi-Device)
 **[STRICT] Breakpoint Validation:**
--   The application must be fully functional on mobile, tablet, and desktop.
--   There should be no unintentional horizontal scrolling.
--   Touch targets must be at least 44x44px on mobile devices.
--   Navigation must be adapted for each viewport.
--   Performance must be maintained across all devices.
+- Full functionality on mobile/tablet/desktop
+- No unintentional horizontal scrolling
+- Touch targets minimum 44px for mobile
+- Navigation adapted to each viewport
+- Performance maintained on all devices
 
-### 2.3. User Experience Patterns (High Priority)
+**[STRICT] Content Prioritization:**
+- Clear information hierarchy on small screens
+- Appropriate progressive disclosure
+- Critical content accessible without scrolling
+- Interactions optimized by device type
+
+### 3. User Experience Patterns (High Priority - UX Standards)
 **[STRICT] Interaction Consistency:**
--   Interaction patterns must be consistent throughout the application.
--   Visual feedback must be provided for all user actions.
--   Loading, error, and success states must be clearly indicated.
--   Navigation should be intuitive and predictable.
+- Consistent interaction patterns throughout the app
+- Visual feedback for all user actions
+- Clearly indicated loading/error/success states
+- Intuitive and predictable navigation
+- Appropriate visual affordances
 
 **[STRICT] Cognitive Load Management:**
--   Information should be presented in appropriate chunks.
--   Use progressive disclosure for complex workflows.
--   Labels and instructions must be clear.
--   Provide clear confirmation for destructive actions.
+- Appropriate information chunks (7±2 rule)
+- Progressive disclosure for complex workflows
+- Clear labels and instructions
+- Prevention and recovery from errors
+- Confirmation for destructive actions
+- **[PRAGMATISM]** `🧠`: Aim for simplicity. A clear and simple interface is often more accessible than a complex one with ARIA aids.
 
-### 2.4. Performance UX (High Priority)
-**[STRICT] Loading Experience (Core Web Vitals):**
--   Largest Contentful Paint (LCP) < 2.5s.
--   First Input Delay (FID) < 100ms.
--   Cumulative Layout Shift (CLS) < 0.1.
--   Use progressive loading with skeletons or placeholders.
--   Optimize images and other assets.
+### 4. Performance UX (High Priority - Core Web Vitals)
+**[STRICT] Loading Experience:**
+- Largest Contentful Paint <2.5s
+- First Input Delay <100ms
+- Cumulative Layout Shift <0.1
+- Progressive loading with skeletons/placeholders
+- Image and asset optimizations
 
-## 3. Review Process
+### 5. Multi-Tenant UX (SaaS - Context Specific)
+**[STRICT] Tenant Isolation UX:**
+- Clear tenant context in the interface
+- No data confusion between tenants
+- Onboarding adapted by tenant type
+- Permissions/roles reflected in the UI
+- Appropriate tenant branding (if applicable)
 
-### 3.1. Accessibility Audit
--   Scan the HTML markup for semantic compliance.
--   Test for complete keyboard navigation.
--   Automatically check color contrasts.
--   Validate ARIA attributes and labels.
--   Simulate screen readers and other assistive technologies.
+## UI/UX Review Process
 
-### 3.2. Responsive Testing
--   Test on standard breakpoints (e.g., 320px, 768px, 1024px, 1200px+).
--   Validate touch interactions on mobile.
--   Check both portrait and landscape orientations.
--   Control for performance on low-end devices.
+### 1. Accessibility Audit
+- Scan HTML markup for semantic compliance
+- Test full keyboard navigation
+- Automatically check color contrasts
+- Validate ARIA attributes and labels
+- Simulate screen readers and assistive technologies
 
-### 3.3. UX Flow Validation
--   Trace critical user journeys.
--   Identify friction points and areas of confusion.
--   Validate user feedback at each step.
--   Check error states and recovery paths.
--   Test for edge cases and error scenarios.
+### 2. Responsive Testing
+- Test on standard breakpoints (320px, 768px, 1024px, 1200px+)
+- Validate touch interactions on mobile
+- Check portrait/landscape orientation
+- Control performance on low-end devices
+- Test with different font sizes
 
-## 4. Report Format
+### 3. UX Flow Validation
+- Trace critical user journeys
+- Identify friction points and confusion
+- Validate user feedback at each step
+- Control error states and recovery
+- Test edge cases and error scenarios
+
+### 4. Performance UX Analysis
+- Measure Core Web Vitals
+- Analyze loading sequences
+- Identify layout shifts
+- Optimize critical rendering path
+- Validate perceived performance
+
+## UI/UX Communication Style
+
+**Standard Compliant Classification:**
+- 🚨 **[CRITICAL/BLOCKER]**: 
+  - WCAG AA violation (contrast, keyboard navigation, ARIA)
+  - Broken functionality on mobile/tablet
+  - Major inaccessibility (users excluded)
+  - Core Web Vitals out of bounds
+
+- ⚠️ **[IMPROVEMENT]**: 
+  - WCAG AAA opportunities
+  - Identified UX friction
+  - Sub-optimal performance
+  - Improvable responsive design
+
+- 💡 **[SUGGESTION]**: 
+  - Improved micro-interactions
+  - Subtle UX optimizations
+  - Enhanced accessibility
+  - Performance fine-tuning
+
+- 🧠 **[PRAGMATISM]**:
+  - Is the accessibility solution too complex? Is there a simpler way to achieve the same level of compliance?
+
+## UI/UX Report Format
 
 ```markdown
-# UI/UX & Accessibility Review
+# ♿ Generic UI/UX Accessibility Review
 
 ## Executive Summary
 - **Accessibility Score**: X/10 (WCAG AA compliance)
-- **Responsive Design**: ✅/⚠️/🚨
-- **UX Patterns**: ✅/⚠️/🚨
-- **Performance UX**: ✅/⚠️/🚨
+- **Responsive Design**: ✅/⚠️/🚨 Multi-device support
+- **UX Patterns**: ✅/⚠️/🚨 User experience quality  
+- **Performance UX**: ✅/⚠️/🚨 Core Web Vitals status
 
-## Critical Violations
+## Critical Violations (Accessibility Standards)
 
-### 🚨 [File:Line] Title of Violation
-- **Standard Violated**: A reference to the specific WCAG guideline or UX best practice.
-- **Issue**: A precise description of the accessibility or UX violation.
-- **Impact**: The users affected and the consequences.
-- **Fix**: A specific code or design example with ✅ CORRECT and ❌ INCORRECT states.
+### 🚨 [File:Line] Title of the violation
+- **Standard Violated**: WCAG AA / UX Best Practice reference
+- **Issue**: Precise description of the accessibility/UX violation
+- **Impact**: Affected users and consequences
+- **Fix**: Specific code/design with examples ✅ CORRECT and ❌ INCORRECT
 
 ## Accessibility Metrics
-- **WCAG AA Compliance**: XX% (target: 100%)
-- **Keyboard Navigation**: ✅/⚠️/🚨
-- **Screen Reader Support**: ✅/⚠️/🚨
-- **Color Contrast Ratio**: X.X:1 (minimum: 4.5:1)
+- WCAG AA Compliance: XX% (target: 100%)
+- Keyboard Navigation: ✅/⚠️/🚨
+- Screen Reader Support: ✅/⚠️/🚨
+- Color Contrast Ratio: X.X:1 (minimum: 4.5:1)
 
 ## Performance UX Metrics
-- **Largest Contentful Paint**: X.Xs (target: <2.5s)
-- **First Input Delay**: XXms (target: <100ms)
-- **Cumulative Layout Shift**: X.XX (target: <0.1)
+- Largest Contentful Paint: X.Xs (target: <2.5s)
+- First Input Delay: XXms (target: <100ms)
+- Cumulative Layout Shift: X.XX (target: <0.1)
 
 ## Priority Recommendations
-1.  **[CRITICAL]** Immediate actions to ensure WCAG AA compliance.
-2.  **[HIGH]** Optimizations for responsive design.
-3.  **[MEDIUM]** Improvements to UX patterns.
-4.  **[LOW]** Performance and micro-interaction suggestions.
+1. [CRITICAL] Immediate WCAG AA compliance
+2. [HIGH] Responsive design optimizations
+3. [MEDIUM] UX patterns improvements
+4. [LOW] Performance and micro-interactions
 ```
+
+**UI/UX Focus**: Ensure **universal accessibility**, optimize the **multi-device experience**, and maintain **consistent UX patterns**.
+
+## Tool Integration Notes
+
+### Universal UI Tools
+- Use browser automation for accessibility testing
+- Leverage responsive design testing tools
+- Access to accessibility validators and contrast checkers
+- Performance monitoring for Core Web Vitals
+
+### Generic Tools  
+- Analyze HTML markup with search patterns
+- Read CSS/styling files with file readers
+- Validate with automated accessibility scanners
+- Test with keyboard navigation simulation

@@ -1,5 +1,5 @@
 ---
-description: "TAGS: [global,workflow,context,rules,documentation,discovery,bios,dynamic-context,robustness] | TRIGGERS: rule,context,readme,documentation,understand,project,setup,start,discovery | SCOPE: global | DESCRIPTION: Defines the robust, BIOS-like protocol for discovering relevant rules and README.md documentation with verification safeguards. It governs the initial context loading and its dynamic re-evaluation during a task."
+description: "TAGS: [global,workflow,context,rules,documentation,discovery] | TRIGGERS: rule,context,readme,documentation,understand,project,setup,start,discovery | SCOPE: global | DESCRIPTION: Defines the robust protocol for discovering relevant rules and documentation with verification safeguards, governing initial context loading and its dynamic re-evaluation."
 alwaysApply: true
 ---
 # Master Rule: Context Discovery Protocol (The System BIOS)

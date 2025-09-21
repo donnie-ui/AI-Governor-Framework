@@ -1,123 +1,144 @@
-# PROTOCOL: Generic Design System Review
+# PROTOCOL: Generic Design System Review (DDD Compliant)
 
-**IMPORTANT**: This protocol is a specialized pointer to the comprehensive quality audit.
+**IMPORTANT**: This protocol is now a specialized pointer to the comprehensive quality audit.
 
-**Primary Protocol**: `dev-workflow/4-quality-audit.md`
+**Primary Protocol**: `.ai-governor/dev-workflow/4-quality-audit.md`
 
-**Execution Mode**: `design`
-- **Layers**: LAYER 5 (Design System)
-- **Usage**: For design system compliance validation.
+**Execution Mode**: Mode 6 (Design System Review)
+- **Layers**: LAYER 1 (DDD Compliance) + LAYER 6 (Design System)
+- **Duration**: 8-15 minutes
+- **Usage**: Design system compliance validation
 
-## 1. Design Focus
+## Design Focus
+Please read and apply the comprehensive protocol with **Mode 6: Design System Review** settings:
+- Visual consistency validation
+- Design system compliance
+- Component usage patterns verification
+- Brand guidelines adherence
 
-When applying the comprehensive protocol in `design` mode, focus on:
--   Visual consistency validation.
--   Compliance with the design system.
--   Verification of component usage patterns.
--   Adherence to brand guidelines.
+## Design Review Framework (Standard Compliance)
 
-## 2. Review Framework
-
-### 2.1. Design System Compliance (Critical)
-**[STRICT] Component Usage:**
--   Use components from the design system exclusively.
--   Respect the defined variants and states of each component.
--   Comply with the established guidelines for spacing and typography.
--   Validate that colors are used according to the defined palette.
+### 1. Design System Compliance (Critical - Design Standard)
+**[STRICT] Component Usage Validation:**
+- Use of design system components only
+- Respect for defined variants and states
+- Compliance with spacing/typography guidelines
+- Validation of colors according to the defined palette
 
 **[STRICT] Visual Consistency:**
--   Ensure visual coherence between different modules and services.
--   Respect the established visual hierarchy.
--   Align with existing UI patterns.
--   Validate responsive breakpoints.
+- Visual consistency between modules/services
+- Respect for the established visual hierarchy
+- Alignment with existing UI patterns
+- Validation of responsive breakpoints
 
-### 2.2. Brand Guidelines (High Priority)
+### 2. Brand Guidelines Adherence (High Priority - Brand)
 **[STRICT] Brand Compliance:**
--   Respect the visual identity (logos, colors, typography).
--   Apply brand guidelines correctly.
--   Ensure a consistent tone of voice in the UI.
--   Comply with all established visual standards.
+- Respect for the visual identity (logos, colors, typography)
+- Correct application of brand guidelines
+- Consistency of tone of voice in the UI
+- Compliance with established visual standards
 
-### 2.3. Component Architecture (Critical)
+### 3. Component Architecture (Critical - DDD)
 **[STRICT] Component Boundaries:**
--   Reusable components should be located in a shared library (e.g., `/libs/ui`).
--   Avoid duplicating UI components between services.
--   Respect the abstractions provided by the design system.
--   Maintain a clear separation between presentation and business logic.
+- Reusable components in `/libs/ui` or equivalent
+- No duplication of UI components between services
+- Respect for design system abstractions
+- Clear separation of presentation/business logic
+- **[PRAGMATISM]** `🧠`: Create reusable components, but avoid premature abstractions. A duplicated component is sometimes better than a bad abstraction.
 
-### 2.4. Design Token Usage (High Priority)
+### 4. Design Token Usage (High Priority - Consistency)
 **[STRICT] Token Compliance:**
--   Use design tokens for colors, spacing, and typography.
--   Avoid hard-coded values in the CSS.
--   Respect the established naming convention for tokens.
--   Ensure consistent use of tokens across all components.
+- Use of design tokens (colors, spacing, typography)
+- Avoid hardcoded values in CSS
+- Respect for token nomenclature
+- Consistency of values between components
 
-## 3. Review Process
+## Design Review Process
 
-### 3.1. Design System Audit
--   Identify all components used and compare them against the design system.
--   Analyze the compliance of the component variants used.
--   Verify the application of design tokens.
--   Check for overall visual consistency.
+### 1. Design System Audit
+- Identify used components vs design system
+- Analyze compliance of used variants
+- Check application of design tokens
+- Control visual consistency
 
-### 3.2. Brand Compliance Check
--   Scan the usage of colors and typography.
--   Verify the application of visual guidelines.
--   Check for alignment with the brand identity.
--   Validate the consistency of the visual language.
+### 2. Brand Compliance Check
+- Scan uses of colors/typography
+- Check application of visual guidelines
+- Control alignment with brand identity
+- Validate consistency of visual language
 
-### 3.3. Component Architecture Review
--   Verify the reusability of components.
--   Check the separation of concerns between UI and business logic.
--   Analyze the organization of the component library.
--   Validate the architecture of the design system itself.
+### 3. Component Architecture Review
+- Check reusability of components
+- Control separation of UI/business concerns
+- Analyze organization of components
+- Validate the design system architecture
 
-## 4. Communication Style
+## Design Communication Style
 
-**[STRICT] Classification:**
--   🚨 **[CRITICAL/BLOCKER]**:
-    -   Violation of the design system (e.g., using a custom component instead of a system one).
-    -   Non-compliance with brand guidelines.
-    -   Duplication of UI components between services.
-    -   Ignoring design tokens in favor of hard-coded values.
--   ⚠️ **[IMPROVEMENT]**:
-    -   Minor visual inconsistencies.
-    -   Possible UX optimizations.
-    -   Sub-optimal but functional component usage.
-    -   Missing design documentation.
--   💡 **[SUGGESTION]**:
-    -   Aesthetic improvements.
-    -   Micro-interaction optimizations.
-    -   Suggestions for evolving the design system.
+**Standard Compliant Classification:**
+- 🚨 **[CRITICAL/BLOCKER]**: 
+  - Design system violation (custom component vs system)
+  - Non-compliance with brand guidelines
+  - Duplication of UI components between services
+  - Design tokens ignored (hardcoded values)
 
-## 5. Report Format
+- ⚠️ **[IMPROVEMENT]**: 
+  - Minor visual inconsistencies
+  - Possible UX optimizations
+  - Non-optimal but functional components
+  - Missing design documentation
+
+- 💡 **[SUGGESTION]**: 
+  - Aesthetic improvements
+  - Micro-interaction optimizations
+  - Suggestions for design system evolution
+
+- 🧠 **[PRAGMATISM]**:
+  - Is the component too complex? Could it be simplified while still respecting the design system requirements?
+
+## Design Report Format
 
 ```markdown
-# Design System Review Report
+# 🎨 Generic Design System Review
 
 ## Executive Summary
 - **Design System Score**: X/10
-- **Brand Compliance**: ✅/⚠️/🚨
-- **Component Usage**: ✅/⚠️/🚨
-- **Visual Consistency**: ✅/⚠️/🚨
+- **Brand Compliance**: ✅/⚠️/🚨 Status
+- **Component Usage**: ✅/⚠️/🚨 Conformity  
+- **Visual Consistency**: ✅/⚠️/🚨 Standards adherence
 
-## Critical Violations
+## Critical Violations (Design Standards)
 
-### 🚨 [File:Line] Title of Violation
-- **Rule Violated**: A reference to the specific design system or brand guideline.
-- **Issue**: A precise description of the design or brand violation.
-- **Impact**: The consequences for consistency and user experience.
-- **Fix**: A specific code or design example with ✅ CORRECT and ❌ INCORRECT states.
+### 🚨 [File:Line] Title of the violation
+- **Rule Violated**: Design System / Brand Guidelines reference
+- **Issue**: Precise description of the design/brand violation
+- **Impact**: Consequences on consistency/user experience
+- **Fix**: Specific code/design with examples ✅ CORRECT and ❌ INCORRECT
 
 ## Design System Compliance
-- **Component Usage**: ✅/⚠️/🚨
-- **Design Token Usage**: ✅/⚠️/🚨
-- **Brand Guidelines**: ✅/⚠️/🚨
-- **Visual Consistency**: ✅/⚠️/🚨
+- Component Usage: ✅/⚠️/🚨
+- Design Token Usage: ✅/⚠️/🚨
+- Brand Guidelines: ✅/⚠️/🚨
+- Visual Consistency: ✅/⚠️/🚨
 
 ## Priority Recommendations
-1.  **[CRITICAL]** Immediate actions to ensure design system compliance.
-2.  **[HIGH]** Improvements to align with brand guidelines.
-3.  **[MEDIUM]** Optimizations for UI components.
-4.  **[LOW]** Aesthetic and UX suggestions.
+1. [CRITICAL] Immediate actions for design system compliance
+2. [HIGH] Improvements to brand guidelines
+3. [MEDIUM] UI component optimizations
+4. [LOW] Aesthetic/UX suggestions
 ```
+
+**Design Focus**: Maintain the **consistency of the design system**, respect **brand guidelines**, and ensure the **reusability of UI components**.
+
+## Tool Integration Notes
+
+### Universal Design Tools
+- Use browser tools for screenshots and visual validation
+- Leverage design system documentation
+- Access to style guides and brand guidelines
+- Validation of design tokens usage
+
+### Generic Tools  
+- Analyze component structure with search patterns
+- Read CSS/styling files with file readers
+- Validate with repository scanning design files

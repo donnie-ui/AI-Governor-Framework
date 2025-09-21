@@ -1,5 +1,5 @@
 ---
-description: "TAGS: [global,safety,modification,validation,regression,multi-feature] | TRIGGERS: modify,edit,change,update,refactor,fix,implement,modal,shared,multiple,features,handler,router,manager | SCOPE: global | DESCRIPTION: Comprehensive code modification safety protocol - pre-analysis, risk assessment, surgical implementation, and validation for all code changes"
+description: "TAGS: [global,safety,modification,validation,regression] | TRIGGERS: modify,edit,change,update,refactor,fix,implement | SCOPE: global | DESCRIPTION: A comprehensive protocol for safe code modification, including pre-analysis, risk assessment, surgical implementation, and validation to prevent regressions."
 alwaysApply: false
 ---
 # Master Rule: Code Modification Safety Protocol
@@ -14,7 +14,7 @@ alwaysApply: false
 **[STRICT]** Before any modification, you **MUST**:
 
 1.  **Confirm the Target:** Have I correctly understood the file to be modified and the final goal?
-2.  **Validate File Location:** For any new file, or when modifying configuration/rules, you **MUST** verify that its location conforms to the project's structure as defined in `common-rule-monorepo-setup-conventions.mdc`. Announce and correct any discrepancies immediately.
+2.  **Validate File Location:** For any new file, or when modifying configuration/rules, you **MUST** verify that its location conforms to the project's structure. Announce and correct any discrepancies immediately.
 3.  **Read the Latest Version:** Following the **Tool Usage Protocol**, use the appropriate tool to get the most current version of target file(s).
 4.  **Verify Inconsistencies:** If file content contradicts recent conversation history, **STOP** and ask for clarification.
 5.  **Apply Specific Rules:** Follow `1-master-rule-context-discovery.mdc` to load relevant project-specific rules.
