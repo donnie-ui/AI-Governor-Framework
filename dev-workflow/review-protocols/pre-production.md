@@ -132,7 +132,7 @@ ALTER TABLE billing_invoices ENABLE ROW LEVEL SECURITY;
 
 CREATE POLICY "Users can only see their own tenant's invoices" 
 ON billing_invoices
-FOR ALL USING (tenant_id = current_setting('app.current_tenant_id'));
+  FOR ALL USING (tenant_id = current_setting('app.current_tenant_id'));
 ```
 
 ## ⚠️ High-Risk Issues

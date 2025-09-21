@@ -11,7 +11,7 @@ This directory contains the core logic for AI-driven code reviews. The system is
 ## 2. Protocol Architecture
 
 ### **Main Orchestrators**
--   **`review.md`**: The unified entry point for all reviews. It provides an interactive way to select the desired review protocol.
+-   **`review.md`**: The unified entry point for all reviews. It provides an interactive way to select the desired review protocol and then triggers the main audit protocol.
 -   **`../4-quality-audit.md`**: The execution engine that performs the quality audit based on the selected mode.
 
 ### **Utilities**
@@ -38,7 +38,10 @@ This review system is designed to be tool-agnostic. To trigger a review, apply t
 ```
 Apply instructions from dev-workflow/review-protocols/review.md
 ```
-This will present an interactive selection of the available review protocols.
+This will present an interactive selection of the available review protocols. Alternatively, you can directly call the audit engine with a specific mode:
+```
+Apply instructions from dev-workflow/4-quality-audit.md --mode security
+```
 
 ## 4. Workflow Integration
 

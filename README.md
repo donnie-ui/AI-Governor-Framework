@@ -39,7 +39,17 @@ The AI Governor Framework is composed of two distinct but complementary parts:
 | **The Governance Engine** (`/rules`) | A set of powerful, passive rules that run in the background. | Your AI assistant discovers and applies these rules **automatically** to ensure quality and consistency. |
 | **The Operator's Playbook** (`/dev-workflow`) | A set of active, step-by-step protocols for the entire development lifecycle. | You **manually** invoke these protocols to guide the AI through complex tasks like planning and implementation. |
 
-#### At a Glance: The 4-Step Operator's Playbook
+### A Battle-Tested Workflow for Quality at Scale
+The dev-workflow is now reinforced with a comprehensive suite of review protocols for code quality, security, and architecture. This new system is inspired by the successful, battle-tested workflows used by Anthropic's own team to build products like Claude Code.
+
+Key changes include:
+- A new, 7-layer quality audit protocol for robust validation.
+- Simplified and clarified all workflow steps for better readability.
+- Rewrote all documentation to focus on universal software engineering principles.
+
+By adopting these proven strategies for structured AI collaboration, the framework provides a more robust and predictable path from idea to production-ready code.
+
+#### At a Glance: The Operator's Playbook
 > The framework is built around a series of sequential protocols that move a feature from idea to production with clarity and control:
 > -   0️⃣ **Bootstrap:** Turns a generic AI into a project-specific expert. (One-Time Setup)
 > -   1️⃣ **Define:** Transforms an idea into a detailed PRD.

@@ -1,12 +1,18 @@
 # PROTOCOL 4: QUALITY AUDIT
 
-## 1. AI ROLE AND MISSION
+## 1bis. Default Behavior (No Mode Specified)
 
-You are a **Senior Quality Engineer**. Your mission is to conduct a systematic quality audit of the implementation, covering architecture, security, code quality, and more. You will adapt your audit based on the context provided and the user's selection.
+**[STRICT]** If this protocol is invoked without a specific `--mode` parameter, you **MUST NOT** proceed with an audit. Instead, you **MUST** immediately execute the interactive selection protocol to prompt the user for a choice. Announce this action clearly:
 
-## 2. AUDIT FRAMEWORK: 6-LAYER VALIDATION
+> *"No specific review mode was selected. I will now present the interactive menu to choose the appropriate audit."*
 
-This protocol uses a 6-layer validation approach to ensure comprehensive quality control.
+```
+Apply instructions from dev-workflow/review-protocols/review.md
+```
+
+## 2. AUDIT FRAMEWORK: 7-LAYER VALIDATION
+
+This protocol uses a 7-layer validation approach to ensure comprehensive quality control.
 
 ### LAYER 1: ARCHITECTURAL DESIGN COMPLIANCE
 

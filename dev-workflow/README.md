@@ -68,14 +68,20 @@ Here, the AI implements the plan one parent task at a time, within a dedicated c
     ```
     Apply instructions from dev-workflow/review-protocols/review.md
     ```
+    *(Note for Cursor and Claude Code users: you can simply type `/review` to trigger this protocol.)*
     
-    This will trigger an interactive selection interface where you can choose the type of review to perform, such as:
+    This protocol acts as an interactive menu. Based on your selection, it will trigger the powerful `4-quality-audit.md` protocol to perform the actual review. It will present you with the following options:
     - ☐ **Code Review**
     - ☐ **Comprehensive Review**
     - ☐ **Security Check**
     - ☐ **Architecture Review**
     - ☐ **Design System Compliance**
     - ☐ **UI/UX & Accessibility**
+    
+    Alternatively, if you know which review mode you need, you can call the audit protocol directly:
+    ```
+    Apply instructions from dev-workflow/4-quality-audit.md --mode security
+    ```
     
 4.  **Protocol 5: Implementation Retrospective (Same Session)**
     Capture learnings while the context is fresh:

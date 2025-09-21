@@ -69,6 +69,8 @@ Based on the analysis, you can present smart recommendations to the user before 
 
 ## 4. AI Execution Instructions
 
+**[STRICT]** To prevent an infinite loop, you **MUST** ensure a `--mode` is always passed to `4-quality-audit.md` when executing from this protocol. If the user does not select a mode, you **MUST** ask for clarification and **MUST NOT** call the audit protocol without a mode.
+
 Based on the user's selection, execute the `4-quality-audit.md` protocol with the corresponding mode.
 
 ### Single Protocol Selection
