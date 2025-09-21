@@ -54,7 +54,7 @@ By adopting these proven strategies for structured AI collaboration, the framewo
 > -   0️⃣ **Bootstrap:** Turns a generic AI into a project-specific expert. (One-Time Setup)
 > -   1️⃣ **Define:** Transforms an idea into a detailed PRD.
 > -   2️⃣ **Plan:** Converts the PRD into a step-by-step technical plan.
-> -   3️⃣ **Implement:** Executes the plan with integrated quality gates and retrospectives.
+> -   3️⃣ **Implement & Review:** Executes the plan, followed by a mandatory quality audit (`4-quality-audit.md`) and a process retrospective (`5-implementation-retrospective.md`) to continuously improve the system.
 
 ---
 
