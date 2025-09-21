@@ -44,8 +44,7 @@ The AI Governor Framework is composed of two distinct but complementary parts:
 > -   0️⃣ **Bootstrap:** Turns a generic AI into a project-specific expert. (One-Time Setup)
 > -   1️⃣ **Define:** Transforms an idea into a detailed PRD.
 > -   2️⃣ **Plan:** Converts the PRD into a step-by-step technical plan.
-> -   3️⃣ **Implement:** Executes the plan with human validation at each step.
-> -   4️⃣ **Improve:** Audits the code to make the AI smarter for the future.
+> -   3️⃣ **Implement:** Executes the plan with integrated quality gates and retrospectives.
 
 ---
 
@@ -73,7 +72,7 @@ The final step depends on your AI assistant:
 #### For Cursor Users
 Cursor requires rules to be in a specific `.cursor` directory to load them automatically. Run this command to copy them:
 ```bash
-mkdir -p .cursor/rules && cp -r .ai-governor/rules/master-rules .cursor/rules/ && cp -r .ai-governor/rules/*
+mkdir -p .cursor/rules && cp -r .ai-governor/rules/* .cursor/rules/
 ```
 
 #### For Other AI Assistants

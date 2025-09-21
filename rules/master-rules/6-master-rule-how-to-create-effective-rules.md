@@ -155,3 +155,5 @@ To ensure the critical YAML frontmatter is always formatted correctly, the assis
     *   The assistant presents the full content as a diff, explaining the process:
         > *"Voici les modifications pour le fichier `.mdc`. Vous devriez pouvoir les appliquer directement, car l'assistant ne peut pas modifier ces métadonnées de manière fiable."*
 
+### Alternative for Automated Workflows (CLI)
+For scripted workflows, direct file manipulation is an option. Use `echo` to prepend the metadata block, as it is generally more reliable than `cat <<'EOF'`.

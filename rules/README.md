@@ -59,7 +59,7 @@ The best way to create high-quality rules is to follow a simple, two-step proces
 
 -   **Location:** Inside each specific project/codebase folder.
 -   **Purpose:** To contain protocols and conventions specific to that project's tech stack.
--   **Examples:** Rules for interacting with Cloudflare Workers, patterns for React components, or conventions for REST API endpoints.
+-   **Examples:** Rules for interacting with a specific cloud service, patterns for React components, or conventions for REST API endpoints.
 
 ---
 
